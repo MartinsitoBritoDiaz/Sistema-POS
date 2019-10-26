@@ -82,6 +82,12 @@
     <Compile Include="UI\Registros\rCliente.Designer.cs">
       <DependentUpon>rCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\RPosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RPosForm.Designer.cs">
+      <DependentUpon>RPosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroFacturacion.resx">
       <DependentUpon>RegistroFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RPosForm.resx">
+      <DependentUpon>RPosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rVentas.resx">
       <DependentUpon>rVentas.cs</DependentUpon>
