@@ -107,5 +107,10 @@ namespace Sistema_de_POS
             rCliente registro = new rCliente();
             registro.Show();
         }
+
+        private void ContenedorPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

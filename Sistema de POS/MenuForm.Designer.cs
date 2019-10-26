@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.ContenedorPanel = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.IconoHomePictureBox = new System.Windows.Forms.PictureBox();
@@ -38,6 +37,7 @@
             this.CajaChicaButton = new System.Windows.Forms.Button();
             this.FacturacionButton = new System.Windows.Forms.Button();
             this.VentasButton = new System.Windows.Forms.Button();
+            this.ContenedorPanel = new System.Windows.Forms.Panel();
             this.SlideButton = new System.Windows.Forms.PictureBox();
             this.CerrarButton = new System.Windows.Forms.PictureBox();
             this.MaximizarButton = new System.Windows.Forms.PictureBox();
@@ -70,16 +70,6 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(251, 788);
             this.MenuVertical.TabIndex = 0;
-            // 
-            // ContenedorPanel
-            // 
-            this.ContenedorPanel.BackColor = System.Drawing.SystemColors.Window;
-            this.ContenedorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContenedorPanel.Location = new System.Drawing.Point(251, 58);
-            this.ContenedorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ContenedorPanel.Name = "ContenedorPanel";
-            this.ContenedorPanel.Size = new System.Drawing.Size(1049, 730);
-            this.ContenedorPanel.TabIndex = 2;
             // 
             // button2
             // 
@@ -204,6 +194,17 @@
             this.VentasButton.Text = "Fcturacion V1.0";
             this.VentasButton.UseVisualStyleBackColor = true;
             this.VentasButton.Click += new System.EventHandler(this.VentasButton_Click);
+            // 
+            // ContenedorPanel
+            // 
+            this.ContenedorPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.ContenedorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContenedorPanel.Location = new System.Drawing.Point(251, 58);
+            this.ContenedorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ContenedorPanel.Name = "ContenedorPanel";
+            this.ContenedorPanel.Size = new System.Drawing.Size(1049, 730);
+            this.ContenedorPanel.TabIndex = 2;
+            this.ContenedorPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ContenedorPanel_Paint);
             // 
             // SlideButton
             // 
