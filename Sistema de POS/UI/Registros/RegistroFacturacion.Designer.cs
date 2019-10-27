@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroFacturacion));
             this.RemoverButton = new System.Windows.Forms.Button();
             this.ProductosgroupBox = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.UnidadComboBox = new System.Windows.Forms.ComboBox();
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.PrecioUnitariotextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.UnidadComboBox = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.ProductosgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
@@ -75,9 +75,10 @@
             // 
             // RemoverButton
             // 
-            this.RemoverButton.Location = new System.Drawing.Point(19, 383);
+            this.RemoverButton.Location = new System.Drawing.Point(25, 471);
+            this.RemoverButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RemoverButton.Name = "RemoverButton";
-            this.RemoverButton.Size = new System.Drawing.Size(137, 23);
+            this.RemoverButton.Size = new System.Drawing.Size(183, 28);
             this.RemoverButton.TabIndex = 40;
             this.RemoverButton.Text = "Remover Producto";
             this.RemoverButton.UseVisualStyleBackColor = true;
@@ -95,19 +96,48 @@
             this.ProductosgroupBox.Controls.Add(this.label10);
             this.ProductosgroupBox.Controls.Add(this.DetalledataGridView);
             this.ProductosgroupBox.Controls.Add(this.label5);
-            this.ProductosgroupBox.Location = new System.Drawing.Point(10, 115);
+            this.ProductosgroupBox.Location = new System.Drawing.Point(13, 142);
+            this.ProductosgroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProductosgroupBox.Name = "ProductosgroupBox";
-            this.ProductosgroupBox.Size = new System.Drawing.Size(503, 290);
+            this.ProductosgroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductosgroupBox.Size = new System.Drawing.Size(671, 357);
             this.ProductosgroupBox.TabIndex = 37;
             this.ProductosgroupBox.TabStop = false;
             this.ProductosgroupBox.Text = "Productos";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(367, 34);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 17);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Unidad";
+            // 
+            // UnidadComboBox
+            // 
+            this.UnidadComboBox.FormattingEnabled = true;
+            this.UnidadComboBox.Items.AddRange(new object[] {
+            "Kilos",
+            "Libras",
+            "Onzas",
+            "Paquetes",
+            "Unidades",
+            "Porciones"});
+            this.UnidadComboBox.Location = new System.Drawing.Point(429, 26);
+            this.UnidadComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UnidadComboBox.Name = "UnidadComboBox";
+            this.UnidadComboBox.Size = new System.Drawing.Size(141, 24);
+            this.UnidadComboBox.TabIndex = 20;
+            // 
             // Agregarbutton
             // 
             this.Agregarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Agregarbutton.Image")));
-            this.Agregarbutton.Location = new System.Drawing.Point(444, 9);
+            this.Agregarbutton.Location = new System.Drawing.Point(592, 11);
+            this.Agregarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Agregarbutton.Name = "Agregarbutton";
-            this.Agregarbutton.Size = new System.Drawing.Size(36, 32);
+            this.Agregarbutton.Size = new System.Drawing.Size(48, 39);
             this.Agregarbutton.TabIndex = 19;
             this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Agregarbutton.UseVisualStyleBackColor = true;
@@ -115,68 +145,76 @@
             // 
             // PrecioUnitariotextBox
             // 
-            this.PrecioUnitariotextBox.Location = new System.Drawing.Point(91, 73);
+            this.PrecioUnitariotextBox.Location = new System.Drawing.Point(121, 90);
+            this.PrecioUnitariotextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PrecioUnitariotextBox.Name = "PrecioUnitariotextBox";
-            this.PrecioUnitariotextBox.Size = new System.Drawing.Size(389, 20);
+            this.PrecioUnitariotextBox.Size = new System.Drawing.Size(517, 22);
             this.PrecioUnitariotextBox.TabIndex = 5;
             this.PrecioUnitariotextBox.TextChanged += new System.EventHandler(this.PrecioUnitariotextBox_TextChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 80);
+            this.label12.Location = new System.Drawing.Point(8, 98);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 13);
+            this.label12.Size = new System.Drawing.Size(105, 17);
             this.label12.TabIndex = 4;
             this.label12.Text = "Precio Unitario:";
             // 
             // DescripcionTextBox
             // 
-            this.DescripcionTextBox.Location = new System.Drawing.Point(91, 47);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(121, 58);
+            this.DescripcionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.Size = new System.Drawing.Size(389, 20);
+            this.DescripcionTextBox.Size = new System.Drawing.Size(517, 22);
             this.DescripcionTextBox.TabIndex = 3;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 54);
+            this.label11.Location = new System.Drawing.Point(8, 66);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 13);
+            this.label11.Size = new System.Drawing.Size(86, 17);
             this.label11.TabIndex = 2;
             this.label11.Text = "Descripcion:";
             // 
             // CantidadnumericUpDown
             // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(91, 21);
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(121, 26);
+            this.CantidadnumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
-            this.CantidadnumericUpDown.Size = new System.Drawing.Size(135, 20);
+            this.CantidadnumericUpDown.Size = new System.Drawing.Size(180, 22);
             this.CantidadnumericUpDown.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 28);
+            this.label10.Location = new System.Drawing.Point(9, 34);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 0;
             this.label10.Text = "Cantidad:";
             // 
             // DetalledataGridView
             // 
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalledataGridView.Location = new System.Drawing.Point(10, 119);
+            this.DetalledataGridView.Location = new System.Drawing.Point(13, 146);
+            this.DetalledataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DetalledataGridView.Name = "DetalledataGridView";
             this.DetalledataGridView.RowHeadersWidth = 51;
-            this.DetalledataGridView.Size = new System.Drawing.Size(470, 142);
+            this.DetalledataGridView.Size = new System.Drawing.Size(627, 175);
             this.DetalledataGridView.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 103);
+            this.label5.Location = new System.Drawing.Point(9, 127);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 13);
+            this.label5.Size = new System.Drawing.Size(129, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Lista de productos:";
             // 
@@ -193,9 +231,11 @@
             this.ClientegroupBox.Controls.Add(this.IDnumericUpDown);
             this.ClientegroupBox.Controls.Add(this.FechadateTimePicker);
             this.ClientegroupBox.Controls.Add(this.ClientetextBox);
-            this.ClientegroupBox.Location = new System.Drawing.Point(10, 5);
+            this.ClientegroupBox.Location = new System.Drawing.Point(13, 6);
+            this.ClientegroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientegroupBox.Name = "ClientegroupBox";
-            this.ClientegroupBox.Size = new System.Drawing.Size(503, 105);
+            this.ClientegroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientegroupBox.Size = new System.Drawing.Size(671, 129);
             this.ClientegroupBox.TabIndex = 36;
             this.ClientegroupBox.TabStop = false;
             this.ClientegroupBox.Text = "Cliente";
@@ -207,9 +247,10 @@
             this.CondicioncomboBox.Items.AddRange(new object[] {
             "Credito",
             "Contado"});
-            this.CondicioncomboBox.Location = new System.Drawing.Point(68, 76);
+            this.CondicioncomboBox.Location = new System.Drawing.Point(91, 94);
+            this.CondicioncomboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CondicioncomboBox.Name = "CondicioncomboBox";
-            this.CondicioncomboBox.Size = new System.Drawing.Size(107, 21);
+            this.CondicioncomboBox.Size = new System.Drawing.Size(141, 24);
             this.CondicioncomboBox.TabIndex = 11;
             // 
             // TipoPagocomboBox
@@ -219,35 +260,39 @@
             "Efectivo",
             "Tarjeta de Credito",
             "Cheque"});
-            this.TipoPagocomboBox.Location = new System.Drawing.Point(373, 79);
+            this.TipoPagocomboBox.Location = new System.Drawing.Point(499, 97);
+            this.TipoPagocomboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TipoPagocomboBox.Name = "TipoPagocomboBox";
-            this.TipoPagocomboBox.Size = new System.Drawing.Size(107, 21);
+            this.TipoPagocomboBox.Size = new System.Drawing.Size(141, 24);
             this.TipoPagocomboBox.TabIndex = 21;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 23);
+            this.label1.Location = new System.Drawing.Point(9, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 13);
+            this.label1.Size = new System.Drawing.Size(23, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(295, 79);
+            this.label9.Location = new System.Drawing.Point(393, 97);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 13);
+            this.label9.Size = new System.Drawing.Size(96, 17);
             this.label9.TabIndex = 20;
             this.label9.Text = "Tipo de pago:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(346, 23);
+            this.label2.Location = new System.Drawing.Point(461, 28);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fecha:";
             // 
@@ -255,9 +300,10 @@
             // 
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(146, 12);
+            this.Buscarbutton.Location = new System.Drawing.Point(195, 15);
+            this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(80, 35);
+            this.Buscarbutton.Size = new System.Drawing.Size(107, 43);
             this.Buscarbutton.TabIndex = 19;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -267,49 +313,55 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 50);
+            this.label3.Location = new System.Drawing.Point(9, 62);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Cliente:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 79);
+            this.label4.Location = new System.Drawing.Point(9, 97);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.Size = new System.Drawing.Size(74, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Condicion:";
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(68, 21);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(91, 26);
+            this.IDnumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
-            this.IDnumericUpDown.Size = new System.Drawing.Size(70, 20);
+            this.IDnumericUpDown.Size = new System.Drawing.Size(93, 22);
             this.IDnumericUpDown.TabIndex = 8;
             // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(401, 21);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(535, 26);
+            this.FechadateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(79, 20);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(104, 22);
             this.FechadateTimePicker.TabIndex = 9;
             // 
             // ClientetextBox
             // 
-            this.ClientetextBox.Location = new System.Drawing.Point(68, 54);
+            this.ClientetextBox.Location = new System.Drawing.Point(91, 66);
+            this.ClientetextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientetextBox.Name = "ClientetextBox";
-            this.ClientetextBox.Size = new System.Drawing.Size(412, 20);
+            this.ClientetextBox.Size = new System.Drawing.Size(548, 22);
             this.ClientetextBox.TabIndex = 10;
             // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
-            this.Eliminarbutton.Location = new System.Drawing.Point(419, 534);
+            this.Eliminarbutton.Location = new System.Drawing.Point(559, 657);
+            this.Eliminarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(70, 47);
+            this.Eliminarbutton.Size = new System.Drawing.Size(93, 58);
             this.Eliminarbutton.TabIndex = 35;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -320,9 +372,10 @@
             // 
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(244, 534);
+            this.Guardarbutton.Location = new System.Drawing.Point(325, 657);
+            this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(72, 47);
+            this.Guardarbutton.Size = new System.Drawing.Size(96, 58);
             this.Guardarbutton.TabIndex = 34;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -333,9 +386,10 @@
             // 
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(78, 534);
+            this.Nuevobutton.Location = new System.Drawing.Point(104, 657);
+            this.Nuevobutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(70, 47);
+            this.Nuevobutton.Size = new System.Drawing.Size(93, 58);
             this.Nuevobutton.TabIndex = 33;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -344,52 +398,58 @@
             // 
             // TotalVentatextBox
             // 
-            this.TotalVentatextBox.Location = new System.Drawing.Point(78, 482);
+            this.TotalVentatextBox.Location = new System.Drawing.Point(104, 593);
+            this.TotalVentatextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TotalVentatextBox.Name = "TotalVentatextBox";
-            this.TotalVentatextBox.Size = new System.Drawing.Size(194, 20);
+            this.TotalVentatextBox.Size = new System.Drawing.Size(257, 22);
             this.TotalVentatextBox.TabIndex = 32;
             this.TotalVentatextBox.TextChanged += new System.EventHandler(this.TotalVentatextBox_TextChanged);
             // 
             // DescuentostextBox
             // 
-            this.DescuentostextBox.Location = new System.Drawing.Point(79, 456);
+            this.DescuentostextBox.Location = new System.Drawing.Point(105, 561);
+            this.DescuentostextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DescuentostextBox.Name = "DescuentostextBox";
-            this.DescuentostextBox.Size = new System.Drawing.Size(193, 20);
+            this.DescuentostextBox.Size = new System.Drawing.Size(256, 22);
             this.DescuentostextBox.TabIndex = 31;
             this.DescuentostextBox.TextChanged += new System.EventHandler(this.DescuentostextBox_TextChanged);
             // 
             // SubtotaltextBox
             // 
-            this.SubtotaltextBox.Location = new System.Drawing.Point(78, 429);
+            this.SubtotaltextBox.Location = new System.Drawing.Point(104, 528);
+            this.SubtotaltextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SubtotaltextBox.Name = "SubtotaltextBox";
-            this.SubtotaltextBox.Size = new System.Drawing.Size(194, 20);
+            this.SubtotaltextBox.Size = new System.Drawing.Size(257, 22);
             this.SubtotaltextBox.TabIndex = 30;
             this.SubtotaltextBox.TextChanged += new System.EventHandler(this.SubtotaltextBox_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 485);
+            this.label8.Location = new System.Drawing.Point(8, 597);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.Size = new System.Drawing.Size(44, 17);
             this.label8.TabIndex = 29;
             this.label8.Text = "Total:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 459);
+            this.label7.Location = new System.Drawing.Point(8, 565);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.Size = new System.Drawing.Size(87, 17);
             this.label7.TabIndex = 28;
             this.label7.Text = "Descuentos:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 431);
+            this.label6.Location = new System.Drawing.Point(8, 530);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 27;
             this.label6.Text = "Subtotal:";
             // 
@@ -397,35 +457,11 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // UnidadComboBox
-            // 
-            this.UnidadComboBox.FormattingEnabled = true;
-            this.UnidadComboBox.Items.AddRange(new object[] {
-            "Kilos",
-            "Libras",
-            "Onzas",
-            "Paquetes",
-            "Unidades",
-            "Porciones"});
-            this.UnidadComboBox.Location = new System.Drawing.Point(322, 21);
-            this.UnidadComboBox.Name = "UnidadComboBox";
-            this.UnidadComboBox.Size = new System.Drawing.Size(107, 21);
-            this.UnidadComboBox.TabIndex = 20;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(275, 28);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Unidad";
-            // 
             // RegistroFacturacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 596);
+            this.ClientSize = new System.Drawing.Size(691, 734);
             this.Controls.Add(this.RemoverButton);
             this.Controls.Add(this.ProductosgroupBox);
             this.Controls.Add(this.ClientegroupBox);
@@ -438,7 +474,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RegistroFacturacion";
             this.Text = "RegsitroFacturacion";
             this.Load += new System.EventHandler(this.RegistroFacturacion_Load);

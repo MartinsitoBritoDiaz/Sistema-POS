@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rCliente));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.CelularMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.TelefonoMaskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.DireccionTextBox = new System.Windows.Forms.TextBox();
+            this.NombreTextBox = new System.Windows.Forms.TextBox();
             this.FechaNacimientoLabel = new System.Windows.Forms.Label();
             this.DireccionLabel = new System.Windows.Forms.Label();
             this.CelularLabel = new System.Windows.Forms.Label();
@@ -43,37 +44,35 @@
             this.CedulaLabel = new System.Windows.Forms.Label();
             this.NombreLabel = new System.Windows.Forms.Label();
             this.ClienteLabel = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.NuevoButton = new System.Windows.Forms.Button();
+            this.BorrarButton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.BuscarButton = new System.Windows.Forms.Button();
             this.BarraTituloPanel = new System.Windows.Forms.Panel();
             this.Label = new System.Windows.Forms.Label();
             this.MinimizarButton = new System.Windows.Forms.PictureBox();
-            this.RestaurarButton = new System.Windows.Forms.PictureBox();
-            this.MaximizarButton = new System.Windows.Forms.PictureBox();
             this.CerrarButton = new System.Windows.Forms.PictureBox();
+            this.BuscarButton = new System.Windows.Forms.Button();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.panel2.SuspendLayout();
             this.BarraTituloPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RestaurarButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MaximizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.maskedTextBox3);
-            this.panel1.Controls.Add(this.maskedTextBox2);
-            this.panel1.Controls.Add(this.maskedTextBox1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.BuscarButton);
+            this.panel1.Controls.Add(this.FechaDateTimePicker);
+            this.panel1.Controls.Add(this.CelularMaskedTextBox);
+            this.panel1.Controls.Add(this.TelefonoMaskedTextBox2);
+            this.panel1.Controls.Add(this.CedulaMaskedTextBox);
+            this.panel1.Controls.Add(this.DireccionTextBox);
+            this.panel1.Controls.Add(this.NombreTextBox);
             this.panel1.Controls.Add(this.FechaNacimientoLabel);
             this.panel1.Controls.Add(this.DireccionLabel);
             this.panel1.Controls.Add(this.CelularLabel);
@@ -81,57 +80,58 @@
             this.panel1.Controls.Add(this.CedulaLabel);
             this.panel1.Controls.Add(this.NombreLabel);
             this.panel1.Controls.Add(this.ClienteLabel);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.IDnumericUpDown);
             this.panel1.Location = new System.Drawing.Point(7, 52);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(506, 319);
             this.panel1.TabIndex = 19;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
-            // dateTimePicker1
+            // FechaDateTimePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(381, 220);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(103, 22);
-            this.dateTimePicker1.TabIndex = 33;
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(381, 220);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(103, 22);
+            this.FechaDateTimePicker.TabIndex = 33;
             // 
-            // maskedTextBox3
+            // CelularMaskedTextBox
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(126, 222);
-            this.maskedTextBox3.Mask = "000-000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(103, 22);
-            this.maskedTextBox3.TabIndex = 32;
+            this.CelularMaskedTextBox.Location = new System.Drawing.Point(126, 222);
+            this.CelularMaskedTextBox.Mask = "000-000-0000";
+            this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
+            this.CelularMaskedTextBox.Size = new System.Drawing.Size(103, 22);
+            this.CelularMaskedTextBox.TabIndex = 32;
             // 
-            // maskedTextBox2
+            // TelefonoMaskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(381, 151);
-            this.maskedTextBox2.Mask = "(999)000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(103, 22);
-            this.maskedTextBox2.TabIndex = 31;
+            this.TelefonoMaskedTextBox2.Location = new System.Drawing.Point(381, 151);
+            this.TelefonoMaskedTextBox2.Mask = "(999)000-0000";
+            this.TelefonoMaskedTextBox2.Name = "TelefonoMaskedTextBox2";
+            this.TelefonoMaskedTextBox2.Size = new System.Drawing.Size(103, 22);
+            this.TelefonoMaskedTextBox2.TabIndex = 31;
             // 
-            // maskedTextBox1
+            // CedulaMaskedTextBox
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(126, 153);
-            this.maskedTextBox1.Mask = "000-0000000-0";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(103, 22);
-            this.maskedTextBox1.TabIndex = 30;
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(126, 153);
+            this.CedulaMaskedTextBox.Mask = "000-0000000-0";
+            this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
+            this.CedulaMaskedTextBox.Size = new System.Drawing.Size(103, 22);
+            this.CedulaMaskedTextBox.TabIndex = 30;
             // 
-            // textBox2
+            // DireccionTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 277);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(358, 22);
-            this.textBox2.TabIndex = 29;
+            this.DireccionTextBox.Location = new System.Drawing.Point(126, 277);
+            this.DireccionTextBox.Name = "DireccionTextBox";
+            this.DireccionTextBox.Size = new System.Drawing.Size(358, 22);
+            this.DireccionTextBox.TabIndex = 29;
             // 
-            // textBox1
+            // NombreTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(358, 22);
-            this.textBox1.TabIndex = 28;
+            this.NombreTextBox.Location = new System.Drawing.Point(126, 95);
+            this.NombreTextBox.Name = "NombreTextBox";
+            this.NombreTextBox.Size = new System.Drawing.Size(358, 22);
+            this.NombreTextBox.TabIndex = 28;
             // 
             // FechaNacimientoLabel
             // 
@@ -199,28 +199,62 @@
             this.ClienteLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClienteLabel.Location = new System.Drawing.Point(4, 41);
             this.ClienteLabel.Name = "ClienteLabel";
-            this.ClienteLabel.Size = new System.Drawing.Size(69, 21);
+            this.ClienteLabel.Size = new System.Drawing.Size(91, 21);
             this.ClienteLabel.TabIndex = 20;
-            this.ClienteLabel.Text = "Cliente";
+            this.ClienteLabel.Text = "Cliente Id";
             // 
-            // numericUpDown1
+            // IDnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(126, 40);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(65, 22);
-            this.numericUpDown1.TabIndex = 19;
+            this.IDnumericUpDown.Location = new System.Drawing.Point(126, 40);
+            this.IDnumericUpDown.Name = "IDnumericUpDown";
+            this.IDnumericUpDown.Size = new System.Drawing.Size(65, 22);
+            this.IDnumericUpDown.TabIndex = 19;
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.NuevoButton);
+            this.panel2.Controls.Add(this.BorrarButton);
             this.panel2.Controls.Add(this.Guardarbutton);
             this.panel2.Location = new System.Drawing.Point(-3, 391);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(530, 48);
             this.panel2.TabIndex = 20;
+            // 
+            // NuevoButton
+            // 
+            this.NuevoButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NuevoButton.FlatAppearance.BorderSize = 0;
+            this.NuevoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.NuevoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NuevoButton.Font = new System.Drawing.Font("Copperplate Gothic Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoButton.ForeColor = System.Drawing.Color.White;
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NuevoButton.Location = new System.Drawing.Point(4, 0);
+            this.NuevoButton.Margin = new System.Windows.Forms.Padding(4);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(119, 48);
+            this.NuevoButton.TabIndex = 46;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            // 
+            // BorrarButton
+            // 
+            this.BorrarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BorrarButton.FlatAppearance.BorderSize = 0;
+            this.BorrarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.BorrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BorrarButton.Font = new System.Drawing.Font("Copperplate Gothic Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BorrarButton.ForeColor = System.Drawing.Color.White;
+            this.BorrarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BorrarButton.Location = new System.Drawing.Point(414, -2);
+            this.BorrarButton.Margin = new System.Windows.Forms.Padding(4);
+            this.BorrarButton.Name = "BorrarButton";
+            this.BorrarButton.Size = new System.Drawing.Size(112, 46);
+            this.BorrarButton.TabIndex = 45;
+            this.BorrarButton.Text = "Borrar";
+            this.BorrarButton.UseVisualStyleBackColor = true;
             // 
             // Guardarbutton
             // 
@@ -239,109 +273,43 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Copperplate Gothic Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(414, -2);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 46);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Borrar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Copperplate Gothic Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(4, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 48);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "Nuevo";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // BuscarButton
-            // 
-            this.BuscarButton.Image = global::Sistema_de_POS.Properties.Resources.imgBuscar;
-            this.BuscarButton.Location = new System.Drawing.Point(452, 34);
-            this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(32, 32);
-            this.BuscarButton.TabIndex = 27;
-            this.BuscarButton.UseVisualStyleBackColor = true;
-            // 
             // BarraTituloPanel
             // 
             this.BarraTituloPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BarraTituloPanel.Controls.Add(this.Label);
             this.BarraTituloPanel.Controls.Add(this.MinimizarButton);
-            this.BarraTituloPanel.Controls.Add(this.RestaurarButton);
-            this.BarraTituloPanel.Controls.Add(this.MaximizarButton);
             this.BarraTituloPanel.Controls.Add(this.CerrarButton);
             this.BarraTituloPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTituloPanel.Location = new System.Drawing.Point(0, 0);
             this.BarraTituloPanel.Name = "BarraTituloPanel";
             this.BarraTituloPanel.Size = new System.Drawing.Size(525, 34);
             this.BarraTituloPanel.TabIndex = 47;
+            this.BarraTituloPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTituloPanel_Paint);
+            this.BarraTituloPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloPanel_MouseDown);
             // 
             // Label
             // 
             this.Label.AutoSize = true;
             this.Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label.Location = new System.Drawing.Point(239, 8);
+            this.Label.Location = new System.Drawing.Point(227, 8);
             this.Label.Name = "Label";
             this.Label.Size = new System.Drawing.Size(68, 20);
             this.Label.TabIndex = 47;
             this.Label.Text = "Cliente";
+            this.Label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label_MouseDown);
             // 
             // MinimizarButton
             // 
             this.MinimizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MinimizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinimizarButton.Image = ((System.Drawing.Image)(resources.GetObject("MinimizarButton.Image")));
-            this.MinimizarButton.Location = new System.Drawing.Point(433, 3);
+            this.MinimizarButton.Location = new System.Drawing.Point(459, 3);
             this.MinimizarButton.Name = "MinimizarButton";
             this.MinimizarButton.Size = new System.Drawing.Size(25, 25);
             this.MinimizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.MinimizarButton.TabIndex = 4;
             this.MinimizarButton.TabStop = false;
-            // 
-            // RestaurarButton
-            // 
-            this.RestaurarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RestaurarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RestaurarButton.Image = ((System.Drawing.Image)(resources.GetObject("RestaurarButton.Image")));
-            this.RestaurarButton.Location = new System.Drawing.Point(464, 3);
-            this.RestaurarButton.Name = "RestaurarButton";
-            this.RestaurarButton.Size = new System.Drawing.Size(25, 25);
-            this.RestaurarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RestaurarButton.TabIndex = 3;
-            this.RestaurarButton.TabStop = false;
-            this.RestaurarButton.Visible = false;
-            // 
-            // MaximizarButton
-            // 
-            this.MaximizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MaximizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MaximizarButton.Image = ((System.Drawing.Image)(resources.GetObject("MaximizarButton.Image")));
-            this.MaximizarButton.Location = new System.Drawing.Point(464, 3);
-            this.MaximizarButton.Name = "MaximizarButton";
-            this.MaximizarButton.Size = new System.Drawing.Size(25, 25);
-            this.MaximizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.MaximizarButton.TabIndex = 2;
-            this.MaximizarButton.TabStop = false;
+            this.MinimizarButton.Click += new System.EventHandler(this.MinimizarButton_Click);
             // 
             // CerrarButton
             // 
@@ -354,6 +322,20 @@
             this.CerrarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CerrarButton.TabIndex = 1;
             this.CerrarButton.TabStop = false;
+            this.CerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
+            // 
+            // BuscarButton
+            // 
+            this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
+            this.BuscarButton.Location = new System.Drawing.Point(437, 30);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(47, 40);
+            this.BuscarButton.TabIndex = 34;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // rCliente
             // 
@@ -367,29 +349,29 @@
             this.Name = "rCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "rCliente";
+            this.Load += new System.EventHandler(this.RCliente_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RCliente_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             this.panel2.ResumeLayout(false);
             this.BarraTituloPanel.ResumeLayout(false);
             this.BarraTituloPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RestaurarButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MaximizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
+        private System.Windows.Forms.MaskedTextBox CelularMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox TelefonoMaskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox CedulaMaskedTextBox;
+        private System.Windows.Forms.TextBox DireccionTextBox;
+        private System.Windows.Forms.TextBox NombreTextBox;
         private System.Windows.Forms.Label FechaNacimientoLabel;
         private System.Windows.Forms.Label DireccionLabel;
         private System.Windows.Forms.Label CelularLabel;
@@ -397,16 +379,16 @@
         private System.Windows.Forms.Label CedulaLabel;
         private System.Windows.Forms.Label NombreLabel;
         private System.Windows.Forms.Label ClienteLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.Button BorrarButton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Panel BarraTituloPanel;
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.PictureBox MinimizarButton;
-        private System.Windows.Forms.PictureBox RestaurarButton;
-        private System.Windows.Forms.PictureBox MaximizarButton;
         private System.Windows.Forms.PictureBox CerrarButton;
+        private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

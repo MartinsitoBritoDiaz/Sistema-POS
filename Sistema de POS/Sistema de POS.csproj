@@ -43,9 +43,9 @@
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Articulo.cs" />
     <Compile Include="Entidades\ArticuloMV.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\DetalleProductoPOS.cs" />
     <Compile Include="Entidades\Factura.cs" />
-    <Compile Include="Entidades\keyAttribute.cs" />
     <Compile Include="Entidades\POS.cs" />
     <Compile Include="Entidades\DetalleProducto.cs" />
     <Compile Include="MenuForm.cs">

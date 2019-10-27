@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace Sistema_de_POS.Entidades
 {
     public class POS
     {
-        [key]
+        [Key]
         public int POSid { get; set; }
         public DateTime Fecha { get; set; }
         public decimal SubTotal { get; set; }
