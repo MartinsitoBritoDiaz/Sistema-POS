@@ -87,7 +87,7 @@ namespace SistemaPOS.BLL
             return paso;
         }
 
-        public bool Modificar(T entity)
+        public virtual bool Modificar(T entity)
         {
             bool paso = false;
 

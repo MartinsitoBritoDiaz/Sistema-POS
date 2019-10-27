@@ -1,31 +1,32 @@
-﻿
+﻿using Sistema_de_POS.Entidades;
+using SistemaPOS.BLL;
 using SistemaPOS.DAL;
-using SistemaPOS.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaPOS.BLL
+namespace Sistema_de_POS.BLL
 {
-    class FacturacionRepositorio : RepositorioBase<Factura>
+
+    public class POSRepositorio : RepositorioBase<POS>
     {
-        public override bool Modificar(Factura factura)
+        public override bool Modificar(POS pos)
         {
             bool paso = false;
             Contexto db = new Contexto();
 
             try
             {
-                var anterior = db.Facturas.Find(factura.Facturaid);
+                var anterior = db.pos.Find(pos.POSid);
 
-                foreach (var item in anterior.Productos)
+                foreach (var item in anterior.ProductosPOS)
                 {
-                    if (!factura.Productos.Exists(d => d.id == item.id))
+                    if (!pos.ProductosPOS.Exists(d => d.id == item.id))
                         db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
                 }
-                db.Entry(factura).State = System.Data.Entity.EntityState.Modified;
+                db.Entry(pos).State = System.Data.Entity.EntityState.Modified;
                 paso = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -39,5 +40,6 @@ namespace SistemaPOS.BLL
 
             return paso;
         }
+
     }
 }

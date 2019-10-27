@@ -17,11 +17,11 @@ namespace Sistema_de_POS.UI.Registros
     public partial class RegistroFacturacion : Form
         {
      
-            public List<Producto> productos { get; set; }
+            public List<DetalleProducto> productos { get; set; }
             public RegistroFacturacion()
             {
                 InitializeComponent();
-                this.productos = new List<Producto>();
+                this.productos = new List<DetalleProducto>();
             }
             public void CargarGrid()
             {
@@ -41,7 +41,7 @@ namespace Sistema_de_POS.UI.Registros
             SubtotaltextBox.Text = Convert.ToString("0");
                 DescuentostextBox.Text = Convert.ToString("0");
             TotalVentatextBox.Text = Convert.ToString("0");
-            this.productos = new List<Producto>();
+            this.productos = new List<DetalleProducto>();
 
                 CargarGrid();
             }
@@ -195,18 +195,21 @@ namespace Sistema_de_POS.UI.Registros
             private void Agregarbutton_Click(object sender, EventArgs e)
             {
                 if (DetalledataGridView.DataSource != null)
-                    this.productos = (List<Producto>)DetalledataGridView.DataSource;
+                    this.productos = (List<DetalleProducto>)DetalledataGridView.DataSource;
 
-                this.productos.Add(
-                    new Producto(
-                        productoID: 0,
-                        cantidad: Convert.ToInt32(CantidadnumericUpDown.Value),
-                        descripcion: DescripcionTextBox.Text,
-                        precioUnitario: Convert.ToDecimal(PrecioUnitariotextBox.Text)
-                        )
+            this.productos.Add(
+                new DetalleProducto(
+                    id:0,
+                    facturaid: Convert.ToInt32(IDnumericUpDown.Value),
+                    cantidad: Convert.ToInt32(CantidadnumericUpDown.Value),
+                    unidad: UnidadComboBox.Text,
+                    descripcion: DescripcionTextBox.Text,
+                    precioUnitario: Convert.ToDecimal(PrecioUnitariotextBox.Text),
+                    importe: (Convert.ToDecimal(PrecioUnitariotextBox.Text)*Convert.ToDecimal(CantidadnumericUpDown.Value))
+                    )
 
-                    );
-
+                );
+                
                 CargarGrid();
             }
 

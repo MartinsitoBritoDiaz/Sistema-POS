@@ -20,7 +20,7 @@ namespace SistemaPOS.Entidades
         public decimal descuentos { get; set; }
         public decimal Total { get; set; }
         public decimal ITBIS { get; set; }
-        public virtual List<Producto> Productos { get; set; }
+        public virtual List<DetalleProducto> Productos { get; set; }
 
 
         public Factura()

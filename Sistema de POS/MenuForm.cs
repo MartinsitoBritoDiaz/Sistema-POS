@@ -112,5 +112,11 @@ namespace Sistema_de_POS
         {
 
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Form formulario = new RPosForm();
+            formulario.Show();
+        }
     }
 }
