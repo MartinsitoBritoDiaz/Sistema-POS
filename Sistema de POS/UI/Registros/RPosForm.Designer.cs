@@ -89,6 +89,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.CajeroTextBox = new System.Windows.Forms.TextBox();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             this.HerramientasgroupBox.SuspendLayout();
@@ -99,6 +103,10 @@
             // 
             // Panel
             // 
+            this.Panel.Controls.Add(this.label15);
+            this.Panel.Controls.Add(this.label14);
+            this.Panel.Controls.Add(this.label4);
+            this.Panel.Controls.Add(this.label2);
             this.Panel.Controls.Add(this.LimpiarButton);
             this.Panel.Controls.Add(this.IgualButton);
             this.Panel.Controls.Add(this.DivisionButton);
@@ -296,11 +304,11 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Mistral", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.label8.Location = new System.Drawing.Point(488, 488);
+            this.label8.Location = new System.Drawing.Point(588, 488);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(135, 29);
+            this.label8.Size = new System.Drawing.Size(194, 29);
             this.label8.TabIndex = 46;
-            this.label8.Text = "Tiendas STING";
+            this.label8.Text = "Supermercados STING";
             // 
             // CantidadLabel
             // 
@@ -328,9 +336,9 @@
             this.ITBISLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ITBISLabel.Location = new System.Drawing.Point(309, 437);
             this.ITBISLabel.Name = "ITBISLabel";
-            this.ITBISLabel.Size = new System.Drawing.Size(49, 17);
+            this.ITBISLabel.Size = new System.Drawing.Size(40, 17);
             this.ITBISLabel.TabIndex = 43;
-            this.ITBISLabel.Text = "$0.00";
+            this.ITBISLabel.Text = "0.00";
             // 
             // label1
             // 
@@ -435,9 +443,9 @@
             this.ImpuestosResultadolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ImpuestosResultadolabel.Location = new System.Drawing.Point(309, 410);
             this.ImpuestosResultadolabel.Name = "ImpuestosResultadolabel";
-            this.ImpuestosResultadolabel.Size = new System.Drawing.Size(49, 17);
+            this.ImpuestosResultadolabel.Size = new System.Drawing.Size(40, 17);
             this.ImpuestosResultadolabel.TabIndex = 28;
-            this.ImpuestosResultadolabel.Text = "$0.00";
+            this.ImpuestosResultadolabel.Text = "0.00";
             // 
             // Impuestoslabel
             // 
@@ -464,9 +472,9 @@
             this.SubtotalResultadolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubtotalResultadolabel.Location = new System.Drawing.Point(309, 384);
             this.SubtotalResultadolabel.Name = "SubtotalResultadolabel";
-            this.SubtotalResultadolabel.Size = new System.Drawing.Size(49, 17);
+            this.SubtotalResultadolabel.Size = new System.Drawing.Size(40, 17);
             this.SubtotalResultadolabel.TabIndex = 25;
-            this.SubtotalResultadolabel.Text = "$0.00";
+            this.SubtotalResultadolabel.Text = "0.00";
             // 
             // Subtotallabel
             // 
@@ -494,9 +502,9 @@
             this.TotalResultadolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalResultadolabel.Location = new System.Drawing.Point(304, 476);
             this.TotalResultadolabel.Name = "TotalResultadolabel";
-            this.TotalResultadolabel.Size = new System.Drawing.Size(124, 46);
+            this.TotalResultadolabel.Size = new System.Drawing.Size(101, 46);
             this.TotalResultadolabel.TabIndex = 22;
-            this.TotalResultadolabel.Text = "$0.00";
+            this.TotalResultadolabel.Text = "0.00";
             // 
             // ResultadotextBox
             // 
@@ -723,6 +731,46 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(286, 384);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 17);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "$";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(286, 437);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 17);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "$";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(286, 410);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(17, 17);
+            this.label14.TabIndex = 66;
+            this.label14.Text = "$";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(260, 476);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 46);
+            this.label15.TabIndex = 67;
+            this.label15.Text = "$";
+            // 
             // RPosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -815,5 +863,9 @@
         private System.Windows.Forms.Button LimpiarButton;
         private System.Windows.Forms.Button IgualButton;
         private System.Windows.Forms.Button DivisionButton;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -541,5 +541,6 @@ namespace Sistema_de_POS.UI.Registros
         {
             ResultadotextBox.Clear();
         }
+
     }
 }
