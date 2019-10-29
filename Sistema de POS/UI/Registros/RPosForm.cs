@@ -361,14 +361,14 @@ namespace Sistema_de_POS.UI.Registros
 
         private void RPosForm_Load(object sender, EventArgs e)
         {
-            RepositorioBase<Articulo> repo = new RepositorioBase<Articulo>();
+            /*RepositorioBase<Articulo> repo = new RepositorioBase<Articulo>();
 
             var Lista = repo.GetList(p => true);
 
             foreach (var item in Lista)
             {
                 ProductoComboBox.Items.Add(item.Descripcion);
-            }
+            }*/
         }
 
         public void ProductoComboBox_SelectedIndexChanged(object sender, EventArgs e)

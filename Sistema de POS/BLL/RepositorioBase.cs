@@ -11,11 +11,11 @@ namespace SistemaPOS.BLL
 {
     public class RepositorioBase<T> : IDisposable, IRepositorio<T> where T : class
     {
-        internal Contexto contexto;
+        internal Contexto _contexto;
 
         public RepositorioBase()
         {
-            contexto = new Contexto();
+            _contexto = new Contexto();
         }
 
         public T Buscar(int id)
@@ -24,7 +24,7 @@ namespace SistemaPOS.BLL
 
             try
             {
-                entity = contexto.Set<T>().Find(id);
+                entity = _contexto.Set<T>().Find(id);
             }
             catch (Exception)
             {
@@ -35,7 +35,7 @@ namespace SistemaPOS.BLL
 
         public void Dispose()
         {
-            contexto.Dispose();
+            _contexto.Dispose();
         }
 
         public bool Eliminar(int id)
@@ -44,10 +44,10 @@ namespace SistemaPOS.BLL
 
             try
             {
-                T entity = contexto.Set<T>().Find(id);
-                contexto.Set<T>().Remove(entity);
+                T entity = _contexto.Set<T>().Find(id);
+                _contexto.Set<T>().Remove(entity);
 
-                paso = contexto.SaveChanges() > 0;
+                paso = _contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
@@ -62,7 +62,7 @@ namespace SistemaPOS.BLL
 
             try
             {
-                Lista = contexto.Set<T>().Where(expression).ToList();
+                Lista = _contexto.Set<T>().Where(expression).ToList();
             }
             catch (Exception)
             {
@@ -77,8 +77,8 @@ namespace SistemaPOS.BLL
 
             try
             {
-                if (contexto.Set<T>().Add(entity) != null)
-                    paso = contexto.SaveChanges() > 0;
+                if (_contexto.Set<T>().Add(entity) != null)
+                    paso = _contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
@@ -93,8 +93,8 @@ namespace SistemaPOS.BLL
 
             try
             {
-                contexto.Entry(entity).State = EntityState.Modified;
-                paso = contexto.SaveChanges() > 0;
+                _contexto.Entry(entity).State = EntityState.Modified;
+                paso = _contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {

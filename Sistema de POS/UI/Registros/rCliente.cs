@@ -76,6 +76,7 @@ namespace Sistema_de_POS.UI.Registros
             TelefonoMaskedTextBox2.Text = string.Empty;
             CelularMaskedTextBox.Text = string.Empty;
             DireccionTextBox.Text = string.Empty;
+            DeudasTextBox.Text = string.Empty;
             FechaDateTimePicker.Value = DateTime.Now;
         }
 
@@ -88,6 +89,7 @@ namespace Sistema_de_POS.UI.Registros
             CelularMaskedTextBox.Text = cliente.Celular;
             DireccionTextBox.Text = cliente.Direccion;
             FechaDateTimePicker.Value = cliente.Fecha;
+            DeudasTextBox.Text = Convert.ToString(cliente.Deudas);
         }
 
         private Cliente LlenaClase()
@@ -100,6 +102,7 @@ namespace Sistema_de_POS.UI.Registros
             cliente.Celular = CelularMaskedTextBox.Text;
             cliente.Direccion = DireccionTextBox.Text;
             cliente.Fecha = FechaDateTimePicker.Value;
+            cliente.Deudas = Convert.ToDouble(DeudasTextBox.Text);
 
             return cliente;
         }
@@ -153,9 +156,89 @@ namespace Sistema_de_POS.UI.Registros
                 paso = false;
             }
 
+
             return paso;
         }
 
-        //Todo: Terminar el registro de cliente y Terminar de mover el registro de facturacion.
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+            bool paso = false;
+
+            RepositorioBase<Cliente> repositorio = new RepositorioBase<Cliente>();
+
+            Cliente cliente = LlenaClase();
+
+            if (!Validar())
+                return;
+
+            if (IDnumericUpDown.Value == 0)
+                paso = repositorio.Guardar(cliente);
+            else
+            {
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("No se encuentra el cliente a modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                paso = repositorio.Modificar(cliente);
+            }
+
+            if (paso)
+            {
+                Limpiar();
+                MessageBox.Show("Guardado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se puede guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BorrarButton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Cliente> repositorio = new RepositorioBase<Cliente>();
+
+            int id;
+            int.TryParse(Convert.ToString(IDnumericUpDown.Value), out id);
+
+            Cliente cliente = repositorio.Buscar(id);
+            Limpiar();
+
+            if (cliente != null)
+            {
+                repositorio.Eliminar(id);
+                MessageBox.Show("Eliminado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MyErrorProvider.SetError(IDnumericUpDown, "No se puede eliminar un cliente que no existe");
+            }
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Cliente> repositorio = new RepositorioBase<Cliente>();
+
+            int id;
+            int.TryParse(Convert.ToString(IDnumericUpDown.Value), out id);
+
+            Cliente cliente = repositorio.Buscar(id);
+            Limpiar();
+
+            if (cliente != null)
+            {
+                LlenaCampo(cliente);
+            }
+            else
+            {
+                MessageBox.Show("Cliente no encontrado");
+            }
+        }
+
     }
 }

@@ -18,7 +18,7 @@ namespace Sistema_de_POS.Entidades
         public string Celular{ get; set; }
         public DateTime Fecha { get; set; }
         public string Direccion { get; set; }
-
+        public double Deudas { get; set; }
         public Cliente()
         {
             ClienteId = 0;
@@ -28,6 +28,7 @@ namespace Sistema_de_POS.Entidades
             Celular = string.Empty;
             Fecha = DateTime.Now;
             Direccion = string.Empty;
+            Deudas = 0;
         }
     }
 }

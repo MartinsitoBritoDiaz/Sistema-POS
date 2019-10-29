@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Sistema_de_POS.UI.Registros
 {
-    public partial class rVentas : Form
+    public partial class rFacturacion : Form
     {
         private Button Eliminarbutton;
         private Button Guardarbutton;
@@ -52,9 +52,15 @@ namespace Sistema_de_POS.UI.Registros
         private ComboBox CondicioncomboBox;
         private NumericUpDown ClienteIDnumericUpDown;
         private Label label5;
+        private Label label9;
+        private TextBox ItbisTextBox;
+        private Label label10;
+        private TextBox PagoTextBox;
+        private TextBox textBox4;
+        private Label label11;
         private TextBox TotalVentatextBox;
 
-        public rVentas()
+        public rFacturacion()
         {
             InitializeComponent();
         }
@@ -65,7 +71,7 @@ namespace Sistema_de_POS.UI.Registros
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rVentas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rFacturacion));
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
@@ -84,6 +90,10 @@ namespace Sistema_de_POS.UI.Registros
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.ClientesGroupBox = new System.Windows.Forms.GroupBox();
+            this.ClienteIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CondicioncomboBox = new System.Windows.Forms.ComboBox();
+            this.TipoPagocomboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DescripcionLabel = new System.Windows.Forms.Label();
             this.PrecioUnitarioLabel = new System.Windows.Forms.Label();
@@ -102,20 +112,22 @@ namespace Sistema_de_POS.UI.Registros
             this.SubtotaltextBox = new System.Windows.Forms.TextBox();
             this.DescuentostextBox = new System.Windows.Forms.TextBox();
             this.TotalVentatextBox = new System.Windows.Forms.TextBox();
-            this.TipoPagocomboBox = new System.Windows.Forms.ComboBox();
-            this.CondicioncomboBox = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ClienteIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ItbisTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.PagoTextBox = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
             this.BarraTituloPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.ClientesGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteIDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.ProductosGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteIDnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // Eliminarbutton
@@ -176,7 +188,7 @@ namespace Sistema_de_POS.UI.Registros
             this.panel1.Controls.Add(this.Nuevobutton);
             this.panel1.Controls.Add(this.Eliminarbutton);
             this.panel1.Controls.Add(this.Guardarbutton);
-            this.panel1.Location = new System.Drawing.Point(0, 665);
+            this.panel1.Location = new System.Drawing.Point(0, 707);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(695, 40);
             this.panel1.TabIndex = 45;
@@ -339,6 +351,51 @@ namespace Sistema_de_POS.UI.Registros
             this.ClientesGroupBox.TabStop = false;
             this.ClientesGroupBox.Text = "Clientes";
             // 
+            // ClienteIDnumericUpDown
+            // 
+            this.ClienteIDnumericUpDown.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClienteIDnumericUpDown.Location = new System.Drawing.Point(142, 82);
+            this.ClienteIDnumericUpDown.Name = "ClienteIDnumericUpDown";
+            this.ClienteIDnumericUpDown.Size = new System.Drawing.Size(75, 26);
+            this.ClienteIDnumericUpDown.TabIndex = 50;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(350, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(138, 21);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Nombre cliente";
+            // 
+            // CondicioncomboBox
+            // 
+            this.CondicioncomboBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CondicioncomboBox.FormattingEnabled = true;
+            this.CondicioncomboBox.Items.AddRange(new object[] {
+            "Credito",
+            "Contado"});
+            this.CondicioncomboBox.Location = new System.Drawing.Point(139, 126);
+            this.CondicioncomboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.CondicioncomboBox.Name = "CondicioncomboBox";
+            this.CondicioncomboBox.Size = new System.Drawing.Size(140, 28);
+            this.CondicioncomboBox.TabIndex = 48;
+            // 
+            // TipoPagocomboBox
+            // 
+            this.TipoPagocomboBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TipoPagocomboBox.FormattingEnabled = true;
+            this.TipoPagocomboBox.Items.AddRange(new object[] {
+            "Efectivo",
+            "Tarjeta de Credito",
+            "Cheque"});
+            this.TipoPagocomboBox.Location = new System.Drawing.Point(504, 126);
+            this.TipoPagocomboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.TipoPagocomboBox.Name = "TipoPagocomboBox";
+            this.TipoPagocomboBox.Size = new System.Drawing.Size(149, 28);
+            this.TipoPagocomboBox.TabIndex = 47;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -431,6 +488,13 @@ namespace Sistema_de_POS.UI.Registros
             // 
             this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Kilos",
+            "Libras",
+            "Onzas",
+            "Paquetes",
+            "Unidades",
+            "Porciones"});
             this.comboBox3.Location = new System.Drawing.Point(418, 27);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(149, 25);
@@ -481,7 +545,7 @@ namespace Sistema_de_POS.UI.Registros
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(409, 577);
+            this.label7.Location = new System.Drawing.Point(429, 577);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 19);
@@ -492,7 +556,7 @@ namespace Sistema_de_POS.UI.Registros
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(34, 617);
+            this.label8.Location = new System.Drawing.Point(429, 620);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 19);
@@ -510,69 +574,89 @@ namespace Sistema_de_POS.UI.Registros
             // 
             // DescuentostextBox
             // 
-            this.DescuentostextBox.Location = new System.Drawing.Point(517, 574);
+            this.DescuentostextBox.Location = new System.Drawing.Point(538, 574);
             this.DescuentostextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DescuentostextBox.Name = "DescuentostextBox";
-            this.DescuentostextBox.Size = new System.Drawing.Size(149, 22);
+            this.DescuentostextBox.Size = new System.Drawing.Size(128, 22);
             this.DescuentostextBox.TabIndex = 40;
             // 
             // TotalVentatextBox
             // 
-            this.TotalVentatextBox.Location = new System.Drawing.Point(130, 614);
+            this.TotalVentatextBox.Location = new System.Drawing.Point(538, 617);
             this.TotalVentatextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TotalVentatextBox.Name = "TotalVentatextBox";
             this.TotalVentatextBox.ReadOnly = true;
             this.TotalVentatextBox.Size = new System.Drawing.Size(128, 22);
             this.TotalVentatextBox.TabIndex = 41;
             // 
-            // TipoPagocomboBox
+            // label9
             // 
-            this.TipoPagocomboBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TipoPagocomboBox.FormattingEnabled = true;
-            this.TipoPagocomboBox.Items.AddRange(new object[] {
-            "Efectivo",
-            "Tarjeta de Credito",
-            "Cheque"});
-            this.TipoPagocomboBox.Location = new System.Drawing.Point(504, 126);
-            this.TipoPagocomboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.TipoPagocomboBox.Name = "TipoPagocomboBox";
-            this.TipoPagocomboBox.Size = new System.Drawing.Size(149, 28);
-            this.TipoPagocomboBox.TabIndex = 47;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(34, 620);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 19);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "ITBIS:";
             // 
-            // CondicioncomboBox
+            // ItbisTextBox
             // 
-            this.CondicioncomboBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CondicioncomboBox.FormattingEnabled = true;
-            this.CondicioncomboBox.Items.AddRange(new object[] {
-            "Credito",
-            "Contado"});
-            this.CondicioncomboBox.Location = new System.Drawing.Point(139, 126);
-            this.CondicioncomboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.CondicioncomboBox.Name = "CondicioncomboBox";
-            this.CondicioncomboBox.Size = new System.Drawing.Size(140, 28);
-            this.CondicioncomboBox.TabIndex = 48;
+            this.ItbisTextBox.Location = new System.Drawing.Point(130, 620);
+            this.ItbisTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ItbisTextBox.Name = "ItbisTextBox";
+            this.ItbisTextBox.ReadOnly = true;
+            this.ItbisTextBox.Size = new System.Drawing.Size(128, 22);
+            this.ItbisTextBox.TabIndex = 48;
             // 
-            // label5
+            // label10
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(350, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 21);
-            this.label5.TabIndex = 49;
-            this.label5.Text = "Nombre cliente";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(33, 665);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 19);
+            this.label10.TabIndex = 49;
+            this.label10.Text = "Pago:";
             // 
-            // ClienteIDnumericUpDown
+            // PagoTextBox
             // 
-            this.ClienteIDnumericUpDown.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClienteIDnumericUpDown.Location = new System.Drawing.Point(142, 82);
-            this.ClienteIDnumericUpDown.Name = "ClienteIDnumericUpDown";
-            this.ClienteIDnumericUpDown.Size = new System.Drawing.Size(75, 26);
-            this.ClienteIDnumericUpDown.TabIndex = 50;
+            this.PagoTextBox.Location = new System.Drawing.Point(130, 665);
+            this.PagoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.PagoTextBox.Name = "PagoTextBox";
+            this.PagoTextBox.Size = new System.Drawing.Size(128, 22);
+            this.PagoTextBox.TabIndex = 50;
             // 
-            // rVentas
+            // textBox4
             // 
-            this.ClientSize = new System.Drawing.Size(696, 704);
+            this.textBox4.Location = new System.Drawing.Point(538, 665);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(128, 22);
+            this.textBox4.TabIndex = 51;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(429, 668);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 19);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Deuda:";
+            // 
+            // rFacturacion
+            // 
+            this.ClientSize = new System.Drawing.Size(696, 746);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.PagoTextBox);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.ItbisTextBox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.BarraTituloPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TotalVentatextBox);
@@ -584,7 +668,7 @@ namespace Sistema_de_POS.UI.Registros
             this.Controls.Add(this.ProductosGroupBox);
             this.Controls.Add(this.ClientesGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "rVentas";
+            this.Name = "rFacturacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.RVentas_Load);
             this.panel1.ResumeLayout(false);
@@ -595,11 +679,11 @@ namespace Sistema_de_POS.UI.Registros
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ClientesGroupBox.ResumeLayout(false);
             this.ClientesGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteIDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ProductosGroupBox.ResumeLayout(false);
             this.ProductosGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClienteIDnumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

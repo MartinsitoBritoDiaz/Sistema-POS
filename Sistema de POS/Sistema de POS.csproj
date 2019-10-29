@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BLL\ClienteRepositorio.cs" />
     <Compile Include="BLL\FacturacionRepositorio.cs" />
     <Compile Include="BLL\IRepositorio.cs" />
     <Compile Include="BLL\POSRepositorio.cs" />
@@ -86,7 +87,7 @@
     <Compile Include="UI\Registros\RPosForm.Designer.cs">
       <DependentUpon>RPosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\rVentas.cs">
+    <Compile Include="UI\Registros\rFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\RegistroFacturacion.cs">
@@ -138,8 +139,8 @@
     <EmbeddedResource Include="UI\Registros\RPosForm.resx">
       <DependentUpon>RPosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\rVentas.resx">
-      <DependentUpon>rVentas.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\rFacturacion.resx">
+      <DependentUpon>rFacturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\ToolBox\ProductosMasVendidos.resx">
       <DependentUpon>ProductosMasVendidos.cs</DependentUpon>
@@ -162,7 +163,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resource\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>

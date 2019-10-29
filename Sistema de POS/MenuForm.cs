@@ -98,7 +98,7 @@ namespace Sistema_de_POS
         }
         private void CajaChicaButton_Click(object sender, EventArgs e)
         {
-            rVentas registro = new rVentas();
+            rFacturacion registro = new rFacturacion();
             registro.Show();
         }
 

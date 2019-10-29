@@ -76,7 +76,7 @@
             // RemoverButton
             // 
             this.RemoverButton.Location = new System.Drawing.Point(25, 471);
-            this.RemoverButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RemoverButton.Margin = new System.Windows.Forms.Padding(4);
             this.RemoverButton.Name = "RemoverButton";
             this.RemoverButton.Size = new System.Drawing.Size(183, 28);
             this.RemoverButton.TabIndex = 40;
@@ -97,9 +97,9 @@
             this.ProductosgroupBox.Controls.Add(this.DetalledataGridView);
             this.ProductosgroupBox.Controls.Add(this.label5);
             this.ProductosgroupBox.Location = new System.Drawing.Point(13, 142);
-            this.ProductosgroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductosgroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.ProductosgroupBox.Name = "ProductosgroupBox";
-            this.ProductosgroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductosgroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.ProductosgroupBox.Size = new System.Drawing.Size(671, 357);
             this.ProductosgroupBox.TabIndex = 37;
             this.ProductosgroupBox.TabStop = false;
@@ -126,16 +126,17 @@
             "Unidades",
             "Porciones"});
             this.UnidadComboBox.Location = new System.Drawing.Point(429, 26);
-            this.UnidadComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UnidadComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.UnidadComboBox.Name = "UnidadComboBox";
             this.UnidadComboBox.Size = new System.Drawing.Size(141, 24);
             this.UnidadComboBox.TabIndex = 20;
+            this.UnidadComboBox.SelectedIndexChanged += new System.EventHandler(this.UnidadComboBox_SelectedIndexChanged);
             // 
             // Agregarbutton
             // 
             this.Agregarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Agregarbutton.Image")));
             this.Agregarbutton.Location = new System.Drawing.Point(592, 11);
-            this.Agregarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Agregarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(48, 39);
             this.Agregarbutton.TabIndex = 19;
@@ -146,7 +147,7 @@
             // PrecioUnitariotextBox
             // 
             this.PrecioUnitariotextBox.Location = new System.Drawing.Point(121, 90);
-            this.PrecioUnitariotextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrecioUnitariotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PrecioUnitariotextBox.Name = "PrecioUnitariotextBox";
             this.PrecioUnitariotextBox.Size = new System.Drawing.Size(517, 22);
             this.PrecioUnitariotextBox.TabIndex = 5;
@@ -165,7 +166,7 @@
             // DescripcionTextBox
             // 
             this.DescripcionTextBox.Location = new System.Drawing.Point(121, 58);
-            this.DescripcionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DescripcionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(517, 22);
             this.DescripcionTextBox.TabIndex = 3;
@@ -183,7 +184,7 @@
             // CantidadnumericUpDown
             // 
             this.CantidadnumericUpDown.Location = new System.Drawing.Point(121, 26);
-            this.CantidadnumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CantidadnumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(180, 22);
             this.CantidadnumericUpDown.TabIndex = 1;
@@ -202,7 +203,7 @@
             // 
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalledataGridView.Location = new System.Drawing.Point(13, 146);
-            this.DetalledataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DetalledataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.DetalledataGridView.Name = "DetalledataGridView";
             this.DetalledataGridView.RowHeadersWidth = 51;
             this.DetalledataGridView.Size = new System.Drawing.Size(627, 175);
@@ -232,9 +233,9 @@
             this.ClientegroupBox.Controls.Add(this.FechadateTimePicker);
             this.ClientegroupBox.Controls.Add(this.ClientetextBox);
             this.ClientegroupBox.Location = new System.Drawing.Point(13, 6);
-            this.ClientegroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientegroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClientegroupBox.Name = "ClientegroupBox";
-            this.ClientegroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientegroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.ClientegroupBox.Size = new System.Drawing.Size(671, 129);
             this.ClientegroupBox.TabIndex = 36;
             this.ClientegroupBox.TabStop = false;
@@ -248,7 +249,7 @@
             "Credito",
             "Contado"});
             this.CondicioncomboBox.Location = new System.Drawing.Point(91, 94);
-            this.CondicioncomboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CondicioncomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.CondicioncomboBox.Name = "CondicioncomboBox";
             this.CondicioncomboBox.Size = new System.Drawing.Size(141, 24);
             this.CondicioncomboBox.TabIndex = 11;
@@ -261,7 +262,7 @@
             "Tarjeta de Credito",
             "Cheque"});
             this.TipoPagocomboBox.Location = new System.Drawing.Point(499, 97);
-            this.TipoPagocomboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TipoPagocomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.TipoPagocomboBox.Name = "TipoPagocomboBox";
             this.TipoPagocomboBox.Size = new System.Drawing.Size(141, 24);
             this.TipoPagocomboBox.TabIndex = 21;
@@ -301,7 +302,7 @@
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.Location = new System.Drawing.Point(195, 15);
-            this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(107, 43);
             this.Buscarbutton.TabIndex = 19;
@@ -333,7 +334,7 @@
             // IDnumericUpDown
             // 
             this.IDnumericUpDown.Location = new System.Drawing.Point(91, 26);
-            this.IDnumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IDnumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(93, 22);
             this.IDnumericUpDown.TabIndex = 8;
@@ -342,7 +343,7 @@
             // 
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FechadateTimePicker.Location = new System.Drawing.Point(535, 26);
-            this.FechadateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FechadateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(104, 22);
             this.FechadateTimePicker.TabIndex = 9;
@@ -350,7 +351,7 @@
             // ClientetextBox
             // 
             this.ClientetextBox.Location = new System.Drawing.Point(91, 66);
-            this.ClientetextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientetextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClientetextBox.Name = "ClientetextBox";
             this.ClientetextBox.Size = new System.Drawing.Size(548, 22);
             this.ClientetextBox.TabIndex = 10;
@@ -359,7 +360,7 @@
             // 
             this.Eliminarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Eliminarbutton.Image")));
             this.Eliminarbutton.Location = new System.Drawing.Point(559, 657);
-            this.Eliminarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Eliminarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(93, 58);
             this.Eliminarbutton.TabIndex = 35;
@@ -373,7 +374,7 @@
             this.Guardarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Guardarbutton.Image")));
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Guardarbutton.Location = new System.Drawing.Point(325, 657);
-            this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(96, 58);
             this.Guardarbutton.TabIndex = 34;
@@ -387,7 +388,7 @@
             this.Nuevobutton.Image = ((System.Drawing.Image)(resources.GetObject("Nuevobutton.Image")));
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.Location = new System.Drawing.Point(104, 657);
-            this.Nuevobutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nuevobutton.Margin = new System.Windows.Forms.Padding(4);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(93, 58);
             this.Nuevobutton.TabIndex = 33;
@@ -399,7 +400,7 @@
             // TotalVentatextBox
             // 
             this.TotalVentatextBox.Location = new System.Drawing.Point(104, 593);
-            this.TotalVentatextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TotalVentatextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TotalVentatextBox.Name = "TotalVentatextBox";
             this.TotalVentatextBox.Size = new System.Drawing.Size(257, 22);
             this.TotalVentatextBox.TabIndex = 32;
@@ -408,7 +409,7 @@
             // DescuentostextBox
             // 
             this.DescuentostextBox.Location = new System.Drawing.Point(105, 561);
-            this.DescuentostextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DescuentostextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DescuentostextBox.Name = "DescuentostextBox";
             this.DescuentostextBox.Size = new System.Drawing.Size(256, 22);
             this.DescuentostextBox.TabIndex = 31;
@@ -417,7 +418,7 @@
             // SubtotaltextBox
             // 
             this.SubtotaltextBox.Location = new System.Drawing.Point(104, 528);
-            this.SubtotaltextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SubtotaltextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SubtotaltextBox.Name = "SubtotaltextBox";
             this.SubtotaltextBox.Size = new System.Drawing.Size(257, 22);
             this.SubtotaltextBox.TabIndex = 30;

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rCliente));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BuscarButton = new System.Windows.Forms.Button();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.CelularMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.TelefonoMaskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
@@ -53,8 +54,9 @@
             this.Label = new System.Windows.Forms.Label();
             this.MinimizarButton = new System.Windows.Forms.PictureBox();
             this.CerrarButton = new System.Windows.Forms.PictureBox();
-            this.BuscarButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.DeudasTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.panel2.SuspendLayout();
@@ -66,6 +68,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.DeudasTextBox);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.BuscarButton);
             this.panel1.Controls.Add(this.FechaDateTimePicker);
             this.panel1.Controls.Add(this.CelularMaskedTextBox);
@@ -83,9 +87,19 @@
             this.panel1.Controls.Add(this.IDnumericUpDown);
             this.panel1.Location = new System.Drawing.Point(7, 52);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(506, 319);
+            this.panel1.Size = new System.Drawing.Size(506, 378);
             this.panel1.TabIndex = 19;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // BuscarButton
+            // 
+            this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
+            this.BuscarButton.Location = new System.Drawing.Point(437, 30);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(47, 40);
+            this.BuscarButton.TabIndex = 34;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // FechaDateTimePicker
             // 
@@ -217,7 +231,7 @@
             this.panel2.Controls.Add(this.NuevoButton);
             this.panel2.Controls.Add(this.BorrarButton);
             this.panel2.Controls.Add(this.Guardarbutton);
-            this.panel2.Location = new System.Drawing.Point(-3, 391);
+            this.panel2.Location = new System.Drawing.Point(-3, 439);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(530, 48);
             this.panel2.TabIndex = 20;
@@ -238,6 +252,7 @@
             this.NuevoButton.TabIndex = 46;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // BorrarButton
             // 
@@ -255,6 +270,7 @@
             this.BorrarButton.TabIndex = 45;
             this.BorrarButton.Text = "Borrar";
             this.BorrarButton.UseVisualStyleBackColor = true;
+            this.BorrarButton.Click += new System.EventHandler(this.BorrarButton_Click);
             // 
             // Guardarbutton
             // 
@@ -272,6 +288,7 @@
             this.Guardarbutton.TabIndex = 44;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // BarraTituloPanel
             // 
@@ -324,24 +341,33 @@
             this.CerrarButton.TabStop = false;
             this.CerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
             // 
-            // BuscarButton
-            // 
-            this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(437, 30);
-            this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(47, 40);
-            this.BuscarButton.TabIndex = 34;
-            this.BuscarButton.UseVisualStyleBackColor = true;
-            // 
             // MyErrorProvider
             // 
             this.MyErrorProvider.ContainerControl = this;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 329);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 21);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Deudas";
+            // 
+            // DeudasTextBox
+            // 
+            this.DeudasTextBox.Location = new System.Drawing.Point(126, 328);
+            this.DeudasTextBox.Name = "DeudasTextBox";
+            this.DeudasTextBox.ReadOnly = true;
+            this.DeudasTextBox.Size = new System.Drawing.Size(358, 22);
+            this.DeudasTextBox.TabIndex = 36;
             // 
             // rCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 436);
+            this.ClientSize = new System.Drawing.Size(525, 484);
             this.Controls.Add(this.BarraTituloPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -390,5 +416,7 @@
         private System.Windows.Forms.PictureBox CerrarButton;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.TextBox DeudasTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }

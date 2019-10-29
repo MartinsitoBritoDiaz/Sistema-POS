@@ -17,18 +17,18 @@ namespace Sistema_de_POS.UI.Registros
     public partial class RegistroFacturacion : Form
         {
      
-            public List<DetalleProducto> productos { get; set; }
+            public List<DetalleProducto> Detalle { get; set; }
             public RegistroFacturacion()
             {
                 InitializeComponent();
-                this.productos = new List<DetalleProducto>();
+                this.Detalle = new List<DetalleProducto>();
             }
             public void CargarGrid()
             {
                 DetalledataGridView.DataSource = null;
-                DetalledataGridView.DataSource = this.productos;
+                DetalledataGridView.DataSource = this.Detalle;
             }
-            public void Limpiar()
+            /*public void Limpiar()
             {
                 IDnumericUpDown.Value = 0;
                 FechadateTimePicker.Value = DateTime.Now;
@@ -38,10 +38,10 @@ namespace Sistema_de_POS.UI.Registros
                 CantidadnumericUpDown.Value = 0;
                 DescripcionTextBox.Text = string.Empty;
                 PrecioUnitariotextBox.Text = Convert.ToString("0");
-            SubtotaltextBox.Text = Convert.ToString("0");
+                SubtotaltextBox.Text = Convert.ToString("0");
                 DescuentostextBox.Text = Convert.ToString("0");
-            TotalVentatextBox.Text = Convert.ToString("0");
-            this.productos = new List<DetalleProducto>();
+                TotalVentatextBox.Text = Convert.ToString("0");
+                this.Detalle = new List<DetalleProducto>();
 
                 CargarGrid();
             }
@@ -59,7 +59,7 @@ namespace Sistema_de_POS.UI.Registros
                 factura.Total = Convert.ToDecimal(TotalVentatextBox.Text);
                 factura.descuentos = Convert.ToDecimal(DescuentostextBox.Text);
 
-                factura.Productos = this.productos;
+                factura.Productos = this.Detalle;
 
                 return factura;
             }
@@ -75,10 +75,10 @@ namespace Sistema_de_POS.UI.Registros
                 TotalVentatextBox.Text = Convert.ToString(factura.Total);
                 DescuentostextBox.Text = Convert.ToString(factura.descuentos);
 
-                this.productos = factura.Productos;
+                this.Detalle = factura.Productos;
 
             }
-
+            
             public bool Validar()
             {
                 bool paso = true;
@@ -95,7 +95,7 @@ namespace Sistema_de_POS.UI.Registros
                     TipoPagocomboBox.Focus();
                     paso = false;
                 }
-                if (this.productos.Count == 0)
+                if (this.Detalle.Count == 0)
                 {
                     MyErrorProvider.SetError(Agregarbutton, "Debe agregar al menos un producto");
                     Agregarbutton.Focus();
@@ -195,9 +195,9 @@ namespace Sistema_de_POS.UI.Registros
             private void Agregarbutton_Click(object sender, EventArgs e)
             {
                 if (DetalledataGridView.DataSource != null)
-                    this.productos = (List<DetalleProducto>)DetalledataGridView.DataSource;
+                    this.Detalle = (List<DetalleProducto>)DetalledataGridView.DataSource;
 
-            this.productos.Add(
+            this.Detalle.Add(
                 new DetalleProducto(
                     id:0,
                     facturaid: Convert.ToInt32(IDnumericUpDown.Value),
@@ -291,7 +291,7 @@ namespace Sistema_de_POS.UI.Registros
             {
                 LlenarCampo(factura);
             }
-        }
+        }*/
 
         private void PrecioUnitariotextBox_TextChanged(object sender, EventArgs e)
         {
@@ -323,6 +323,11 @@ namespace Sistema_de_POS.UI.Registros
         }
 
         private void RegistroFacturacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UnidadComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
