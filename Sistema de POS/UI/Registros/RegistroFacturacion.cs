@@ -331,5 +331,10 @@ namespace Sistema_de_POS.UI.Registros
         {
 
         }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }
