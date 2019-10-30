@@ -1,4 +1,5 @@
 ﻿using Sistema_de_POS.Entidades;
+using SistemaPOS.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -730,7 +731,7 @@ namespace Sistema_de_POS.UI.Registros
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        /*
         public void Limpiar()
         {
             FacturaIdnumericUpDown.Value = 0;
@@ -820,7 +821,7 @@ namespace Sistema_de_POS.UI.Registros
             Factura f = repositorio.Buscar((int)IDnumericUpDown.Value);
             return f != null;
         }
-
+        */
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
 

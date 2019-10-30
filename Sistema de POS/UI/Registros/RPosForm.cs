@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +27,11 @@ namespace Sistema_de_POS.UI.Registros
             InitializeComponent();
             this.detalle = new List<DetalleProductoPOS>();
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
 
         private void Busquedabutton_Click(object sender, EventArgs e)
         {
@@ -243,6 +249,7 @@ namespace Sistema_de_POS.UI.Registros
             PrecioUnitarioTextBox.Text = string.Empty;
             ImporteTextBox.Text = string.Empty;
 
+            AplicarCheckBox.Checked = false;
             CargarGrid();
         }
 
@@ -542,5 +549,30 @@ namespace Sistema_de_POS.UI.Registros
             ResultadotextBox.Clear();
         }
 
+        private void Cerobutton_Click(object sender, EventArgs e)
+        {
+            ResultadotextBox.Text += "0";
+        }
+
+        private void CerrarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizarButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BarraTituloPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BarraTituloPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

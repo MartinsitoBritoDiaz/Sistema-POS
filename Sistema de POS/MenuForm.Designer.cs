@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.IconoHomePictureBox = new System.Windows.Forms.PictureBox();
@@ -38,25 +39,24 @@
             this.FacturacionButton = new System.Windows.Forms.Button();
             this.VentasButton = new System.Windows.Forms.Button();
             this.ContenedorPanel = new System.Windows.Forms.Panel();
+            this.VersionPictureBox = new System.Windows.Forms.PictureBox();
             this.SlideButton = new System.Windows.Forms.PictureBox();
             this.CerrarButton = new System.Windows.Forms.PictureBox();
             this.MaximizarButton = new System.Windows.Forms.PictureBox();
             this.RestaurarButton = new System.Windows.Forms.PictureBox();
             this.MinimizarButton = new System.Windows.Forms.PictureBox();
             this.BarraTituloPanel = new System.Windows.Forms.Panel();
-            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.VersionPictureBox = new System.Windows.Forms.PictureBox();
             this.MenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoHomePictureBox)).BeginInit();
             this.ContenedorPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VersionPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SlideButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaximizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RestaurarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
             this.BarraTituloPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VersionPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -76,6 +76,16 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(251, 788);
             this.MenuVertical.TabIndex = 0;
+            // 
+            // LogoPictureBox
+            // 
+            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
+            this.LogoPictureBox.Location = new System.Drawing.Point(70, 10);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(140, 49);
+            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoPictureBox.TabIndex = 8;
+            this.LogoPictureBox.TabStop = false;
             // 
             // button3
             // 
@@ -180,7 +190,7 @@
             this.FacturacionButton.Name = "FacturacionButton";
             this.FacturacionButton.Size = new System.Drawing.Size(251, 39);
             this.FacturacionButton.TabIndex = 1;
-            this.FacturacionButton.Text = "Consultas ";
+            this.FacturacionButton.Text = "Consultas  POS";
             this.FacturacionButton.UseVisualStyleBackColor = true;
             this.FacturacionButton.Click += new System.EventHandler(this.FacturacionButton_Click);
             // 
@@ -199,7 +209,7 @@
             this.VentasButton.Name = "VentasButton";
             this.VentasButton.Size = new System.Drawing.Size(251, 39);
             this.VentasButton.TabIndex = 0;
-            this.VentasButton.Text = "Fcturacion V1.0";
+            this.VentasButton.Text = "Consulta F.";
             this.VentasButton.UseVisualStyleBackColor = true;
             this.VentasButton.Click += new System.EventHandler(this.VentasButton_Click);
             // 
@@ -214,6 +224,17 @@
             this.ContenedorPanel.Size = new System.Drawing.Size(1049, 730);
             this.ContenedorPanel.TabIndex = 2;
             this.ContenedorPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ContenedorPanel_Paint);
+            // 
+            // VersionPictureBox
+            // 
+            this.VersionPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.VersionPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("VersionPictureBox.Image")));
+            this.VersionPictureBox.Location = new System.Drawing.Point(768, 636);
+            this.VersionPictureBox.Name = "VersionPictureBox";
+            this.VersionPictureBox.Size = new System.Drawing.Size(387, 94);
+            this.VersionPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.VersionPictureBox.TabIndex = 0;
+            this.VersionPictureBox.TabStop = false;
             // 
             // SlideButton
             // 
@@ -302,27 +323,6 @@
             this.BarraTituloPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTituloPanel_Paint);
             this.BarraTituloPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloPanel_MouseDown);
             // 
-            // LogoPictureBox
-            // 
-            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
-            this.LogoPictureBox.Location = new System.Drawing.Point(70, 10);
-            this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(140, 49);
-            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoPictureBox.TabIndex = 8;
-            this.LogoPictureBox.TabStop = false;
-            // 
-            // VersionPictureBox
-            // 
-            this.VersionPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.VersionPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("VersionPictureBox.Image")));
-            this.VersionPictureBox.Location = new System.Drawing.Point(768, 636);
-            this.VersionPictureBox.Name = "VersionPictureBox";
-            this.VersionPictureBox.Size = new System.Drawing.Size(387, 94);
-            this.VersionPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.VersionPictureBox.TabIndex = 0;
-            this.VersionPictureBox.TabStop = false;
-            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -336,16 +336,16 @@
             this.Name = "MenuForm";
             this.Text = "Sistema POS";
             this.MenuVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoHomePictureBox)).EndInit();
             this.ContenedorPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.VersionPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SlideButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaximizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RestaurarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).EndInit();
             this.BarraTituloPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VersionPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -80,7 +80,7 @@ namespace Sistema_de_POS
 
         private void FacturacionButton_Click(object sender, EventArgs e)
         {
-            ConsultaFactura registro = new ConsultaFactura();
+            ConsultaPOS registro = new ConsultaPOS();
             registro.Show();
         }
 
