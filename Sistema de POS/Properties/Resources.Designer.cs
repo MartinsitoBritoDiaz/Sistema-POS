@@ -63,6 +63,16 @@ namespace Sistema_de_POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Billetes {
+            get {
+                object obj = ResourceManager.GetObject("Billetes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CajaChica {
             get {
                 object obj = ResourceManager.GetObject("CajaChica", resourceCulture);

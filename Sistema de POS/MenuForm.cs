@@ -119,9 +119,10 @@ namespace Sistema_de_POS
             formulario.Show();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void CajaChicaButton_Click_1(object sender, EventArgs e)
         {
-
+            rCajaChica rcajaChica = new rCajaChica();
+            rcajaChica.Show();
         }
     }
 }

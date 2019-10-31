@@ -16,6 +16,8 @@ namespace SistemaPOS.DAL
         public DbSet<Articulo> articulo { get; set; }
         public DbSet<ArticuloMV> articuloMVs { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<CajaChica> ReposicionFondos { get; set; }
+        public DbSet<EgresoFondos> Egresos { get; set; }
 
         public Contexto() : base("ConStr") { }
     }

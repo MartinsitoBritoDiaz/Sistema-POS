@@ -44,8 +44,10 @@
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Articulo.cs" />
     <Compile Include="Entidades\ArticuloMV.cs" />
+    <Compile Include="Entidades\CajaChica.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\DetalleProductoPOS.cs" />
+    <Compile Include="Entidades\EgresoFondos.cs" />
     <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\POS.cs" />
     <Compile Include="Entidades\DetalleProducto.cs" />
@@ -57,6 +59,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\ConsultaFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +75,12 @@
     </Compile>
     <Compile Include="UI\Consultas\ConsultaPOS.Designer.cs">
       <DependentUpon>ConsultaPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rCajaChica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rCajaChica.Designer.cs">
+      <DependentUpon>rCajaChica.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rCliente.cs">
       <SubType>Form</SubType>
@@ -113,19 +126,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UI\Consultas\ConsultaFactura.resx">
       <DependentUpon>ConsultaFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\ConsultaPOS.resx">
       <DependentUpon>ConsultaPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rCajaChica.resx">
+      <DependentUpon>rCajaChica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCliente.resx">
       <DependentUpon>rCliente.cs</DependentUpon>
@@ -236,6 +247,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Script\ScriptSPOS.sql" />
+    <None Include="Resources\Billetes1.png" />
+    <None Include="Resources\Billetes.png" />
+    <None Include="Resources\icons8-billetes-80%281%29.png" />
+    <None Include="Resources\icons8-billetes-80.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
