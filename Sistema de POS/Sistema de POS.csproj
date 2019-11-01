@@ -76,11 +76,23 @@
     <Compile Include="UI\Consultas\ConsultaPOS.Designer.cs">
       <DependentUpon>ConsultaPOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rAperturaCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rAperturaCaja.Designer.cs">
+      <DependentUpon>rAperturaCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rCajaChica.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\rCajaChica.Designer.cs">
       <DependentUpon>rCajaChica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rCierreCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rCierreCaja.Designer.cs">
+      <DependentUpon>rCierreCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rCliente.cs">
       <SubType>Form</SubType>
@@ -135,8 +147,14 @@
     <EmbeddedResource Include="UI\Consultas\ConsultaPOS.resx">
       <DependentUpon>ConsultaPOS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rAperturaCaja.resx">
+      <DependentUpon>rAperturaCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCajaChica.resx">
       <DependentUpon>rCajaChica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rCierreCaja.resx">
+      <DependentUpon>rCierreCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCliente.resx">
       <DependentUpon>rCliente.cs</DependentUpon>

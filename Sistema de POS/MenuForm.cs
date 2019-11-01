@@ -124,5 +124,11 @@ namespace Sistema_de_POS
             rCajaChica rcajaChica = new rCajaChica();
             rcajaChica.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            rAperturaCaja rAperturaCaja = new rAperturaCaja();
+            rAperturaCaja.Show();
+        }
     }
 }
