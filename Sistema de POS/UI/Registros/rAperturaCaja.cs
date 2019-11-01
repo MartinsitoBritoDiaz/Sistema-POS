@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sistema_de_POS.Entidades;
+using SistemaPOS.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,6 +66,132 @@ namespace Sistema_de_POS.UI.Registros
             dataGridView1.Rows[7].Cells[0].Value = 5;
             dataGridView1.Rows[8].Cells[0].Value = 1;
             
+        }
+
+        public void Limpiar()
+        {
+            IDNumericUpDown.Value = 0;
+            FechaDateTimePicker.Value = DateTime.Now;
+            UsuarioTextBox.Text = string.Empty;
+            CajaTextBox.Text = string.Empty;
+            TotalEfectivoTextBox.Text = string.Empty;
+            ComentarioTextBox.Text = string.Empty;
+            
+        }
+
+        public Apertura LlenarClase()
+        {
+            Apertura apertura = new Apertura();
+
+            apertura.AperturaId = Convert.ToInt32(IDNumericUpDown.Value);
+            apertura.Caja = Convert.ToInt32(CajaTextBox.Text);
+            apertura.Fecha = FechaDateTimePicker.Value;
+            apertura.Usuario = UsuarioTextBox.Text;
+            apertura.TotalEfectivo = Convert.ToDouble(TotalEfectivoTextBox.Text);
+            apertura.Comentario = ComentarioTextBox.Text;
+
+            return apertura;
+        }
+       
+        public void LlenarCampo(Apertura apertura)
+        {
+            IDNumericUpDown.Value = apertura.AperturaId;
+            CajaTextBox.Text = Convert.ToString(apertura.Caja);
+            FechaDateTimePicker.Value = apertura.Fecha;
+            UsuarioTextBox.Text = apertura.Usuario;
+            TotalEfectivoTextBox.Text = Convert.ToString(apertura.TotalEfectivo);
+            ComentarioTextBox.Text = apertura.Comentario;
+        }
+
+        public bool Validar()
+        {
+            MyErrorProvider.Clear();
+            bool paso = true;
+
+            if (string.IsNullOrWhiteSpace(CajaTextBox.Text))
+            {
+                MyErrorProvider.SetError(CajaTextBox, "El campo caja no puede estar vacio");
+                CajaTextBox.Focus();
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(UsuarioTextBox.Text))
+            {
+                MyErrorProvider.SetError(CajaTextBox, "El campo usuario no puede estar vacio");
+                UsuarioTextBox.Focus();
+                paso = false;
+            }
+
+            return paso;
+        }
+
+        public bool ExisteEnLaBaseDeDatos()
+        {
+            RepositorioBase<Apertura> repo = new RepositorioBase<Apertura>();
+            Apertura apertura = repo.Buscar((int)IDNumericUpDown.Value);
+            return apertura != null;
+        }
+
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+            bool paso = false;
+            RepositorioBase<Apertura> repo = new RepositorioBase<Apertura>();
+            Apertura apertura = new Apertura();
+
+            if (!Validar())
+                return;
+
+            apertura = LlenarClase();
+
+            if (IDNumericUpDown.Value == 0)
+                paso = repo.Guardar(apertura);
+            else
+            {
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("No esta registrado para modificar");
+                    return;
+                }
+                paso = repo.Modificar(apertura);
+            }
+
+            if (paso)
+            {
+                MessageBox.Show("Guardado");
+            }
+            else
+            {
+                MessageBox.Show("No fue posible guardar");
+            }
+        }
+
+        private void BorrarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int id;
+            int.TryParse(IDNumericUpDown.Text, out id);
+            RepositorioBase<Apertura> repo = new RepositorioBase<Apertura>();
+            Apertura apertura = repo.Buscar(id);
+
+            Limpiar();
+
+            if(apertura == null)
+            {
+                MessageBox.Show("No encontrado");
+            }
+            else
+            {
+                LlenarCampo(apertura);
+            }
         }
     }
 }

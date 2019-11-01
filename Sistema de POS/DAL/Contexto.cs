@@ -19,6 +19,9 @@ namespace SistemaPOS.DAL
         public DbSet<CajaChica> ReposicionFondos { get; set; }
         public DbSet<EgresoFondos> Egresos { get; set; }
 
+        public DbSet<Apertura> Aperturas { get; set; }
+        public DbSet<Cierre> Cierres { get; set; }
+
         public Contexto() : base("ConStr") { }
     }
 }

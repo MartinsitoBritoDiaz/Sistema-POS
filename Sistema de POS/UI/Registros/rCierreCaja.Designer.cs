@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rCierreCaja));
             this.BarraTituloPanel = new System.Windows.Forms.Panel();
             this.Label = new System.Windows.Forms.Label();
@@ -35,43 +36,52 @@
             this.CerrarButton = new System.Windows.Forms.PictureBox();
             this.CierreCajaTabControl = new System.Windows.Forms.TabControl();
             this.CierreEfectivoTabPage = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.TotalEfectivoTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EfectivoDGV = new System.Windows.Forms.DataGridView();
             this.ColumnaBilletes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CreditoDGV = new System.Windows.Forms.DataGridView();
+            this.ColumnaReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BorrarButton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.CajaTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.IDNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DSTGTextBox = new System.Windows.Forms.TextBox();
+            this.DSTTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DSETextBox = new System.Windows.Forms.TextBox();
+            this.TotalGeneralTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ComentarioTextBox = new System.Windows.Forms.TextBox();
+            this.TotalEfectivoTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label11 = new System.Windows.Forms.Label();
             this.BarraTituloPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
             this.CierreCajaTabControl.SuspendLayout();
             this.CierreEfectivoTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EfectivoDGV)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CreditoDGV)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // BarraTituloPanel
@@ -128,158 +138,36 @@
             // 
             this.CierreCajaTabControl.Controls.Add(this.CierreEfectivoTabPage);
             this.CierreCajaTabControl.Controls.Add(this.tabPage2);
-            this.CierreCajaTabControl.Location = new System.Drawing.Point(3, 27);
+            this.CierreCajaTabControl.Location = new System.Drawing.Point(0, 150);
             this.CierreCajaTabControl.Multiline = true;
             this.CierreCajaTabControl.Name = "CierreCajaTabControl";
             this.CierreCajaTabControl.SelectedIndex = 0;
-            this.CierreCajaTabControl.Size = new System.Drawing.Size(508, 530);
+            this.CierreCajaTabControl.Size = new System.Drawing.Size(535, 273);
             this.CierreCajaTabControl.TabIndex = 49;
             // 
             // CierreEfectivoTabPage
             // 
-            this.CierreEfectivoTabPage.Controls.Add(this.textBox7);
-            this.CierreEfectivoTabPage.Controls.Add(this.textBox6);
-            this.CierreEfectivoTabPage.Controls.Add(this.label10);
-            this.CierreEfectivoTabPage.Controls.Add(this.label9);
-            this.CierreEfectivoTabPage.Controls.Add(this.textBox5);
-            this.CierreEfectivoTabPage.Controls.Add(this.textBox4);
-            this.CierreEfectivoTabPage.Controls.Add(this.label7);
-            this.CierreEfectivoTabPage.Controls.Add(this.textBox2);
-            this.CierreEfectivoTabPage.Controls.Add(this.label6);
-            this.CierreEfectivoTabPage.Controls.Add(this.textBox3);
-            this.CierreEfectivoTabPage.Controls.Add(this.label5);
-            this.CierreEfectivoTabPage.Controls.Add(this.button1);
-            this.CierreEfectivoTabPage.Controls.Add(this.TotalEfectivoTextBox);
-            this.CierreEfectivoTabPage.Controls.Add(this.label4);
-            this.CierreEfectivoTabPage.Controls.Add(this.dateTimePicker1);
-            this.CierreEfectivoTabPage.Controls.Add(this.label3);
-            this.CierreEfectivoTabPage.Controls.Add(this.textBox1);
-            this.CierreEfectivoTabPage.Controls.Add(this.label2);
-            this.CierreEfectivoTabPage.Controls.Add(this.numericUpDown1);
-            this.CierreEfectivoTabPage.Controls.Add(this.label1);
-            this.CierreEfectivoTabPage.Controls.Add(this.dataGridView1);
+            this.CierreEfectivoTabPage.Controls.Add(this.EfectivoDGV);
             this.CierreEfectivoTabPage.Location = new System.Drawing.Point(4, 22);
             this.CierreEfectivoTabPage.Name = "CierreEfectivoTabPage";
             this.CierreEfectivoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.CierreEfectivoTabPage.Size = new System.Drawing.Size(500, 504);
+            this.CierreEfectivoTabPage.Size = new System.Drawing.Size(527, 247);
             this.CierreEfectivoTabPage.TabIndex = 0;
             this.CierreEfectivoTabPage.Text = "Efectivo";
             this.CierreEfectivoTabPage.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // EfectivoDGV
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(500, 446);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Credito";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(83, 452);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(171, 44);
-            this.textBox3.TabIndex = 72;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-3, 457);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "Comentario";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(126, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 27);
-            this.button1.TabIndex = 70;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // TotalEfectivoTextBox
-            // 
-            this.TotalEfectivoTextBox.Location = new System.Drawing.Point(85, 360);
-            this.TotalEfectivoTextBox.Name = "TotalEfectivoTextBox";
-            this.TotalEfectivoTextBox.ReadOnly = true;
-            this.TotalEfectivoTextBox.Size = new System.Drawing.Size(110, 20);
-            this.TotalEfectivoTextBox.TabIndex = 69;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 363);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
-            this.label4.TabIndex = 68;
-            this.label4.Text = "Total Efectivo";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(59, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(127, 20);
-            this.dateTimePicker1.TabIndex = 67;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 66;
-            this.label3.Text = "Fecha";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(59, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 20);
-            this.textBox1.TabIndex = 65;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "Usuario";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(30, 6);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(89, 20);
-            this.numericUpDown1.TabIndex = 63;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Id";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EfectivoDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EfectivoDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaBilletes,
             this.ColumnaCantidad,
             this.ColumnaSubtotal});
-            this.dataGridView1.Location = new System.Drawing.Point(9, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(348, 237);
-            this.dataGridView1.TabIndex = 61;
-            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            this.EfectivoDGV.Location = new System.Drawing.Point(6, 6);
+            this.EfectivoDGV.Name = "EfectivoDGV";
+            this.EfectivoDGV.Size = new System.Drawing.Size(348, 237);
+            this.EfectivoDGV.TabIndex = 61;
+            this.EfectivoDGV.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // ColumnaBilletes
             // 
@@ -297,81 +185,38 @@
             this.ColumnaSubtotal.HeaderText = "Subtotal";
             this.ColumnaSubtotal.Name = "ColumnaSubtotal";
             // 
-            // textBox2
+            // tabPage2
             // 
-            this.textBox2.Location = new System.Drawing.Point(83, 386);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(110, 20);
-            this.textBox2.TabIndex = 74;
+            this.tabPage2.Controls.Add(this.CreditoDGV);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(527, 247);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Credito";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // CreditoDGV
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 389);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
-            this.label6.TabIndex = 73;
-            this.label6.Text = "Tarjeta Crédito";
+            this.CreditoDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CreditoDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnaReferencia,
+            this.ColumnaMonto});
+            this.CreditoDGV.Location = new System.Drawing.Point(3, 6);
+            this.CreditoDGV.Name = "CreditoDGV";
+            this.CreditoDGV.Size = new System.Drawing.Size(360, 238);
+            this.CreditoDGV.TabIndex = 0;
             // 
-            // textBox4
+            // ColumnaReferencia
             // 
-            this.textBox4.Location = new System.Drawing.Point(83, 415);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(110, 20);
-            this.textBox4.TabIndex = 76;
+            this.ColumnaReferencia.HeaderText = "Referencia";
+            this.ColumnaReferencia.Name = "ColumnaReferencia";
+            this.ColumnaReferencia.Width = 200;
             // 
-            // label7
+            // ColumnaMonto
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 418);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
-            this.label7.TabIndex = 75;
-            this.label7.Text = "Total General";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(265, 360);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(110, 20);
-            this.textBox5.TabIndex = 78;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(46, 331);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 13);
-            this.label9.TabIndex = 79;
-            this.label9.Text = "Datos del Cajero:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(262, 331);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 13);
-            this.label10.TabIndex = 80;
-            this.label10.Text = "Datos del Sistema:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(265, 386);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(110, 20);
-            this.textBox6.TabIndex = 81;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(265, 415);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(110, 20);
-            this.textBox7.TabIndex = 82;
+            this.ColumnaMonto.HeaderText = "Monto";
+            this.ColumnaMonto.Name = "ColumnaMonto";
             // 
             // panel2
             // 
@@ -380,7 +225,7 @@
             this.panel2.Controls.Add(this.NuevoButton);
             this.panel2.Controls.Add(this.BorrarButton);
             this.panel2.Controls.Add(this.Guardarbutton);
-            this.panel2.Location = new System.Drawing.Point(0, 562);
+            this.panel2.Location = new System.Drawing.Point(0, 590);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(539, 39);
@@ -401,6 +246,7 @@
             this.NuevoButton.TabIndex = 46;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // BorrarButton
             // 
@@ -417,6 +263,7 @@
             this.BorrarButton.TabIndex = 45;
             this.BorrarButton.Text = "Salir";
             this.BorrarButton.UseVisualStyleBackColor = true;
+            this.BorrarButton.Click += new System.EventHandler(this.BorrarButton_Click);
             // 
             // Guardarbutton
             // 
@@ -433,12 +280,227 @@
             this.Guardarbutton.TabIndex = 44;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(132, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 27);
+            this.button1.TabIndex = 77;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // FechaDateTimePicker
+            // 
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(65, 69);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(127, 20);
+            this.FechaDateTimePicker.TabIndex = 76;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "Fecha";
+            // 
+            // CajaTextBox
+            // 
+            this.CajaTextBox.Location = new System.Drawing.Point(65, 99);
+            this.CajaTextBox.Name = "CajaTextBox";
+            this.CajaTextBox.Size = new System.Drawing.Size(127, 20);
+            this.CajaTextBox.TabIndex = 74;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 13);
+            this.label2.TabIndex = 73;
+            this.label2.Text = "Caja";
+            // 
+            // IDNumericUpDown
+            // 
+            this.IDNumericUpDown.Location = new System.Drawing.Point(65, 40);
+            this.IDNumericUpDown.Name = "IDNumericUpDown";
+            this.IDNumericUpDown.Size = new System.Drawing.Size(60, 20);
+            this.IDNumericUpDown.TabIndex = 72;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.TabIndex = 71;
+            this.label1.Text = "Id";
+            // 
+            // DSTGTextBox
+            // 
+            this.DSTGTextBox.Location = new System.Drawing.Point(289, 502);
+            this.DSTGTextBox.Name = "DSTGTextBox";
+            this.DSTGTextBox.ReadOnly = true;
+            this.DSTGTextBox.Size = new System.Drawing.Size(110, 20);
+            this.DSTGTextBox.TabIndex = 95;
+            // 
+            // DSTTextBox
+            // 
+            this.DSTTextBox.Location = new System.Drawing.Point(289, 477);
+            this.DSTTextBox.Name = "DSTTextBox";
+            this.DSTTextBox.ReadOnly = true;
+            this.DSTTextBox.Size = new System.Drawing.Size(110, 20);
+            this.DSTTextBox.TabIndex = 94;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(272, 422);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 13);
+            this.label10.TabIndex = 93;
+            this.label10.Text = "Datos del Sistema:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(56, 422);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 13);
+            this.label9.TabIndex = 92;
+            this.label9.Text = "Datos del Cajero:";
+            // 
+            // DSETextBox
+            // 
+            this.DSETextBox.Location = new System.Drawing.Point(289, 451);
+            this.DSETextBox.Name = "DSETextBox";
+            this.DSETextBox.ReadOnly = true;
+            this.DSETextBox.Size = new System.Drawing.Size(110, 20);
+            this.DSETextBox.TabIndex = 91;
+            // 
+            // TotalGeneralTextBox
+            // 
+            this.TotalGeneralTextBox.Location = new System.Drawing.Point(95, 502);
+            this.TotalGeneralTextBox.Name = "TotalGeneralTextBox";
+            this.TotalGeneralTextBox.ReadOnly = true;
+            this.TotalGeneralTextBox.Size = new System.Drawing.Size(110, 20);
+            this.TotalGeneralTextBox.TabIndex = 90;
+            this.TotalGeneralTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 509);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.TabIndex = 89;
+            this.label7.Text = "Total General";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(95, 477);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(110, 20);
+            this.textBox2.TabIndex = 88;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 480);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.TabIndex = 87;
+            this.label6.Text = "Tarjeta Crédito";
+            // 
+            // ComentarioTextBox
+            // 
+            this.ComentarioTextBox.Location = new System.Drawing.Point(95, 528);
+            this.ComentarioTextBox.Multiline = true;
+            this.ComentarioTextBox.Name = "ComentarioTextBox";
+            this.ComentarioTextBox.Size = new System.Drawing.Size(164, 44);
+            this.ComentarioTextBox.TabIndex = 86;
+            this.ComentarioTextBox.TextChanged += new System.EventHandler(this.ComentarioTextBox_TextChanged);
+            // 
+            // TotalEfectivoTextBox
+            // 
+            this.TotalEfectivoTextBox.Location = new System.Drawing.Point(95, 451);
+            this.TotalEfectivoTextBox.Name = "TotalEfectivoTextBox";
+            this.TotalEfectivoTextBox.ReadOnly = true;
+            this.TotalEfectivoTextBox.Size = new System.Drawing.Size(110, 20);
+            this.TotalEfectivoTextBox.TabIndex = 84;
+            this.TotalEfectivoTextBox.TextChanged += new System.EventHandler(this.TotalEfectivoTextBox_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 454);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 13);
+            this.label4.TabIndex = 83;
+            this.label4.Text = "Total Efectivo";
+            // 
+            // UsuarioTextBox
+            // 
+            this.UsuarioTextBox.Location = new System.Drawing.Point(65, 125);
+            this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.Size = new System.Drawing.Size(127, 20);
+            this.UsuarioTextBox.TabIndex = 97;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 128);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.TabIndex = 96;
+            this.label8.Text = "Usuario";
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(13, 531);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.TabIndex = 99;
+            this.label11.Text = "Comentario";
             // 
             // rCierreCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 601);
+            this.ClientSize = new System.Drawing.Size(539, 629);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.UsuarioTextBox);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.DSTGTextBox);
+            this.Controls.Add(this.DSTTextBox);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.DSETextBox);
+            this.Controls.Add(this.TotalGeneralTextBox);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.ComentarioTextBox);
+            this.Controls.Add(this.TotalEfectivoTextBox);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FechaDateTimePicker);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.CajaTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.IDNumericUpDown);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.CierreCajaTabControl);
             this.Controls.Add(this.BarraTituloPanel);
@@ -452,11 +514,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
             this.CierreCajaTabControl.ResumeLayout(false);
             this.CierreEfectivoTabPage.ResumeLayout(false);
-            this.CierreEfectivoTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EfectivoDGV)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CreditoDGV)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -468,27 +533,7 @@
         private System.Windows.Forms.PictureBox CerrarButton;
         private System.Windows.Forms.TabControl CierreCajaTabControl;
         private System.Windows.Forms.TabPage CierreEfectivoTabPage;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox TotalEfectivoTextBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView EfectivoDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaBilletes;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaSubtotal;
@@ -497,5 +542,31 @@
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button BorrarButton;
         private System.Windows.Forms.Button Guardarbutton;
+        private System.Windows.Forms.DataGridView CreditoDGV;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox CajaTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown IDNumericUpDown;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox DSTGTextBox;
+        private System.Windows.Forms.TextBox DSTTextBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox DSETextBox;
+        private System.Windows.Forms.TextBox TotalGeneralTextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox ComentarioTextBox;
+        private System.Windows.Forms.TextBox TotalEfectivoTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaReferencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaMonto;
+        private System.Windows.Forms.TextBox UsuarioTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Label label11;
     }
 }

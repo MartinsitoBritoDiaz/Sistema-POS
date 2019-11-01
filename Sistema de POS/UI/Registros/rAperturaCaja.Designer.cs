@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rAperturaCaja));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnaBilletes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.IDNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.TotalEfectivoTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.ColumnaBilletes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ComentarioTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BorrarButton = new System.Windows.Forms.Button();
@@ -52,12 +53,16 @@
             this.Label = new System.Windows.Forms.Label();
             this.MinimizarButton = new System.Windows.Forms.PictureBox();
             this.CerrarButton = new System.Windows.Forms.PictureBox();
+            this.CajaTextBox = new System.Windows.Forms.TextBox();
+            this.CajaLabel = new System.Windows.Forms.Label();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).BeginInit();
             this.panel2.SuspendLayout();
             this.BarraTituloPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -75,6 +80,22 @@
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
+            // ColumnaBilletes
+            // 
+            this.ColumnaBilletes.HeaderText = "Denominacion";
+            this.ColumnaBilletes.Name = "ColumnaBilletes";
+            this.ColumnaBilletes.ReadOnly = true;
+            // 
+            // ColumnaCantidad
+            // 
+            this.ColumnaCantidad.HeaderText = "Cantidad";
+            this.ColumnaCantidad.Name = "ColumnaCantidad";
+            // 
+            // ColumnaSubtotal
+            // 
+            this.ColumnaSubtotal.HeaderText = "Subtotal";
+            this.ColumnaSubtotal.Name = "ColumnaSubtotal";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -84,12 +105,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Id";
             // 
-            // numericUpDown1
+            // IDNumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(43, 37);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(89, 20);
-            this.numericUpDown1.TabIndex = 2;
+            this.IDNumericUpDown.Location = new System.Drawing.Point(72, 37);
+            this.IDNumericUpDown.Name = "IDNumericUpDown";
+            this.IDNumericUpDown.Size = new System.Drawing.Size(60, 20);
+            this.IDNumericUpDown.TabIndex = 2;
             // 
             // label2
             // 
@@ -100,12 +121,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Usuario";
             // 
-            // textBox1
+            // UsuarioTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 20);
-            this.textBox1.TabIndex = 4;
+            this.UsuarioTextBox.Location = new System.Drawing.Point(72, 96);
+            this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.Size = new System.Drawing.Size(127, 20);
+            this.UsuarioTextBox.TabIndex = 4;
             // 
             // label3
             // 
@@ -116,13 +137,13 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Fecha";
             // 
-            // dateTimePicker1
+            // FechaDateTimePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(72, 66);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(127, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(72, 66);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(127, 20);
+            this.FechaDateTimePicker.TabIndex = 6;
             // 
             // label4
             // 
@@ -148,6 +169,7 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -158,29 +180,13 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Comentario";
             // 
-            // textBox3
+            // ComentarioTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(92, 407);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 35);
-            this.textBox3.TabIndex = 24;
-            // 
-            // ColumnaBilletes
-            // 
-            this.ColumnaBilletes.HeaderText = "Denominacion";
-            this.ColumnaBilletes.Name = "ColumnaBilletes";
-            this.ColumnaBilletes.ReadOnly = true;
-            // 
-            // ColumnaCantidad
-            // 
-            this.ColumnaCantidad.HeaderText = "Cantidad";
-            this.ColumnaCantidad.Name = "ColumnaCantidad";
-            // 
-            // ColumnaSubtotal
-            // 
-            this.ColumnaSubtotal.HeaderText = "Subtotal";
-            this.ColumnaSubtotal.Name = "ColumnaSubtotal";
+            this.ComentarioTextBox.Location = new System.Drawing.Point(92, 407);
+            this.ComentarioTextBox.Multiline = true;
+            this.ComentarioTextBox.Name = "ComentarioTextBox";
+            this.ComentarioTextBox.Size = new System.Drawing.Size(172, 35);
+            this.ComentarioTextBox.TabIndex = 24;
             // 
             // panel2
             // 
@@ -210,6 +216,7 @@
             this.NuevoButton.TabIndex = 46;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // BorrarButton
             // 
@@ -226,6 +233,7 @@
             this.BorrarButton.TabIndex = 45;
             this.BorrarButton.Text = "Salir";
             this.BorrarButton.UseVisualStyleBackColor = true;
+            this.BorrarButton.Click += new System.EventHandler(this.BorrarButton_Click);
             // 
             // Guardarbutton
             // 
@@ -242,6 +250,7 @@
             this.Guardarbutton.TabIndex = 44;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // BarraTituloPanel
             // 
@@ -293,23 +302,45 @@
             this.CerrarButton.TabIndex = 1;
             this.CerrarButton.TabStop = false;
             // 
+            // CajaTextBox
+            // 
+            this.CajaTextBox.Location = new System.Drawing.Point(287, 40);
+            this.CajaTextBox.Name = "CajaTextBox";
+            this.CajaTextBox.Size = new System.Drawing.Size(83, 20);
+            this.CajaTextBox.TabIndex = 49;
+            // 
+            // CajaLabel
+            // 
+            this.CajaLabel.AutoSize = true;
+            this.CajaLabel.Location = new System.Drawing.Point(244, 43);
+            this.CajaLabel.Name = "CajaLabel";
+            this.CajaLabel.Size = new System.Drawing.Size(28, 13);
+            this.CajaLabel.TabIndex = 50;
+            this.CajaLabel.Text = "Caja";
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
             // rAperturaCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 501);
+            this.Controls.Add(this.CajaLabel);
+            this.Controls.Add(this.CajaTextBox);
             this.Controls.Add(this.BarraTituloPanel);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.ComentarioTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TotalEfectivoTextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.IDNumericUpDown);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -317,12 +348,13 @@
             this.Text = "rAperturaCaja";
             this.Load += new System.EventHandler(this.rAperturaCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).EndInit();
             this.panel2.ResumeLayout(false);
             this.BarraTituloPanel.ResumeLayout(false);
             this.BarraTituloPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,16 +364,16 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown IDNumericUpDown;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox UsuarioTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TotalEfectivoTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox ComentarioTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaBilletes;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaSubtotal;
@@ -353,5 +385,8 @@
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.PictureBox MinimizarButton;
         private System.Windows.Forms.PictureBox CerrarButton;
+        private System.Windows.Forms.TextBox CajaTextBox;
+        private System.Windows.Forms.Label CajaLabel;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

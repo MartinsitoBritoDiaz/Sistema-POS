@@ -42,8 +42,10 @@
     <Compile Include="BLL\POSRepositorio.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\Apertura.cs" />
     <Compile Include="Entidades\Articulo.cs" />
     <Compile Include="Entidades\ArticuloMV.cs" />
+    <Compile Include="Entidades\Cierre.cs" />
     <Compile Include="Entidades\CajaChica.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\DetalleProductoPOS.cs" />
