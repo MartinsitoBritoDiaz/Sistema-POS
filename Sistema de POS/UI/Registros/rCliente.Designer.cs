@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rCliente));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DeudasTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.CelularMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -51,12 +53,12 @@
             this.BorrarButton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.BarraTituloPanel = new System.Windows.Forms.Panel();
-            this.Label = new System.Windows.Forms.Label();
             this.MinimizarButton = new System.Windows.Forms.PictureBox();
             this.CerrarButton = new System.Windows.Forms.PictureBox();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.DeudasTextBox = new System.Windows.Forms.TextBox();
+            this.RestaurarButton = new System.Windows.Forms.PictureBox();
+            this.MaximizarButton = new System.Windows.Forms.PictureBox();
+            this.Label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             this.panel2.SuspendLayout();
@@ -64,10 +66,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RestaurarButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaximizarButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Label);
             this.panel1.Controls.Add(this.DeudasTextBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.BuscarButton);
@@ -85,16 +90,40 @@
             this.panel1.Controls.Add(this.NombreLabel);
             this.panel1.Controls.Add(this.ClienteLabel);
             this.panel1.Controls.Add(this.IDnumericUpDown);
-            this.panel1.Location = new System.Drawing.Point(7, 52);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(506, 378);
+            this.panel1.Size = new System.Drawing.Size(525, 484);
             this.panel1.TabIndex = 19;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
+            // DeudasTextBox
+            // 
+            this.DeudasTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeudasTextBox.Location = new System.Drawing.Point(134, 393);
+            this.DeudasTextBox.Name = "DeudasTextBox";
+            this.DeudasTextBox.ReadOnly = true;
+            this.DeudasTextBox.Size = new System.Drawing.Size(358, 22);
+            this.DeudasTextBox.TabIndex = 36;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 394);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 21);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Deudas";
+            // 
             // BuscarButton
             // 
+            this.BuscarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BuscarButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarButton.Image")));
-            this.BuscarButton.Location = new System.Drawing.Point(437, 30);
+            this.BuscarButton.Location = new System.Drawing.Point(445, 95);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(47, 40);
             this.BuscarButton.TabIndex = 34;
@@ -103,15 +132,16 @@
             // 
             // FechaDateTimePicker
             // 
+            this.FechaDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaDateTimePicker.Location = new System.Drawing.Point(381, 220);
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(389, 285);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
             this.FechaDateTimePicker.Size = new System.Drawing.Size(103, 22);
             this.FechaDateTimePicker.TabIndex = 33;
             // 
             // CelularMaskedTextBox
             // 
-            this.CelularMaskedTextBox.Location = new System.Drawing.Point(126, 222);
+            this.CelularMaskedTextBox.Location = new System.Drawing.Point(134, 287);
             this.CelularMaskedTextBox.Mask = "000-000-0000";
             this.CelularMaskedTextBox.Name = "CelularMaskedTextBox";
             this.CelularMaskedTextBox.Size = new System.Drawing.Size(103, 22);
@@ -119,7 +149,8 @@
             // 
             // TelefonoMaskedTextBox2
             // 
-            this.TelefonoMaskedTextBox2.Location = new System.Drawing.Point(381, 151);
+            this.TelefonoMaskedTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TelefonoMaskedTextBox2.Location = new System.Drawing.Point(389, 216);
             this.TelefonoMaskedTextBox2.Mask = "(999)000-0000";
             this.TelefonoMaskedTextBox2.Name = "TelefonoMaskedTextBox2";
             this.TelefonoMaskedTextBox2.Size = new System.Drawing.Size(103, 22);
@@ -127,7 +158,7 @@
             // 
             // CedulaMaskedTextBox
             // 
-            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(126, 153);
+            this.CedulaMaskedTextBox.Location = new System.Drawing.Point(134, 218);
             this.CedulaMaskedTextBox.Mask = "000-0000000-0";
             this.CedulaMaskedTextBox.Name = "CedulaMaskedTextBox";
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(103, 22);
@@ -135,23 +166,28 @@
             // 
             // DireccionTextBox
             // 
-            this.DireccionTextBox.Location = new System.Drawing.Point(126, 277);
+            this.DireccionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DireccionTextBox.Location = new System.Drawing.Point(134, 342);
             this.DireccionTextBox.Name = "DireccionTextBox";
             this.DireccionTextBox.Size = new System.Drawing.Size(358, 22);
             this.DireccionTextBox.TabIndex = 29;
             // 
             // NombreTextBox
             // 
-            this.NombreTextBox.Location = new System.Drawing.Point(126, 95);
+            this.NombreTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NombreTextBox.Location = new System.Drawing.Point(143, 160);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(358, 22);
             this.NombreTextBox.TabIndex = 28;
             // 
             // FechaNacimientoLabel
             // 
+            this.FechaNacimientoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaNacimientoLabel.AutoSize = true;
             this.FechaNacimientoLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaNacimientoLabel.Location = new System.Drawing.Point(262, 202);
+            this.FechaNacimientoLabel.Location = new System.Drawing.Point(270, 267);
             this.FechaNacimientoLabel.Name = "FechaNacimientoLabel";
             this.FechaNacimientoLabel.Size = new System.Drawing.Size(103, 42);
             this.FechaNacimientoLabel.TabIndex = 26;
@@ -159,9 +195,11 @@
             // 
             // DireccionLabel
             // 
+            this.DireccionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DireccionLabel.AutoSize = true;
             this.DireccionLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DireccionLabel.Location = new System.Drawing.Point(3, 278);
+            this.DireccionLabel.Location = new System.Drawing.Point(11, 343);
             this.DireccionLabel.Name = "DireccionLabel";
             this.DireccionLabel.Size = new System.Drawing.Size(88, 21);
             this.DireccionLabel.TabIndex = 25;
@@ -171,7 +209,7 @@
             // 
             this.CelularLabel.AutoSize = true;
             this.CelularLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CelularLabel.Location = new System.Drawing.Point(4, 222);
+            this.CelularLabel.Location = new System.Drawing.Point(12, 287);
             this.CelularLabel.Name = "CelularLabel";
             this.CelularLabel.Size = new System.Drawing.Size(68, 21);
             this.CelularLabel.TabIndex = 24;
@@ -179,9 +217,10 @@
             // 
             // TelefonoLabel
             // 
+            this.TelefonoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TelefonoLabel.AutoSize = true;
             this.TelefonoLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefonoLabel.Location = new System.Drawing.Point(262, 152);
+            this.TelefonoLabel.Location = new System.Drawing.Point(270, 217);
             this.TelefonoLabel.Name = "TelefonoLabel";
             this.TelefonoLabel.Size = new System.Drawing.Size(80, 21);
             this.TelefonoLabel.TabIndex = 23;
@@ -191,7 +230,7 @@
             // 
             this.CedulaLabel.AutoSize = true;
             this.CedulaLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CedulaLabel.Location = new System.Drawing.Point(3, 155);
+            this.CedulaLabel.Location = new System.Drawing.Point(11, 220);
             this.CedulaLabel.Name = "CedulaLabel";
             this.CedulaLabel.Size = new System.Drawing.Size(72, 21);
             this.CedulaLabel.TabIndex = 22;
@@ -199,9 +238,11 @@
             // 
             // NombreLabel
             // 
+            this.NombreLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NombreLabel.AutoSize = true;
             this.NombreLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreLabel.Location = new System.Drawing.Point(4, 94);
+            this.NombreLabel.Location = new System.Drawing.Point(12, 159);
             this.NombreLabel.Name = "NombreLabel";
             this.NombreLabel.Size = new System.Drawing.Size(77, 21);
             this.NombreLabel.TabIndex = 21;
@@ -211,7 +252,7 @@
             // 
             this.ClienteLabel.AutoSize = true;
             this.ClienteLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClienteLabel.Location = new System.Drawing.Point(4, 41);
+            this.ClienteLabel.Location = new System.Drawing.Point(12, 106);
             this.ClienteLabel.Name = "ClienteLabel";
             this.ClienteLabel.Size = new System.Drawing.Size(91, 21);
             this.ClienteLabel.TabIndex = 20;
@@ -219,14 +260,15 @@
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(126, 40);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(134, 105);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(65, 22);
             this.IDnumericUpDown.TabIndex = 19;
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panel2.Controls.Add(this.NuevoButton);
             this.panel2.Controls.Add(this.BorrarButton);
@@ -256,6 +298,7 @@
             // 
             // BorrarButton
             // 
+            this.BorrarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BorrarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BorrarButton.FlatAppearance.BorderSize = 0;
             this.BorrarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -274,6 +317,7 @@
             // 
             // Guardarbutton
             // 
+            this.Guardarbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Guardarbutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Guardarbutton.FlatAppearance.BorderSize = 0;
             this.Guardarbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -293,7 +337,8 @@
             // BarraTituloPanel
             // 
             this.BarraTituloPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BarraTituloPanel.Controls.Add(this.Label);
+            this.BarraTituloPanel.Controls.Add(this.MaximizarButton);
+            this.BarraTituloPanel.Controls.Add(this.RestaurarButton);
             this.BarraTituloPanel.Controls.Add(this.MinimizarButton);
             this.BarraTituloPanel.Controls.Add(this.CerrarButton);
             this.BarraTituloPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -304,23 +349,12 @@
             this.BarraTituloPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTituloPanel_Paint);
             this.BarraTituloPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloPanel_MouseDown);
             // 
-            // Label
-            // 
-            this.Label.AutoSize = true;
-            this.Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label.Location = new System.Drawing.Point(227, 8);
-            this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(68, 20);
-            this.Label.TabIndex = 47;
-            this.Label.Text = "Cliente";
-            this.Label.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label_MouseDown);
-            // 
             // MinimizarButton
             // 
             this.MinimizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MinimizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinimizarButton.Image = ((System.Drawing.Image)(resources.GetObject("MinimizarButton.Image")));
-            this.MinimizarButton.Location = new System.Drawing.Point(459, 3);
+            this.MinimizarButton.Location = new System.Drawing.Point(435, 3);
             this.MinimizarButton.Name = "MinimizarButton";
             this.MinimizarButton.Size = new System.Drawing.Size(25, 25);
             this.MinimizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -345,23 +379,45 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // label1
+            // RestaurarButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 329);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 21);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Deudas";
+            this.RestaurarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RestaurarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RestaurarButton.Image = ((System.Drawing.Image)(resources.GetObject("RestaurarButton.Image")));
+            this.RestaurarButton.Location = new System.Drawing.Point(466, 3);
+            this.RestaurarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RestaurarButton.Name = "RestaurarButton";
+            this.RestaurarButton.Size = new System.Drawing.Size(25, 25);
+            this.RestaurarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RestaurarButton.TabIndex = 48;
+            this.RestaurarButton.TabStop = false;
+            this.RestaurarButton.Visible = false;
+            this.RestaurarButton.Click += new System.EventHandler(this.RestaurarButton_Click);
             // 
-            // DeudasTextBox
+            // MaximizarButton
             // 
-            this.DeudasTextBox.Location = new System.Drawing.Point(126, 328);
-            this.DeudasTextBox.Name = "DeudasTextBox";
-            this.DeudasTextBox.ReadOnly = true;
-            this.DeudasTextBox.Size = new System.Drawing.Size(358, 22);
-            this.DeudasTextBox.TabIndex = 36;
+            this.MaximizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaximizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MaximizarButton.Image = ((System.Drawing.Image)(resources.GetObject("MaximizarButton.Image")));
+            this.MaximizarButton.Location = new System.Drawing.Point(466, 3);
+            this.MaximizarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizarButton.Name = "MaximizarButton";
+            this.MaximizarButton.Size = new System.Drawing.Size(25, 25);
+            this.MaximizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.MaximizarButton.TabIndex = 49;
+            this.MaximizarButton.TabStop = false;
+            this.MaximizarButton.Click += new System.EventHandler(this.MaximizarButton_Click);
+            // 
+            // Label
+            // 
+            this.Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Label.AutoSize = true;
+            this.Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label.Location = new System.Drawing.Point(252, 52);
+            this.Label.Name = "Label";
+            this.Label.Size = new System.Drawing.Size(68, 20);
+            this.Label.TabIndex = 48;
+            this.Label.Text = "Cliente";
             // 
             // rCliente
             // 
@@ -382,10 +438,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             this.panel2.ResumeLayout(false);
             this.BarraTituloPanel.ResumeLayout(false);
-            this.BarraTituloPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RestaurarButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaximizarButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,12 +468,14 @@
         private System.Windows.Forms.Button BorrarButton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Panel BarraTituloPanel;
-        private System.Windows.Forms.Label Label;
         private System.Windows.Forms.PictureBox MinimizarButton;
         private System.Windows.Forms.PictureBox CerrarButton;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.TextBox DeudasTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox RestaurarButton;
+        private System.Windows.Forms.PictureBox MaximizarButton;
+        private System.Windows.Forms.Label Label;
     }
 }

@@ -120,11 +120,11 @@ namespace Sistema_de_POS.UI.Registros
             cajaChica.Monto = Convert.ToSingle(MontoRTextBox.Text);
             cajaChica.Descripcion = DescripcionRTextBox.Text;
             cajaChica.Comprobante = Convert.ToInt32(ComprobanteRTextBox.Text);
-
+            
             
             using (Contexto context = new Contexto())
             {
-
+                
                 var result = (from item in context.ReposicionFondos
 
                               orderby item.Id descending
@@ -134,7 +134,7 @@ namespace Sistema_de_POS.UI.Registros
 
                 cajaChica.SaldoActual += result.SaldoActual;
             }
-
+            
             return cajaChica;
         }
 
@@ -190,7 +190,7 @@ namespace Sistema_de_POS.UI.Registros
             egresoFondos.Descripcion = DescripcionETextBox.Text;
             egresoFondos.Comprobante = Convert.ToInt32(ComprobanteETextBox.Text);
             egresoFondos.RealizadoPor = RealizadoPorTextBox.Text;
-
+            
             using (Contexto context = new Contexto())
             {
 
@@ -271,6 +271,7 @@ namespace Sistema_de_POS.UI.Registros
 
                 SaldoActualLabel.Text = Convert.ToString(result.SaldoActual);
             }
+            
         }
     }
 }

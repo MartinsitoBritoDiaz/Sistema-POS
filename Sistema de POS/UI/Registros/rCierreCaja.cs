@@ -21,6 +21,9 @@ namespace Sistema_de_POS.UI.Registros
 
         private void rCierreCaja_Load(object sender, EventArgs e)
         {
+            RepositorioBase<POS> repos = new RepositorioBase<POS>();
+            POS pos = new POS();
+
             EfectivoDGV.Rows.Add(9);
             EfectivoDGV.Rows[0].Cells[0].Value = 2000;
             EfectivoDGV.Rows[1].Cells[0].Value = 1000;
@@ -31,6 +34,12 @@ namespace Sistema_de_POS.UI.Registros
             EfectivoDGV.Rows[6].Cells[0].Value = 10;
             EfectivoDGV.Rows[7].Cells[0].Value = 5;
             EfectivoDGV.Rows[8].Cells[0].Value = 1;
+
+
+            pos = repos.Buscar(6);
+
+            DSETextBox.Text = Convert.ToString(pos.Total);
+            DSTGTextBox.Text = Convert.ToString(pos.Total);
         }
 
         int billete = 0;
@@ -46,6 +55,15 @@ namespace Sistema_de_POS.UI.Registros
 
             if (EfectivoDGV.Columns[e.ColumnIndex].Name == "ColumnaCantidad")
             {
+                string tscantidad;
+                try
+                {
+                    tscantidad = (row.Cells[1].Value.ToString());
+                }
+                catch (Exception)
+                {
+                    tscantidad = "0";
+                }
                 billete = int.Parse(row.Cells[0].Value.ToString());
                 cantidad = int.Parse(row.Cells[1].Value.ToString());
                 subtotal = billete * cantidad;
@@ -213,6 +231,7 @@ namespace Sistema_de_POS.UI.Registros
 
                 }
             }
+            TotalGeneralTextBox.Text = TotalEfectivoTextBox.Text;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -220,6 +239,26 @@ namespace Sistema_de_POS.UI.Registros
         }
 
         private void ComentarioTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CerrarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizarButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void DSETextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void DSTGTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -28,7 +28,7 @@ namespace Sistema_de_POS.UI.Registros
                 DetalledataGridView.DataSource = null;
                 DetalledataGridView.DataSource = this.Detalle;
             }
-            /*public void Limpiar()
+            public void Limpiar()
             {
                 IDnumericUpDown.Value = 0;
                 FechadateTimePicker.Value = DateTime.Now;
@@ -57,7 +57,7 @@ namespace Sistema_de_POS.UI.Registros
                 factura.TipoPago = TipoPagocomboBox.Text;
                 factura.SubTotal = Convert.ToDecimal(SubtotaltextBox.Text);
                 factura.Total = Convert.ToDecimal(TotalVentatextBox.Text);
-                factura.descuentos = Convert.ToDecimal(DescuentostextBox.Text);
+                factura.Descuento = 0;
 
                 factura.Productos = this.Detalle;
 
@@ -73,7 +73,7 @@ namespace Sistema_de_POS.UI.Registros
                 TipoPagocomboBox.Text = factura.TipoPago;
                 SubtotaltextBox.Text = Convert.ToString(factura.SubTotal);
                 TotalVentatextBox.Text = Convert.ToString(factura.Total);
-                DescuentostextBox.Text = Convert.ToString(factura.descuentos);
+                DescuentostextBox.Text = Convert.ToString(factura.Descuento);
 
                 this.Detalle = factura.Productos;
 
@@ -173,98 +173,21 @@ namespace Sistema_de_POS.UI.Registros
 
             private void Buscarbutton_Click(object sender, EventArgs e)
             {
-                int id;
-                int.TryParse(IDnumericUpDown.Text, out id);
-
-                Factura factura = new Factura();
-                RepositorioBase<Factura> repositorio = new RepositorioBase<Factura>();
-
-                factura = repositorio.Buscar(id);
-                Limpiar();
-
-                if (factura == null)
-                {
-                    MessageBox.Show("No encontrado");
-                }
-                else
-                {
-                    LlenarCampo(factura);
-                }
             }
 
             private void Agregarbutton_Click(object sender, EventArgs e)
             {
-                if (DetalledataGridView.DataSource != null)
-                    this.Detalle = (List<DetalleProducto>)DetalledataGridView.DataSource;
-
-            this.Detalle.Add(
-                new DetalleProducto(
-                    id:0,
-                    facturaid: Convert.ToInt32(IDnumericUpDown.Value),
-                    cantidad: Convert.ToInt32(CantidadnumericUpDown.Value),
-                    unidad: UnidadComboBox.Text,
-                    descripcion: DescripcionTextBox.Text,
-                    precioUnitario: Convert.ToDecimal(PrecioUnitariotextBox.Text),
-                    importe: (Convert.ToDecimal(PrecioUnitariotextBox.Text)*Convert.ToDecimal(CantidadnumericUpDown.Value))
-                    )
-
-                );
                 
-                CargarGrid();
             }
 
         private void Guardarbutton_Click_1(object sender, EventArgs e)
         {
 
-            bool paso = false;
-            Factura factura = new Factura();
-            RepositorioBase<Factura> repositorio = new RepositorioBase<Factura>();
-            FacturacionRepositorio f = new FacturacionRepositorio();
-
-            if (!Validar())
-                return;
-
-            factura = LlenarClase();
-
-            if (IDnumericUpDown.Value == 0)
-                paso = repositorio.Guardar(factura);
-            else
-            {
-                if (!ExisteEnLaBaseDeDatos())
-                {
-                    MessageBox.Show("No existe en la base de datos");
-                    return;
-                }
-                f.Modificar(factura);
-            }
-            if (paso)
-            {
-                MessageBox.Show("Guardado");
-            }
-            else
-            {
-                MessageBox.Show("No fue posible guardar");
-            }
         }
 
         private void Eliminarbutton_Click_1(object sender, EventArgs e)
         {
-            MyErrorProvider.Clear();
-
-            RepositorioBase<Factura> repositorio = new RepositorioBase<Factura>();
-            int id;
-            int.TryParse(IDnumericUpDown.Text, out id);
-
-            Limpiar();
-
-            if (repositorio.Eliminar(id))
-            {
-                MessageBox.Show("Eliminado");
-            }
-            else
-            {
-                MessageBox.Show("No se pudo eliminar");
-            }
+            
         }
 
         private void Nuevobutton_Click_1(object sender, EventArgs e)
@@ -291,7 +214,7 @@ namespace Sistema_de_POS.UI.Registros
             {
                 LlenarCampo(factura);
             }
-        }*/
+        }
 
         private void PrecioUnitariotextBox_TextChanged(object sender, EventArgs e)
         {
@@ -332,9 +255,112 @@ namespace Sistema_de_POS.UI.Registros
 
         }
 
-        private void Nuevobutton_Click(object sender, EventArgs e)
+
+        private void Nuevobutton_Click_2(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void Guardarbutton_Click_2(object sender, EventArgs e)
         {
 
+            bool paso = false;
+            Factura factura = new Factura();
+            RepositorioBase<Factura> repositorio = new RepositorioBase<Factura>();
+            FacturacionRepositorio f = new FacturacionRepositorio();
+
+            if (!Validar())
+                return;
+
+            factura = LlenarClase();
+
+            if (IDnumericUpDown.Value == 0)
+                paso = repositorio.Guardar(factura);
+            else
+            {
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("No existe en la base de datos");
+                    return;
+                }
+                f.Modificar(factura);
+            }
+            if (paso)
+            {
+                MessageBox.Show("Guardado");
+            }
+            else
+            {
+                MessageBox.Show("No fue posible guardar");
+            }
+        }
+
+        private void Eliminarbutton_Click_2(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+
+            RepositorioBase<Factura> repositorio = new RepositorioBase<Factura>();
+            int id;
+            int.TryParse(IDnumericUpDown.Text, out id);
+
+            Limpiar();
+
+            if (repositorio.Eliminar(id))
+            {
+                MessageBox.Show("Eliminado");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo eliminar");
+            }
+        }
+
+        private void RemoverButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Buscarbutton_Click_2(object sender, EventArgs e)
+        {
+
+            int id;
+            int.TryParse(IDnumericUpDown.Text, out id);
+
+            Factura factura = new Factura();
+            RepositorioBase<Factura> repositorio = new RepositorioBase<Factura>();
+
+            factura = repositorio.Buscar(id);
+            Limpiar();
+
+            if (factura == null)
+            {
+                MessageBox.Show("No encontrado");
+            }
+            else
+            {
+                LlenarCampo(factura);
+            }
+        }
+
+        private void Agregarbutton_Click_1(object sender, EventArgs e)
+        {
+            if (DetalledataGridView.DataSource != null)
+                this.Detalle = (List<DetalleProducto>)DetalledataGridView.DataSource;
+
+            this.Detalle.Add(
+                new DetalleProducto(
+                    id: 0,
+                    facturaid: Convert.ToInt32(IDnumericUpDown.Value),
+                    cantidad: Convert.ToInt32(CantidadnumericUpDown.Value),
+                    unidad: UnidadComboBox.Text,
+                    descripcion: DescripcionTextBox.Text,
+                    precioUnitario: Convert.ToDecimal(PrecioUnitariotextBox.Text),
+                    importe: (Convert.ToDecimal(PrecioUnitariotextBox.Text) * Convert.ToDecimal(CantidadnumericUpDown.Value))
+                    )
+
+                );
+
+            CargarGrid();
         }
     }
     }

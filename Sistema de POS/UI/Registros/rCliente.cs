@@ -89,7 +89,7 @@ namespace Sistema_de_POS.UI.Registros
             CelularMaskedTextBox.Text = cliente.Celular;
             DireccionTextBox.Text = cliente.Direccion;
             FechaDateTimePicker.Value = cliente.Fecha;
-            DeudasTextBox.Text = Convert.ToString(cliente.Deudas);
+            DeudasTextBox.Text = Convert.ToString("0");
         }
 
         private Cliente LlenaClase()
@@ -102,7 +102,6 @@ namespace Sistema_de_POS.UI.Registros
             cliente.Celular = CelularMaskedTextBox.Text;
             cliente.Direccion = DireccionTextBox.Text;
             cliente.Fecha = FechaDateTimePicker.Value;
-            cliente.Deudas = Convert.ToDouble(DeudasTextBox.Text);
 
             return cliente;
         }
@@ -240,5 +239,18 @@ namespace Sistema_de_POS.UI.Registros
             }
         }
 
+        private void RestaurarButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            RestaurarButton.Visible = false;
+            MaximizarButton.Visible = true;
+        }
+
+        private void MaximizarButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            RestaurarButton.Visible = true;
+            MaximizarButton.Visible = false;
+        }
     }
 }

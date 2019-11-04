@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.CajaChicaButton = new System.Windows.Forms.Button();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.POSButton = new System.Windows.Forms.Button();
@@ -47,7 +49,10 @@
             this.MaximizarButton = new System.Windows.Forms.PictureBox();
             this.CerrarButton = new System.Windows.Forms.PictureBox();
             this.SlideButton = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RegistrosButton = new System.Windows.Forms.Button();
+            this.RegistrosPanel = new System.Windows.Forms.Panel();
+            this.ConsultasButton = new System.Windows.Forms.Button();
+            this.ConsultasPanel = new System.Windows.Forms.Panel();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoHomePictureBox)).BeginInit();
@@ -59,27 +64,65 @@
             ((System.ComponentModel.ISupportInitialize)(this.MaximizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SlideButton)).BeginInit();
+            this.RegistrosPanel.SuspendLayout();
+            this.ConsultasPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.MenuVertical.Controls.Add(this.button1);
-            this.MenuVertical.Controls.Add(this.CajaChicaButton);
+            this.MenuVertical.Controls.Add(this.ConsultasPanel);
+            this.MenuVertical.Controls.Add(this.RegistrosButton);
             this.MenuVertical.Controls.Add(this.LogoPictureBox);
-            this.MenuVertical.Controls.Add(this.POSButton);
-            this.MenuVertical.Controls.Add(this.ClienteButton);
+            this.MenuVertical.Controls.Add(this.ConsultasButton);
+            this.MenuVertical.Controls.Add(this.RegistrosPanel);
             this.MenuVertical.Controls.Add(this.IconoHomePictureBox);
             this.MenuVertical.Controls.Add(this.HomeButton);
-            this.MenuVertical.Controls.Add(this.FacturacionButton);
-            this.MenuVertical.Controls.Add(this.ConsultasPOSButton);
-            this.MenuVertical.Controls.Add(this.VentasButton);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
-            this.MenuVertical.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuVertical.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(188, 640);
+            this.MenuVertical.Size = new System.Drawing.Size(251, 698);
             this.MenuVertical.TabIndex = 0;
+            this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 215);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(251, 39);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Cierre Caja";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(-3, 172);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(251, 39);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Apertura Caja";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CajaChicaButton
             // 
@@ -87,14 +130,14 @@
             this.CajaChicaButton.FlatAppearance.BorderSize = 0;
             this.CajaChicaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.CajaChicaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CajaChicaButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CajaChicaButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CajaChicaButton.ForeColor = System.Drawing.Color.White;
             this.CajaChicaButton.Image = ((System.Drawing.Image)(resources.GetObject("CajaChicaButton.Image")));
             this.CajaChicaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CajaChicaButton.Location = new System.Drawing.Point(2, 258);
-            this.CajaChicaButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CajaChicaButton.Location = new System.Drawing.Point(0, 129);
+            this.CajaChicaButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CajaChicaButton.Name = "CajaChicaButton";
-            this.CajaChicaButton.Size = new System.Drawing.Size(186, 43);
+            this.CajaChicaButton.Size = new System.Drawing.Size(251, 39);
             this.CajaChicaButton.TabIndex = 9;
             this.CajaChicaButton.Text = "Caja chica";
             this.CajaChicaButton.UseVisualStyleBackColor = true;
@@ -103,10 +146,10 @@
             // LogoPictureBox
             // 
             this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
-            this.LogoPictureBox.Location = new System.Drawing.Point(52, 8);
-            this.LogoPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.LogoPictureBox.Location = new System.Drawing.Point(69, 10);
+            this.LogoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(105, 40);
+            this.LogoPictureBox.Size = new System.Drawing.Size(140, 49);
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoPictureBox.TabIndex = 8;
             this.LogoPictureBox.TabStop = false;
@@ -117,14 +160,14 @@
             this.POSButton.FlatAppearance.BorderSize = 0;
             this.POSButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.POSButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.POSButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.POSButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.POSButton.ForeColor = System.Drawing.Color.White;
             this.POSButton.Image = ((System.Drawing.Image)(resources.GetObject("POSButton.Image")));
             this.POSButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.POSButton.Location = new System.Drawing.Point(0, 163);
-            this.POSButton.Margin = new System.Windows.Forms.Padding(2);
+            this.POSButton.Location = new System.Drawing.Point(0, 43);
+            this.POSButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.POSButton.Name = "POSButton";
-            this.POSButton.Size = new System.Drawing.Size(188, 32);
+            this.POSButton.Size = new System.Drawing.Size(251, 39);
             this.POSButton.TabIndex = 7;
             this.POSButton.Text = "POS";
             this.POSButton.UseVisualStyleBackColor = true;
@@ -136,14 +179,14 @@
             this.ClienteButton.FlatAppearance.BorderSize = 0;
             this.ClienteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClienteButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClienteButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClienteButton.ForeColor = System.Drawing.Color.White;
             this.ClienteButton.Image = ((System.Drawing.Image)(resources.GetObject("ClienteButton.Image")));
             this.ClienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ClienteButton.Location = new System.Drawing.Point(0, 115);
-            this.ClienteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ClienteButton.Location = new System.Drawing.Point(0, 0);
+            this.ClienteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClienteButton.Name = "ClienteButton";
-            this.ClienteButton.Size = new System.Drawing.Size(188, 32);
+            this.ClienteButton.Size = new System.Drawing.Size(251, 39);
             this.ClienteButton.TabIndex = 6;
             this.ClienteButton.Text = "Cliente";
             this.ClienteButton.UseVisualStyleBackColor = true;
@@ -153,10 +196,10 @@
             // 
             this.IconoHomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("IconoHomePictureBox.Image")));
             this.IconoHomePictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("IconoHomePictureBox.InitialImage")));
-            this.IconoHomePictureBox.Location = new System.Drawing.Point(4, 8);
-            this.IconoHomePictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.IconoHomePictureBox.Location = new System.Drawing.Point(5, 10);
+            this.IconoHomePictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IconoHomePictureBox.Name = "IconoHomePictureBox";
-            this.IconoHomePictureBox.Size = new System.Drawing.Size(44, 39);
+            this.IconoHomePictureBox.Size = new System.Drawing.Size(59, 48);
             this.IconoHomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.IconoHomePictureBox.TabIndex = 4;
             this.IconoHomePictureBox.TabStop = false;
@@ -172,10 +215,10 @@
             this.HomeButton.ForeColor = System.Drawing.Color.White;
             this.HomeButton.Image = ((System.Drawing.Image)(resources.GetObject("HomeButton.Image")));
             this.HomeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HomeButton.Location = new System.Drawing.Point(0, 609);
-            this.HomeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.HomeButton.Location = new System.Drawing.Point(0, 660);
+            this.HomeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(188, 32);
+            this.HomeButton.Size = new System.Drawing.Size(251, 39);
             this.HomeButton.TabIndex = 3;
             this.HomeButton.Text = "Ayuda";
             this.HomeButton.UseVisualStyleBackColor = true;
@@ -186,14 +229,14 @@
             this.FacturacionButton.FlatAppearance.BorderSize = 0;
             this.FacturacionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.FacturacionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FacturacionButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FacturacionButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacturacionButton.ForeColor = System.Drawing.Color.White;
             this.FacturacionButton.Image = ((System.Drawing.Image)(resources.GetObject("FacturacionButton.Image")));
             this.FacturacionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.FacturacionButton.Location = new System.Drawing.Point(0, 210);
-            this.FacturacionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.FacturacionButton.Location = new System.Drawing.Point(-3, 86);
+            this.FacturacionButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FacturacionButton.Name = "FacturacionButton";
-            this.FacturacionButton.Size = new System.Drawing.Size(184, 32);
+            this.FacturacionButton.Size = new System.Drawing.Size(251, 39);
             this.FacturacionButton.TabIndex = 2;
             this.FacturacionButton.Text = "       Facturacion";
             this.FacturacionButton.UseVisualStyleBackColor = true;
@@ -209,10 +252,10 @@
             this.ConsultasPOSButton.ForeColor = System.Drawing.Color.White;
             this.ConsultasPOSButton.Image = ((System.Drawing.Image)(resources.GetObject("ConsultasPOSButton.Image")));
             this.ConsultasPOSButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultasPOSButton.Location = new System.Drawing.Point(2, 370);
-            this.ConsultasPOSButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ConsultasPOSButton.Location = new System.Drawing.Point(-3, 45);
+            this.ConsultasPOSButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ConsultasPOSButton.Name = "ConsultasPOSButton";
-            this.ConsultasPOSButton.Size = new System.Drawing.Size(188, 32);
+            this.ConsultasPOSButton.Size = new System.Drawing.Size(251, 39);
             this.ConsultasPOSButton.TabIndex = 1;
             this.ConsultasPOSButton.Text = "Consultas  POS";
             this.ConsultasPOSButton.UseVisualStyleBackColor = true;
@@ -228,10 +271,10 @@
             this.VentasButton.ForeColor = System.Drawing.Color.White;
             this.VentasButton.Image = ((System.Drawing.Image)(resources.GetObject("VentasButton.Image")));
             this.VentasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.VentasButton.Location = new System.Drawing.Point(0, 316);
-            this.VentasButton.Margin = new System.Windows.Forms.Padding(2);
+            this.VentasButton.Location = new System.Drawing.Point(-3, 2);
+            this.VentasButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VentasButton.Name = "VentasButton";
-            this.VentasButton.Size = new System.Drawing.Size(188, 32);
+            this.VentasButton.Size = new System.Drawing.Size(251, 39);
             this.VentasButton.TabIndex = 0;
             this.VentasButton.Text = "Consulta F.";
             this.VentasButton.UseVisualStyleBackColor = true;
@@ -242,10 +285,10 @@
             this.ContenedorPanel.BackColor = System.Drawing.SystemColors.Window;
             this.ContenedorPanel.Controls.Add(this.VersionPictureBox);
             this.ContenedorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContenedorPanel.Location = new System.Drawing.Point(188, 47);
-            this.ContenedorPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.ContenedorPanel.Location = new System.Drawing.Point(251, 50);
+            this.ContenedorPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ContenedorPanel.Name = "ContenedorPanel";
-            this.ContenedorPanel.Size = new System.Drawing.Size(787, 593);
+            this.ContenedorPanel.Size = new System.Drawing.Size(949, 648);
             this.ContenedorPanel.TabIndex = 2;
             this.ContenedorPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ContenedorPanel_Paint);
             // 
@@ -253,10 +296,10 @@
             // 
             this.VersionPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.VersionPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("VersionPictureBox.Image")));
-            this.VersionPictureBox.Location = new System.Drawing.Point(576, 517);
-            this.VersionPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.VersionPictureBox.Location = new System.Drawing.Point(668, 554);
+            this.VersionPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VersionPictureBox.Name = "VersionPictureBox";
-            this.VersionPictureBox.Size = new System.Drawing.Size(290, 76);
+            this.VersionPictureBox.Size = new System.Drawing.Size(387, 94);
             this.VersionPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.VersionPictureBox.TabIndex = 0;
             this.VersionPictureBox.TabStop = false;
@@ -270,10 +313,10 @@
             this.BarraTituloPanel.Controls.Add(this.CerrarButton);
             this.BarraTituloPanel.Controls.Add(this.SlideButton);
             this.BarraTituloPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraTituloPanel.Location = new System.Drawing.Point(188, 0);
-            this.BarraTituloPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.BarraTituloPanel.Location = new System.Drawing.Point(251, 0);
+            this.BarraTituloPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BarraTituloPanel.Name = "BarraTituloPanel";
-            this.BarraTituloPanel.Size = new System.Drawing.Size(787, 47);
+            this.BarraTituloPanel.Size = new System.Drawing.Size(949, 50);
             this.BarraTituloPanel.TabIndex = 1;
             this.BarraTituloPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTituloPanel_Paint);
             this.BarraTituloPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloPanel_MouseDown);
@@ -283,10 +326,10 @@
             this.MinimizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MinimizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinimizarButton.Image = ((System.Drawing.Image)(resources.GetObject("MinimizarButton.Image")));
-            this.MinimizarButton.Location = new System.Drawing.Point(717, 2);
-            this.MinimizarButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimizarButton.Location = new System.Drawing.Point(856, 2);
+            this.MinimizarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimizarButton.Name = "MinimizarButton";
-            this.MinimizarButton.Size = new System.Drawing.Size(19, 20);
+            this.MinimizarButton.Size = new System.Drawing.Size(25, 25);
             this.MinimizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.MinimizarButton.TabIndex = 4;
             this.MinimizarButton.TabStop = false;
@@ -297,10 +340,10 @@
             this.RestaurarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RestaurarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RestaurarButton.Image = ((System.Drawing.Image)(resources.GetObject("RestaurarButton.Image")));
-            this.RestaurarButton.Location = new System.Drawing.Point(741, 2);
-            this.RestaurarButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RestaurarButton.Location = new System.Drawing.Point(813, 2);
+            this.RestaurarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RestaurarButton.Name = "RestaurarButton";
-            this.RestaurarButton.Size = new System.Drawing.Size(19, 20);
+            this.RestaurarButton.Size = new System.Drawing.Size(25, 25);
             this.RestaurarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RestaurarButton.TabIndex = 3;
             this.RestaurarButton.TabStop = false;
@@ -312,10 +355,10 @@
             this.MaximizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MaximizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MaximizarButton.Image = ((System.Drawing.Image)(resources.GetObject("MaximizarButton.Image")));
-            this.MaximizarButton.Location = new System.Drawing.Point(741, 2);
-            this.MaximizarButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizarButton.Location = new System.Drawing.Point(888, 2);
+            this.MaximizarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizarButton.Name = "MaximizarButton";
-            this.MaximizarButton.Size = new System.Drawing.Size(19, 20);
+            this.MaximizarButton.Size = new System.Drawing.Size(25, 25);
             this.MaximizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.MaximizarButton.TabIndex = 2;
             this.MaximizarButton.TabStop = false;
@@ -326,10 +369,10 @@
             this.CerrarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CerrarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CerrarButton.Image = ((System.Drawing.Image)(resources.GetObject("CerrarButton.Image")));
-            this.CerrarButton.Location = new System.Drawing.Point(764, 2);
-            this.CerrarButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CerrarButton.Location = new System.Drawing.Point(919, 2);
+            this.CerrarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CerrarButton.Name = "CerrarButton";
-            this.CerrarButton.Size = new System.Drawing.Size(19, 20);
+            this.CerrarButton.Size = new System.Drawing.Size(25, 25);
             this.CerrarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CerrarButton.TabIndex = 1;
             this.CerrarButton.TabStop = false;
@@ -339,44 +382,87 @@
             // 
             this.SlideButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SlideButton.Image = ((System.Drawing.Image)(resources.GetObject("SlideButton.Image")));
-            this.SlideButton.Location = new System.Drawing.Point(4, 7);
-            this.SlideButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SlideButton.Location = new System.Drawing.Point(5, 9);
+            this.SlideButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SlideButton.Name = "SlideButton";
-            this.SlideButton.Size = new System.Drawing.Size(26, 28);
+            this.SlideButton.Size = new System.Drawing.Size(35, 34);
             this.SlideButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.SlideButton.TabIndex = 0;
             this.SlideButton.TabStop = false;
             this.SlideButton.Click += new System.EventHandler(this.SlideButton_Click);
             // 
-            // button1
+            // RegistrosButton
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-2, 459);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 32);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "AperturaCaja";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.RegistrosButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RegistrosButton.FlatAppearance.BorderSize = 0;
+            this.RegistrosButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.RegistrosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegistrosButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistrosButton.ForeColor = System.Drawing.Color.White;
+            this.RegistrosButton.Image = ((System.Drawing.Image)(resources.GetObject("RegistrosButton.Image")));
+            this.RegistrosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegistrosButton.Location = new System.Drawing.Point(-3, 127);
+            this.RegistrosButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RegistrosButton.Name = "RegistrosButton";
+            this.RegistrosButton.Size = new System.Drawing.Size(259, 39);
+            this.RegistrosButton.TabIndex = 12;
+            this.RegistrosButton.Text = "Registros";
+            this.RegistrosButton.UseVisualStyleBackColor = true;
+            this.RegistrosButton.Click += new System.EventHandler(this.RegistrosButton_Click);
+            // 
+            // RegistrosPanel
+            // 
+            this.RegistrosPanel.BackColor = System.Drawing.Color.Gray;
+            this.RegistrosPanel.Controls.Add(this.ClienteButton);
+            this.RegistrosPanel.Controls.Add(this.button2);
+            this.RegistrosPanel.Controls.Add(this.POSButton);
+            this.RegistrosPanel.Controls.Add(this.button1);
+            this.RegistrosPanel.Controls.Add(this.FacturacionButton);
+            this.RegistrosPanel.Controls.Add(this.CajaChicaButton);
+            this.RegistrosPanel.Location = new System.Drawing.Point(0, 171);
+            this.RegistrosPanel.Name = "RegistrosPanel";
+            this.RegistrosPanel.Size = new System.Drawing.Size(251, 258);
+            this.RegistrosPanel.TabIndex = 1;
+            // 
+            // ConsultasButton
+            // 
+            this.ConsultasButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConsultasButton.FlatAppearance.BorderSize = 0;
+            this.ConsultasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.ConsultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConsultasButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultasButton.ForeColor = System.Drawing.Color.White;
+            this.ConsultasButton.Image = ((System.Drawing.Image)(resources.GetObject("ConsultasButton.Image")));
+            this.ConsultasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConsultasButton.Location = new System.Drawing.Point(0, 429);
+            this.ConsultasButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ConsultasButton.Name = "ConsultasButton";
+            this.ConsultasButton.Size = new System.Drawing.Size(251, 39);
+            this.ConsultasButton.TabIndex = 13;
+            this.ConsultasButton.Text = "Consultas";
+            this.ConsultasButton.UseVisualStyleBackColor = true;
+            this.ConsultasButton.Click += new System.EventHandler(this.ConsultasButton_Click);
+            // 
+            // ConsultasPanel
+            // 
+            this.ConsultasPanel.BackColor = System.Drawing.Color.Gray;
+            this.ConsultasPanel.Controls.Add(this.VentasButton);
+            this.ConsultasPanel.Controls.Add(this.ConsultasPOSButton);
+            this.ConsultasPanel.Location = new System.Drawing.Point(0, 473);
+            this.ConsultasPanel.Name = "ConsultasPanel";
+            this.ConsultasPanel.Size = new System.Drawing.Size(250, 87);
+            this.ConsultasPanel.TabIndex = 14;
             // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 640);
+            this.ClientSize = new System.Drawing.Size(1200, 698);
             this.Controls.Add(this.ContenedorPanel);
             this.Controls.Add(this.BarraTituloPanel);
             this.Controls.Add(this.MenuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MenuForm";
             this.Text = "Sistema POS";
             this.MenuVertical.ResumeLayout(false);
@@ -390,6 +476,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MaximizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SlideButton)).EndInit();
+            this.RegistrosPanel.ResumeLayout(false);
+            this.ConsultasPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -415,6 +503,11 @@
         private System.Windows.Forms.PictureBox VersionPictureBox;
         private System.Windows.Forms.Button CajaChicaButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button RegistrosButton;
+        private System.Windows.Forms.Panel RegistrosPanel;
+        private System.Windows.Forms.Button ConsultasButton;
+        private System.Windows.Forms.Panel ConsultasPanel;
     }
 }
 

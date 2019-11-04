@@ -193,5 +193,15 @@ namespace Sistema_de_POS.UI.Registros
                 LlenarCampo(apertura);
             }
         }
+
+        private void CerrarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizarButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

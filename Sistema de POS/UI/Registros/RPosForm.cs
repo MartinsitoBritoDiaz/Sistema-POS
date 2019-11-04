@@ -571,8 +571,14 @@ namespace Sistema_de_POS.UI.Registros
 
         private void BarraTituloPanel_MouseDown(object sender, MouseEventArgs e)
         {
+            
+        }
+
+        private void BarraTituloPanel_MouseDown_1(object sender, MouseEventArgs e)
+        {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+
         }
     }
 }

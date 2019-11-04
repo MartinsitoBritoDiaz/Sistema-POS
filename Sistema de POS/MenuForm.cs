@@ -98,7 +98,7 @@ namespace Sistema_de_POS
         }
         private void CajaChicaButton_Click(object sender, EventArgs e)
         {
-            rFacturacion registro = new rFacturacion();
+            RegistroFacturacion registro = new RegistroFacturacion();
             registro.Show();
         }
 
@@ -129,6 +129,71 @@ namespace Sistema_de_POS
         {
             rAperturaCaja rAperturaCaja = new rAperturaCaja();
             rAperturaCaja.Show();
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            rCierreCaja registro = new rCierreCaja();
+            registro.Show();
+        }
+
+        private void MenuVertical_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void RegistrosButton_Click(object sender, EventArgs e)
+        {
+            if (RegistrosPanel.Height == 214)
+            {
+                RegistrosPanel.Height = 0;
+                ConsultasButton.Location = new Point(0, 135);
+                ConsultasPanel.Location = new Point(0, 170);
+            }
+            else
+            {
+                ConsultasButton.Location = new Point(0, 345);
+                ConsultasPanel.Location = new Point(0, 380);
+                RegistrosPanel.Height = 214;
+            }
+        }
+
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ConsultasButton_Click(object sender, EventArgs e)
+        {
+            if (RegistrosPanel.Height == 214)
+            {
+                if (ConsultasPanel.Height == 72)
+                {
+                    ConsultasPanel.Location = new Point(0, 380);
+                    ConsultasPanel.Height = 0;
+                }
+                else
+                {
+                    ConsultasPanel.Location = new Point(0, 380);
+                    ConsultasPanel.Height = 72;
+                }
+            }
+            else
+            {
+                if (ConsultasPanel.Height == 72)
+                {
+                    ConsultasPanel.Location = new Point(0, 170);
+                    ConsultasPanel.Height = 0;
+                }
+                else
+                {
+                    ConsultasPanel.Location = new Point(0, 170);
+                    ConsultasPanel.Height = 72;
+                }
+            }
+
+            
         }
     }
 }

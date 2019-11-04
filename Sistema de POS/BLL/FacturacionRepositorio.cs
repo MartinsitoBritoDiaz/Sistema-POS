@@ -27,15 +27,15 @@ namespace SistemaPOS.BLL
         
             return base.Modificar(factura);
         }
-
+        /*
         public override bool Guardar(Factura factura)
         {
             ClienteRepositorio repositorio = new ClienteRepositorio();
-
+            /*
             repositorio.ModificarDeudas(factura.ClienteId, factura.Deuda);
-
+            
             return base.Guardar(factura);
-        }
+        }*/
     }
 
 

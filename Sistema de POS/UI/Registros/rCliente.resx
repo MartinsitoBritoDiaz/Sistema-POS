@@ -199,4 +199,28 @@
   <metadata name="MyErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="RestaurarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAZtJREFUaEPt
+        mVFKw0AYhHOUJtdR8VBS8AAaT1PrVTxCk/iq7i8TCOtkd7qR3Qj7wUehMLOzoX1pm0qlUtk3h6fhvu3H
+        t7afJvf6lcefs87t83CHGWl0/fT4uzy7R8y5Djx5Vpjd7mW4xSwdF3QfG16Y264fXzFLxwVHv6igA2bp
+        kJKiYpYOKwn5/vH5J7JuE7N0WElINiZF1m1ilg4rCcnGpMi6TczSYSUh2ZgUWbeJWTqsJCQbkyLrNjFL
+        h5WEjA2IWS/gw0pC/psLzAetyTKKsTxm6bASczmWyTKKsTxm6bASczmWyTKKsTxm6bASczmWyTKKsTxm
+        6bASczmWyTKKsTxm6bASc+2g2ICYsTxm6bASc+2g+f2t+r2zmKXDSsy1g5Yjtuj3zmKWDisxYwfFTM1j
+        lg4rMesF6gVEWIlZL7CXC2yVdYfELB1WYrIxKbLukJilw0pKilk6LrSnnxYvmKXjQmevpJiHfjxhlo79
+        ucDKStj1lxvMug4XPvplBXzAnDTszwX7fd4V5fxOjPaxSX7ylUqlkomm+Qa1gnrlJop7WQAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="MaximizarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAVdJREFUaEPt
+        mUFOw0AQBP2U2N8BxKNQJB4Ay2sg+QpPiNdcgTXqw8i0lY432slhSir5tD09ln2xuyAIgttm9zI+9ikf
+        +zRN5frTxr9Zh/51fECNbQxpev4f3tw96lwG7jwLbO7wNt6jlk45WB4bHtjaIeUP1NIpB/MyyNERtXRI
+        iKuopcNCPEUtHRbiKWrpsBBPUUuHhXiKWjosxFPU0mEh1s+v76vKZlhRS4eFWFmJGtkMK2rpsBArK1Ej
+        m2FFLR0WYmUlamQzrKilw0KsrESNbIYVtXRYiFUdfM5YYA0WYo0FYCywBguxxgIwFliDhVhjAei+wLVk
+        M6yopcNCrKxEjWyGFbV0WIinqKXDQjxFLR0W4ilq6ZRDt/Rp8YRaOuXQYRHi5i7ld9TSmX8usDAPh3S6
+        Q63LKIf3yzAHn1BnG/PPhfn7fAlq+U7k+bHZfOeDIAga0XW/O5QgGWKB+PEAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

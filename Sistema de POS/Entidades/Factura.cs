@@ -17,12 +17,13 @@ namespace SistemaPOS.Entidades
         public string Cliente { get; set; }
         public string Condicion { get; set; }
         public string TipoPago { get; set; }
-        public double SubTotal { get; set; }
-        public double Descuento { get; set; }
-        public double Total { get; set; }
-        public double Pago { get; set; }
-        public double Deuda { get; set; }
-        public double ITBIS { get; set; }
+        public decimal SubTotal { get; set; }
+        public decimal Descuento { get; set; }
+        public decimal Total { get; set; }/*
+        public decimal Pago { get; set; }
+        public decimal Deuda { get; set; }
+        */
+        public decimal ITBIS { get; set; }
         public virtual List<DetalleProducto> Productos { get; set; }
 
         public Factura()
@@ -35,9 +36,9 @@ namespace SistemaPOS.Entidades
             TipoPago = string.Empty;
             SubTotal = 0;
             Descuento = 0;
-            Total = 0;
+            Total = 0;/*
             Pago = 0;
-            Deuda = 0;
+            Deuda = 0;*/
             ITBIS = 0;
             Productos = new List<DetalleProducto>();
         }
