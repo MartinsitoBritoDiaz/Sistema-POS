@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RPosForm));
             this.Panel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CajeroTextBox = new System.Windows.Forms.TextBox();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -93,12 +98,8 @@
             this.CerrarButton = new System.Windows.Forms.PictureBox();
             this.MinimizarButton = new System.Windows.Forms.PictureBox();
             this.BarraTituloPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.CajeroTextBox = new System.Windows.Forms.TextBox();
-            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             this.HerramientasgroupBox.SuspendLayout();
@@ -109,7 +110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
             this.BarraTituloPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel
@@ -174,6 +174,59 @@
             this.Panel.Name = "Panel";
             this.Panel.Size = new System.Drawing.Size(1390, 838);
             this.Panel.TabIndex = 3;
+            this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(456, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(467, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 78;
+            this.pictureBox1.TabStop = false;
+            // 
+            // CajeroTextBox
+            // 
+            this.CajeroTextBox.Location = new System.Drawing.Point(104, 53);
+            this.CajeroTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.CajeroTextBox.Name = "CajeroTextBox";
+            this.CajeroTextBox.Size = new System.Drawing.Size(188, 22);
+            this.CajeroTextBox.TabIndex = 77;
+            this.CajeroTextBox.Visible = false;
+            // 
+            // FechaDateTimePicker
+            // 
+            this.FechaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(1239, 49);
+            this.FechaDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.FechaDateTimePicker.MinDate = new System.DateTime(2019, 10, 26, 0, 0, 0, 0);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(139, 28);
+            this.FechaDateTimePicker.TabIndex = 76;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1143, 53);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 24);
+            this.label6.TabIndex = 75;
+            this.label6.Text = "Fecha";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(34, 53);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 17);
+            this.label5.TabIndex = 74;
+            this.label5.Text = "Cajero";
+            this.label5.Visible = false;
             // 
             // pictureBox2
             // 
@@ -874,58 +927,6 @@
             this.BarraTituloPanel.TabIndex = 55;
             this.BarraTituloPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTituloPanel_Paint);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(456, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(467, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 78;
-            this.pictureBox1.TabStop = false;
-            // 
-            // CajeroTextBox
-            // 
-            this.CajeroTextBox.Location = new System.Drawing.Point(104, 53);
-            this.CajeroTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.CajeroTextBox.Name = "CajeroTextBox";
-            this.CajeroTextBox.Size = new System.Drawing.Size(188, 22);
-            this.CajeroTextBox.TabIndex = 77;
-            this.CajeroTextBox.Visible = false;
-            // 
-            // FechaDateTimePicker
-            // 
-            this.FechaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaDateTimePicker.Location = new System.Drawing.Point(1239, 49);
-            this.FechaDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
-            this.FechaDateTimePicker.MinDate = new System.DateTime(2019, 10, 26, 0, 0, 0, 0);
-            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
-            this.FechaDateTimePicker.Size = new System.Drawing.Size(139, 28);
-            this.FechaDateTimePicker.TabIndex = 76;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1143, 53);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 24);
-            this.label6.TabIndex = 75;
-            this.label6.Text = "Fecha";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 53);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 17);
-            this.label5.TabIndex = 74;
-            this.label5.Text = "Cajero";
-            this.label5.Visible = false;
-            // 
             // RPosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -941,6 +942,7 @@
             this.Load += new System.EventHandler(this.RPosForm_Load);
             this.Panel.ResumeLayout(false);
             this.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             this.HerramientasgroupBox.ResumeLayout(false);
@@ -952,7 +954,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).EndInit();
             this.BarraTituloPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

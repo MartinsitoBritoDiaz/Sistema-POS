@@ -74,8 +74,7 @@ namespace Sistema_de_POS
 
         private void VentasButton_Click(object sender, EventArgs e)
         {
-            RegistroFacturacion registro = new RegistroFacturacion();
-            registro.Show();
+         
         }
 
         private void FacturacionButton_Click(object sender, EventArgs e)
@@ -98,7 +97,7 @@ namespace Sistema_de_POS
         }
         private void CajaChicaButton_Click(object sender, EventArgs e)
         {
-            RegistroFacturacion registro = new RegistroFacturacion();
+            rFacturacion registro = new rFacturacion();
             registro.Show();
         }
 

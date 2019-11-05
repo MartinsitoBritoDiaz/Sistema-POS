@@ -48,11 +48,12 @@
     <Compile Include="Entidades\Cierre.cs" />
     <Compile Include="Entidades\CajaChica.cs" />
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\DetalleProducto.cs" />
     <Compile Include="Entidades\DetalleProductoPOS.cs" />
     <Compile Include="Entidades\EgresoFondos.cs" />
     <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\POS.cs" />
-    <Compile Include="Entidades\DetalleProducto.cs" />
+    <Compile Include="Entidades\DetalleProductosss.cs" />
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,12 +118,6 @@
     <Compile Include="UI\Registros\rFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\RegistroFacturacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Registros\RegistroFacturacion.Designer.cs">
-      <DependentUpon>RegistroFacturacion.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Registros\ToolBox\ProductosMasVendidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,9 +155,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCliente.resx">
       <DependentUpon>rCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\RegistroFacturacion.resx">
-      <DependentUpon>RegistroFacturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroProductos.resx">
       <DependentUpon>RegistroProductos.cs</DependentUpon>

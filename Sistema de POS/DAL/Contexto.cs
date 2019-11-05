@@ -1,5 +1,4 @@
 ﻿using Sistema_de_POS.Entidades;
-using SistemaPOS.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

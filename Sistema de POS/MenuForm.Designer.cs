@@ -30,17 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.CajaChicaButton = new System.Windows.Forms.Button();
+            this.ConsultasPanel = new System.Windows.Forms.Panel();
+            this.VentasButton = new System.Windows.Forms.Button();
+            this.ConsultasPOSButton = new System.Windows.Forms.Button();
+            this.RegistrosButton = new System.Windows.Forms.Button();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.POSButton = new System.Windows.Forms.Button();
+            this.ConsultasButton = new System.Windows.Forms.Button();
+            this.RegistrosPanel = new System.Windows.Forms.Panel();
             this.ClienteButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.POSButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.FacturacionButton = new System.Windows.Forms.Button();
+            this.CajaChicaButton = new System.Windows.Forms.Button();
             this.IconoHomePictureBox = new System.Windows.Forms.PictureBox();
             this.HomeButton = new System.Windows.Forms.Button();
-            this.FacturacionButton = new System.Windows.Forms.Button();
-            this.ConsultasPOSButton = new System.Windows.Forms.Button();
-            this.VentasButton = new System.Windows.Forms.Button();
             this.ContenedorPanel = new System.Windows.Forms.Panel();
             this.VersionPictureBox = new System.Windows.Forms.PictureBox();
             this.BarraTituloPanel = new System.Windows.Forms.Panel();
@@ -49,12 +53,10 @@
             this.MaximizarButton = new System.Windows.Forms.PictureBox();
             this.CerrarButton = new System.Windows.Forms.PictureBox();
             this.SlideButton = new System.Windows.Forms.PictureBox();
-            this.RegistrosButton = new System.Windows.Forms.Button();
-            this.RegistrosPanel = new System.Windows.Forms.Panel();
-            this.ConsultasButton = new System.Windows.Forms.Button();
-            this.ConsultasPanel = new System.Windows.Forms.Panel();
             this.MenuVertical.SuspendLayout();
+            this.ConsultasPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
+            this.RegistrosPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconoHomePictureBox)).BeginInit();
             this.ContenedorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VersionPictureBox)).BeginInit();
@@ -64,17 +66,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.MaximizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SlideButton)).BeginInit();
-            this.RegistrosPanel.SuspendLayout();
-            this.ConsultasPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.MenuVertical.Controls.Add(this.ConsultasPanel);
+            this.MenuVertical.Controls.Add(this.ConsultasButton);
             this.MenuVertical.Controls.Add(this.RegistrosButton);
             this.MenuVertical.Controls.Add(this.LogoPictureBox);
-            this.MenuVertical.Controls.Add(this.ConsultasButton);
             this.MenuVertical.Controls.Add(this.RegistrosPanel);
             this.MenuVertical.Controls.Add(this.IconoHomePictureBox);
             this.MenuVertical.Controls.Add(this.HomeButton);
@@ -85,6 +85,136 @@
             this.MenuVertical.Size = new System.Drawing.Size(251, 698);
             this.MenuVertical.TabIndex = 0;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
+            // 
+            // ConsultasPanel
+            // 
+            this.ConsultasPanel.BackColor = System.Drawing.Color.Gray;
+            this.ConsultasPanel.Controls.Add(this.VentasButton);
+            this.ConsultasPanel.Controls.Add(this.ConsultasPOSButton);
+            this.ConsultasPanel.Location = new System.Drawing.Point(0, 214);
+            this.ConsultasPanel.Name = "ConsultasPanel";
+            this.ConsultasPanel.Size = new System.Drawing.Size(250, 0);
+            this.ConsultasPanel.TabIndex = 14;
+            // 
+            // VentasButton
+            // 
+            this.VentasButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VentasButton.FlatAppearance.BorderSize = 0;
+            this.VentasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.VentasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VentasButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VentasButton.ForeColor = System.Drawing.Color.White;
+            this.VentasButton.Image = ((System.Drawing.Image)(resources.GetObject("VentasButton.Image")));
+            this.VentasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.VentasButton.Location = new System.Drawing.Point(-3, 2);
+            this.VentasButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.VentasButton.Name = "VentasButton";
+            this.VentasButton.Size = new System.Drawing.Size(251, 39);
+            this.VentasButton.TabIndex = 0;
+            this.VentasButton.Text = "Consulta F.";
+            this.VentasButton.UseVisualStyleBackColor = true;
+            this.VentasButton.Click += new System.EventHandler(this.VentasButton_Click);
+            // 
+            // ConsultasPOSButton
+            // 
+            this.ConsultasPOSButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConsultasPOSButton.FlatAppearance.BorderSize = 0;
+            this.ConsultasPOSButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.ConsultasPOSButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConsultasPOSButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultasPOSButton.ForeColor = System.Drawing.Color.White;
+            this.ConsultasPOSButton.Image = ((System.Drawing.Image)(resources.GetObject("ConsultasPOSButton.Image")));
+            this.ConsultasPOSButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConsultasPOSButton.Location = new System.Drawing.Point(-3, 45);
+            this.ConsultasPOSButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ConsultasPOSButton.Name = "ConsultasPOSButton";
+            this.ConsultasPOSButton.Size = new System.Drawing.Size(251, 39);
+            this.ConsultasPOSButton.TabIndex = 1;
+            this.ConsultasPOSButton.Text = "Consultas  POS";
+            this.ConsultasPOSButton.UseVisualStyleBackColor = true;
+            this.ConsultasPOSButton.Click += new System.EventHandler(this.FacturacionButton_Click);
+            // 
+            // RegistrosButton
+            // 
+            this.RegistrosButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RegistrosButton.FlatAppearance.BorderSize = 0;
+            this.RegistrosButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.RegistrosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegistrosButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistrosButton.ForeColor = System.Drawing.Color.White;
+            this.RegistrosButton.Image = ((System.Drawing.Image)(resources.GetObject("RegistrosButton.Image")));
+            this.RegistrosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegistrosButton.Location = new System.Drawing.Point(-3, 127);
+            this.RegistrosButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RegistrosButton.Name = "RegistrosButton";
+            this.RegistrosButton.Size = new System.Drawing.Size(259, 39);
+            this.RegistrosButton.TabIndex = 12;
+            this.RegistrosButton.Text = "Registros";
+            this.RegistrosButton.UseVisualStyleBackColor = true;
+            this.RegistrosButton.Click += new System.EventHandler(this.RegistrosButton_Click);
+            // 
+            // LogoPictureBox
+            // 
+            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
+            this.LogoPictureBox.Location = new System.Drawing.Point(69, 10);
+            this.LogoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(140, 49);
+            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoPictureBox.TabIndex = 8;
+            this.LogoPictureBox.TabStop = false;
+            // 
+            // ConsultasButton
+            // 
+            this.ConsultasButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConsultasButton.FlatAppearance.BorderSize = 0;
+            this.ConsultasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.ConsultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConsultasButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultasButton.ForeColor = System.Drawing.Color.White;
+            this.ConsultasButton.Image = ((System.Drawing.Image)(resources.GetObject("ConsultasButton.Image")));
+            this.ConsultasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConsultasButton.Location = new System.Drawing.Point(0, 170);
+            this.ConsultasButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ConsultasButton.Name = "ConsultasButton";
+            this.ConsultasButton.Size = new System.Drawing.Size(251, 39);
+            this.ConsultasButton.TabIndex = 13;
+            this.ConsultasButton.Text = "Consultas";
+            this.ConsultasButton.UseVisualStyleBackColor = true;
+            this.ConsultasButton.Click += new System.EventHandler(this.ConsultasButton_Click);
+            // 
+            // RegistrosPanel
+            // 
+            this.RegistrosPanel.BackColor = System.Drawing.Color.Gray;
+            this.RegistrosPanel.Controls.Add(this.ClienteButton);
+            this.RegistrosPanel.Controls.Add(this.button2);
+            this.RegistrosPanel.Controls.Add(this.POSButton);
+            this.RegistrosPanel.Controls.Add(this.button1);
+            this.RegistrosPanel.Controls.Add(this.FacturacionButton);
+            this.RegistrosPanel.Controls.Add(this.CajaChicaButton);
+            this.RegistrosPanel.Location = new System.Drawing.Point(0, 171);
+            this.RegistrosPanel.Name = "RegistrosPanel";
+            this.RegistrosPanel.Size = new System.Drawing.Size(251, 0);
+            this.RegistrosPanel.TabIndex = 1;
+            // 
+            // ClienteButton
+            // 
+            this.ClienteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClienteButton.FlatAppearance.BorderSize = 0;
+            this.ClienteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.ClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClienteButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClienteButton.ForeColor = System.Drawing.Color.White;
+            this.ClienteButton.Image = ((System.Drawing.Image)(resources.GetObject("ClienteButton.Image")));
+            this.ClienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ClienteButton.Location = new System.Drawing.Point(0, 0);
+            this.ClienteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClienteButton.Name = "ClienteButton";
+            this.ClienteButton.Size = new System.Drawing.Size(251, 39);
+            this.ClienteButton.TabIndex = 6;
+            this.ClienteButton.Text = "Cliente";
+            this.ClienteButton.UseVisualStyleBackColor = true;
+            this.ClienteButton.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button2
             // 
@@ -105,55 +235,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click_1);
             // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-3, 172);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 39);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Apertura Caja";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // CajaChicaButton
-            // 
-            this.CajaChicaButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CajaChicaButton.FlatAppearance.BorderSize = 0;
-            this.CajaChicaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.CajaChicaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CajaChicaButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CajaChicaButton.ForeColor = System.Drawing.Color.White;
-            this.CajaChicaButton.Image = ((System.Drawing.Image)(resources.GetObject("CajaChicaButton.Image")));
-            this.CajaChicaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CajaChicaButton.Location = new System.Drawing.Point(0, 129);
-            this.CajaChicaButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CajaChicaButton.Name = "CajaChicaButton";
-            this.CajaChicaButton.Size = new System.Drawing.Size(251, 39);
-            this.CajaChicaButton.TabIndex = 9;
-            this.CajaChicaButton.Text = "Caja chica";
-            this.CajaChicaButton.UseVisualStyleBackColor = true;
-            this.CajaChicaButton.Click += new System.EventHandler(this.CajaChicaButton_Click_1);
-            // 
-            // LogoPictureBox
-            // 
-            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
-            this.LogoPictureBox.Location = new System.Drawing.Point(69, 10);
-            this.LogoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(140, 49);
-            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoPictureBox.TabIndex = 8;
-            this.LogoPictureBox.TabStop = false;
-            // 
             // POSButton
             // 
             this.POSButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -173,24 +254,62 @@
             this.POSButton.UseVisualStyleBackColor = true;
             this.POSButton.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // ClienteButton
+            // button1
             // 
-            this.ClienteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClienteButton.FlatAppearance.BorderSize = 0;
-            this.ClienteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClienteButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClienteButton.ForeColor = System.Drawing.Color.White;
-            this.ClienteButton.Image = ((System.Drawing.Image)(resources.GetObject("ClienteButton.Image")));
-            this.ClienteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ClienteButton.Location = new System.Drawing.Point(0, 0);
-            this.ClienteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClienteButton.Name = "ClienteButton";
-            this.ClienteButton.Size = new System.Drawing.Size(251, 39);
-            this.ClienteButton.TabIndex = 6;
-            this.ClienteButton.Text = "Cliente";
-            this.ClienteButton.UseVisualStyleBackColor = true;
-            this.ClienteButton.Click += new System.EventHandler(this.Button2_Click);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(-3, 172);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(251, 39);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Apertura Caja";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // FacturacionButton
+            // 
+            this.FacturacionButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FacturacionButton.FlatAppearance.BorderSize = 0;
+            this.FacturacionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.FacturacionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FacturacionButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FacturacionButton.ForeColor = System.Drawing.Color.White;
+            this.FacturacionButton.Image = ((System.Drawing.Image)(resources.GetObject("FacturacionButton.Image")));
+            this.FacturacionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FacturacionButton.Location = new System.Drawing.Point(-3, 86);
+            this.FacturacionButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FacturacionButton.Name = "FacturacionButton";
+            this.FacturacionButton.Size = new System.Drawing.Size(251, 39);
+            this.FacturacionButton.TabIndex = 2;
+            this.FacturacionButton.Text = "       Facturacion";
+            this.FacturacionButton.UseVisualStyleBackColor = true;
+            this.FacturacionButton.Click += new System.EventHandler(this.CajaChicaButton_Click);
+            // 
+            // CajaChicaButton
+            // 
+            this.CajaChicaButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CajaChicaButton.FlatAppearance.BorderSize = 0;
+            this.CajaChicaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.CajaChicaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CajaChicaButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CajaChicaButton.ForeColor = System.Drawing.Color.White;
+            this.CajaChicaButton.Image = ((System.Drawing.Image)(resources.GetObject("CajaChicaButton.Image")));
+            this.CajaChicaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CajaChicaButton.Location = new System.Drawing.Point(0, 129);
+            this.CajaChicaButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CajaChicaButton.Name = "CajaChicaButton";
+            this.CajaChicaButton.Size = new System.Drawing.Size(251, 39);
+            this.CajaChicaButton.TabIndex = 9;
+            this.CajaChicaButton.Text = "Caja chica";
+            this.CajaChicaButton.UseVisualStyleBackColor = true;
+            this.CajaChicaButton.Click += new System.EventHandler(this.CajaChicaButton_Click_1);
             // 
             // IconoHomePictureBox
             // 
@@ -222,63 +341,6 @@
             this.HomeButton.TabIndex = 3;
             this.HomeButton.Text = "Ayuda";
             this.HomeButton.UseVisualStyleBackColor = true;
-            // 
-            // FacturacionButton
-            // 
-            this.FacturacionButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FacturacionButton.FlatAppearance.BorderSize = 0;
-            this.FacturacionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.FacturacionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FacturacionButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FacturacionButton.ForeColor = System.Drawing.Color.White;
-            this.FacturacionButton.Image = ((System.Drawing.Image)(resources.GetObject("FacturacionButton.Image")));
-            this.FacturacionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.FacturacionButton.Location = new System.Drawing.Point(-3, 86);
-            this.FacturacionButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.FacturacionButton.Name = "FacturacionButton";
-            this.FacturacionButton.Size = new System.Drawing.Size(251, 39);
-            this.FacturacionButton.TabIndex = 2;
-            this.FacturacionButton.Text = "       Facturacion";
-            this.FacturacionButton.UseVisualStyleBackColor = true;
-            this.FacturacionButton.Click += new System.EventHandler(this.CajaChicaButton_Click);
-            // 
-            // ConsultasPOSButton
-            // 
-            this.ConsultasPOSButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ConsultasPOSButton.FlatAppearance.BorderSize = 0;
-            this.ConsultasPOSButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ConsultasPOSButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultasPOSButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultasPOSButton.ForeColor = System.Drawing.Color.White;
-            this.ConsultasPOSButton.Image = ((System.Drawing.Image)(resources.GetObject("ConsultasPOSButton.Image")));
-            this.ConsultasPOSButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultasPOSButton.Location = new System.Drawing.Point(-3, 45);
-            this.ConsultasPOSButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ConsultasPOSButton.Name = "ConsultasPOSButton";
-            this.ConsultasPOSButton.Size = new System.Drawing.Size(251, 39);
-            this.ConsultasPOSButton.TabIndex = 1;
-            this.ConsultasPOSButton.Text = "Consultas  POS";
-            this.ConsultasPOSButton.UseVisualStyleBackColor = true;
-            this.ConsultasPOSButton.Click += new System.EventHandler(this.FacturacionButton_Click);
-            // 
-            // VentasButton
-            // 
-            this.VentasButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.VentasButton.FlatAppearance.BorderSize = 0;
-            this.VentasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.VentasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VentasButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VentasButton.ForeColor = System.Drawing.Color.White;
-            this.VentasButton.Image = ((System.Drawing.Image)(resources.GetObject("VentasButton.Image")));
-            this.VentasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.VentasButton.Location = new System.Drawing.Point(-3, 2);
-            this.VentasButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.VentasButton.Name = "VentasButton";
-            this.VentasButton.Size = new System.Drawing.Size(251, 39);
-            this.VentasButton.TabIndex = 0;
-            this.VentasButton.Text = "Consulta F.";
-            this.VentasButton.UseVisualStyleBackColor = true;
-            this.VentasButton.Click += new System.EventHandler(this.VentasButton_Click);
             // 
             // ContenedorPanel
             // 
@@ -391,68 +453,6 @@
             this.SlideButton.TabStop = false;
             this.SlideButton.Click += new System.EventHandler(this.SlideButton_Click);
             // 
-            // RegistrosButton
-            // 
-            this.RegistrosButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RegistrosButton.FlatAppearance.BorderSize = 0;
-            this.RegistrosButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.RegistrosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegistrosButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegistrosButton.ForeColor = System.Drawing.Color.White;
-            this.RegistrosButton.Image = ((System.Drawing.Image)(resources.GetObject("RegistrosButton.Image")));
-            this.RegistrosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RegistrosButton.Location = new System.Drawing.Point(-3, 127);
-            this.RegistrosButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RegistrosButton.Name = "RegistrosButton";
-            this.RegistrosButton.Size = new System.Drawing.Size(259, 39);
-            this.RegistrosButton.TabIndex = 12;
-            this.RegistrosButton.Text = "Registros";
-            this.RegistrosButton.UseVisualStyleBackColor = true;
-            this.RegistrosButton.Click += new System.EventHandler(this.RegistrosButton_Click);
-            // 
-            // RegistrosPanel
-            // 
-            this.RegistrosPanel.BackColor = System.Drawing.Color.Gray;
-            this.RegistrosPanel.Controls.Add(this.ClienteButton);
-            this.RegistrosPanel.Controls.Add(this.button2);
-            this.RegistrosPanel.Controls.Add(this.POSButton);
-            this.RegistrosPanel.Controls.Add(this.button1);
-            this.RegistrosPanel.Controls.Add(this.FacturacionButton);
-            this.RegistrosPanel.Controls.Add(this.CajaChicaButton);
-            this.RegistrosPanel.Location = new System.Drawing.Point(0, 171);
-            this.RegistrosPanel.Name = "RegistrosPanel";
-            this.RegistrosPanel.Size = new System.Drawing.Size(251, 258);
-            this.RegistrosPanel.TabIndex = 1;
-            // 
-            // ConsultasButton
-            // 
-            this.ConsultasButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ConsultasButton.FlatAppearance.BorderSize = 0;
-            this.ConsultasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.ConsultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultasButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultasButton.ForeColor = System.Drawing.Color.White;
-            this.ConsultasButton.Image = ((System.Drawing.Image)(resources.GetObject("ConsultasButton.Image")));
-            this.ConsultasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultasButton.Location = new System.Drawing.Point(0, 429);
-            this.ConsultasButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ConsultasButton.Name = "ConsultasButton";
-            this.ConsultasButton.Size = new System.Drawing.Size(251, 39);
-            this.ConsultasButton.TabIndex = 13;
-            this.ConsultasButton.Text = "Consultas";
-            this.ConsultasButton.UseVisualStyleBackColor = true;
-            this.ConsultasButton.Click += new System.EventHandler(this.ConsultasButton_Click);
-            // 
-            // ConsultasPanel
-            // 
-            this.ConsultasPanel.BackColor = System.Drawing.Color.Gray;
-            this.ConsultasPanel.Controls.Add(this.VentasButton);
-            this.ConsultasPanel.Controls.Add(this.ConsultasPOSButton);
-            this.ConsultasPanel.Location = new System.Drawing.Point(0, 473);
-            this.ConsultasPanel.Name = "ConsultasPanel";
-            this.ConsultasPanel.Size = new System.Drawing.Size(250, 87);
-            this.ConsultasPanel.TabIndex = 14;
-            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -466,7 +466,9 @@
             this.Name = "MenuForm";
             this.Text = "Sistema POS";
             this.MenuVertical.ResumeLayout(false);
+            this.ConsultasPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
+            this.RegistrosPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IconoHomePictureBox)).EndInit();
             this.ContenedorPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.VersionPictureBox)).EndInit();
@@ -476,8 +478,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MaximizarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SlideButton)).EndInit();
-            this.RegistrosPanel.ResumeLayout(false);
-            this.ConsultasPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

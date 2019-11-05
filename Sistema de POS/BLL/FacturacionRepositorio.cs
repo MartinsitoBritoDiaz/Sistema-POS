@@ -2,7 +2,6 @@
 using Sistema_de_POS.BLL;
 using Sistema_de_POS.Entidades;
 using SistemaPOS.DAL;
-using SistemaPOS.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -17,25 +16,25 @@ namespace SistemaPOS.BLL
         public override bool Modificar(Factura factura)
         {
 
-            var anterior = base._contexto.Facturas.Find(factura.Facturaid);
+            var anterior = base._contexto.Facturas.Find(factura.FacturaId);
 
-            foreach (var item in anterior.Productos)
+            foreach (var item in anterior.DetalleProducto)
             {
-                if (!factura.Productos.Exists(d => d.id == item.id))
+                if (!factura.DetalleProducto.Exists(d => d.ProductoId == item.ProductoId))
                     base._contexto.Entry(item).State =  EntityState.Deleted;
             }
         
             return base.Modificar(factura);
         }
-        /*
+        
         public override bool Guardar(Factura factura)
         {
             ClienteRepositorio repositorio = new ClienteRepositorio();
-            /*
+            
             repositorio.ModificarDeudas(factura.ClienteId, factura.Deuda);
             
             return base.Guardar(factura);
-        }*/
+        }
     }
 
 
