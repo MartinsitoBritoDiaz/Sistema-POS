@@ -15,9 +15,11 @@ namespace Sistema_de_POS
 {
     public partial class MenuForm : Form
     {
-        public MenuForm()
+        public string NombreUsuario { get; set; }
+
+        public MenuForm(string nombreUsuario)
         {
-            
+            NombreUsuario = nombreUsuario;
             InitializeComponent();
         }
 
@@ -200,6 +202,11 @@ namespace Sistema_de_POS
         {
             rUsuario registroUsuario = new rUsuario();
             registroUsuario.Show();
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+            UsuarioActuallabel.Text = NombreUsuario;
         }
     }
 }

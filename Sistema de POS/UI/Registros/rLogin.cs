@@ -60,7 +60,7 @@ namespace Sistema_de_POS.UI.Registros
                 {
                     if (ContraseñaTextBox.Text == item.Contraseña)
                     {
-                        MenuForm menu = new MenuForm();
+                        MenuForm menu = new MenuForm(UsuarioTextBox.Text);
                         menu.Show();
 
                     }

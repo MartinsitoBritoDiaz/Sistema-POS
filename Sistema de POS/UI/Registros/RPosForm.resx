@@ -12923,6 +12923,17 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>30</value>
   </metadata>
+  <data name="MinimizarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAVpJREFUaEPt
+        mUFuwjAABPMUku9AxaMqJB4A7msK/UqfQByugIP2YKV7WJLKy8EjjTh5PUJwSZpKpVJ5b1aHftuG+NOG
+        YUif9zI+7zq3x/4DGfPowrD/O17cHXJeA988Gyxu99VvkKWTDqafDR8sbRfiCVk66WCcDhntkaVDRqwi
+        S4eNOEWWDhtxiiwdNuIUWTpsxCmydNiIU2TpsBGnyNJhI06RpcNGnCJLh404RZYOG3GKLB024hRZOmzE
+        KbJ02IhTZOmwEafI0mEjTpGlw0acIkuHjThFlg4bcYosHTaS+3u9/avsjlxk6bCRXBaxRHZHLrJ02Egu
+        i1giuyMXWTpsJJdFLJHdkYssHTbiFFk6bMQpsnTYiFNk6aRD7/Ro8YIsnXToPBmxuQrxG1k648sFNuaw
+        C5c1sl4jHd5Nxwx+Imce48uF8fl8Gir5n4jjz2b2N1+pVCqFaJoHkPurokAnhBoAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="CerrarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAm1JREFUaEPt
@@ -12937,17 +12948,6 @@
         x4/ovnmgpYeVFDh3ysRvXv2XmHPky+SHUOQt0NLDSmY4fzo9Ey5fDTPs5XTw8AHdxoCWHlbiE2jpYSU+
         gZYeVuITaOk5YT8t/oaWHvv7PCnyxSa09NibC6TIC5NRcAFabrE3F1hhm4wH/XvQaRZ7cyEp2mrzNYHn
         2mx85Lt06dKlpfR6/wCAHhfErcd07wAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="MinimizarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAVpJREFUaEPt
-        mUFuwjAABPMUku9AxaMqJB4A7msK/UqfQByugIP2YKV7WJLKy8EjjTh5PUJwSZpKpVJ5b1aHftuG+NOG
-        YUif9zI+7zq3x/4DGfPowrD/O17cHXJeA988Gyxu99VvkKWTDqafDR8sbRfiCVk66WCcDhntkaVDRqwi
-        S4eNOEWWDhtxiiwdNuIUWTpsxCmydNiIU2TpsBGnyNJhI06RpcNGnCJLh404RZYOG3GKLB024hRZOmzE
-        KbJ02IhTZOmwEafI0mEjTpGlw0acIkuHjThFlg4bcYosHTaS+3u9/avsjlxk6bCRXBaxRHZHLrJ02Egu
-        i1giuyMXWTpsJJdFLJHdkYssHTbiFFk6bMQpsnTYiFNk6aRD7/Ro8YIsnXToPBmxuQrxG1k648sFNuaw
-        C5c1sl4jHd5Nxwx+Imce48uF8fl8Gir5n4jjz2b2N1+pVCqFaJoHkPurokAnhBoAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

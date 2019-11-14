@@ -17,10 +17,11 @@ namespace Sistema_de_POS.Entidades
         public string descripcion { get; set; }
         public decimal precioUnitario { get; set; }
         public decimal importe { get; set; }
+
         public DetalleProductoPOS()
         {
-
         }
+
         public DetalleProductoPOS(int id, int POSid, int cantidad, string unidad, string descripcion, decimal precioUnitario, decimal importe)
         {
             this.id = id;

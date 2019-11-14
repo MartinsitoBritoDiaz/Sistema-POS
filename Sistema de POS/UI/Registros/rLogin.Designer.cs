@@ -54,9 +54,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 110);
+            this.label1.Location = new System.Drawing.Point(16, 89);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 24);
+            this.label1.Size = new System.Drawing.Size(60, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario";
             // 
@@ -64,9 +65,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 154);
+            this.label2.Location = new System.Drawing.Point(16, 125);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 24);
+            this.label2.Size = new System.Drawing.Size(85, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña";
             // 
@@ -74,9 +76,10 @@
             // 
             this.IngresarButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.IngresarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IngresarButton.Location = new System.Drawing.Point(164, 205);
+            this.IngresarButton.Location = new System.Drawing.Point(123, 167);
+            this.IngresarButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.IngresarButton.Name = "IngresarButton";
-            this.IngresarButton.Size = new System.Drawing.Size(143, 44);
+            this.IngresarButton.Size = new System.Drawing.Size(107, 36);
             this.IngresarButton.TabIndex = 2;
             this.IngresarButton.Text = "Ingresar";
             this.IngresarButton.UseVisualStyleBackColor = true;
@@ -84,16 +87,18 @@
             // 
             // UsuarioTextBox
             // 
-            this.UsuarioTextBox.Location = new System.Drawing.Point(164, 110);
+            this.UsuarioTextBox.Location = new System.Drawing.Point(123, 89);
+            this.UsuarioTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
-            this.UsuarioTextBox.Size = new System.Drawing.Size(253, 22);
+            this.UsuarioTextBox.Size = new System.Drawing.Size(191, 20);
             this.UsuarioTextBox.TabIndex = 3;
             // 
             // ContraseñaTextBox
             // 
-            this.ContraseñaTextBox.Location = new System.Drawing.Point(164, 156);
+            this.ContraseñaTextBox.Location = new System.Drawing.Point(123, 127);
+            this.ContraseñaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
-            this.ContraseñaTextBox.Size = new System.Drawing.Size(143, 22);
+            this.ContraseñaTextBox.Size = new System.Drawing.Size(108, 20);
             this.ContraseñaTextBox.TabIndex = 4;
             this.ContraseñaTextBox.UseSystemPasswordChar = true;
             // 
@@ -105,9 +110,9 @@
             this.BarraTituloPanel.Controls.Add(this.CerrarButton);
             this.BarraTituloPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTituloPanel.Location = new System.Drawing.Point(0, 0);
-            this.BarraTituloPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BarraTituloPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BarraTituloPanel.Name = "BarraTituloPanel";
-            this.BarraTituloPanel.Size = new System.Drawing.Size(460, 33);
+            this.BarraTituloPanel.Size = new System.Drawing.Size(345, 27);
             this.BarraTituloPanel.TabIndex = 57;
             this.BarraTituloPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTituloPanel_Paint);
             this.BarraTituloPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloPanel_MouseDown);
@@ -116,9 +121,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(211, 0);
+            this.label3.Location = new System.Drawing.Point(158, 4);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 24);
+            this.label3.Size = new System.Drawing.Size(44, 18);
             this.label3.TabIndex = 5;
             this.label3.Text = "Login";
             // 
@@ -127,10 +133,10 @@
             this.MinizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MinizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinizarButton.Image = ((System.Drawing.Image)(resources.GetObject("MinizarButton.Image")));
-            this.MinizarButton.Location = new System.Drawing.Point(398, 2);
-            this.MinizarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinizarButton.Location = new System.Drawing.Point(298, 2);
+            this.MinizarButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MinizarButton.Name = "MinizarButton";
-            this.MinizarButton.Size = new System.Drawing.Size(25, 25);
+            this.MinizarButton.Size = new System.Drawing.Size(19, 20);
             this.MinizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.MinizarButton.TabIndex = 4;
             this.MinizarButton.TabStop = false;
@@ -141,10 +147,10 @@
             this.CerrarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CerrarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CerrarButton.Image = ((System.Drawing.Image)(resources.GetObject("CerrarButton.Image")));
-            this.CerrarButton.Location = new System.Drawing.Point(430, 2);
-            this.CerrarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CerrarButton.Location = new System.Drawing.Point(322, 2);
+            this.CerrarButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CerrarButton.Name = "CerrarButton";
-            this.CerrarButton.Size = new System.Drawing.Size(25, 25);
+            this.CerrarButton.Size = new System.Drawing.Size(19, 20);
             this.CerrarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CerrarButton.TabIndex = 1;
             this.CerrarButton.TabStop = false;
@@ -153,9 +159,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(164, 38);
+            this.pictureBox1.Location = new System.Drawing.Point(123, 31);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(107, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -164,9 +171,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(160, 264);
+            this.label4.Location = new System.Drawing.Point(120, 214);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 20);
+            this.label4.Size = new System.Drawing.Size(132, 17);
             this.label4.TabIndex = 58;
             this.label4.Text = "Desea crear un usuario?";
             this.label4.Click += new System.EventHandler(this.Label4_Click);
@@ -174,9 +182,10 @@
             // VisualizarCheckBox
             // 
             this.VisualizarCheckBox.AutoSize = true;
-            this.VisualizarCheckBox.Location = new System.Drawing.Point(319, 157);
+            this.VisualizarCheckBox.Location = new System.Drawing.Point(239, 128);
+            this.VisualizarCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VisualizarCheckBox.Name = "VisualizarCheckBox";
-            this.VisualizarCheckBox.Size = new System.Drawing.Size(91, 21);
+            this.VisualizarCheckBox.Size = new System.Drawing.Size(70, 17);
             this.VisualizarCheckBox.TabIndex = 59;
             this.VisualizarCheckBox.Text = "Visualizar";
             this.VisualizarCheckBox.UseVisualStyleBackColor = true;
@@ -188,9 +197,9 @@
             // 
             // rLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 293);
+            this.ClientSize = new System.Drawing.Size(345, 238);
             this.Controls.Add(this.VisualizarCheckBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BarraTituloPanel);
@@ -201,6 +210,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "rLogin";
             this.Text = "Login";
             this.BarraTituloPanel.ResumeLayout(false);

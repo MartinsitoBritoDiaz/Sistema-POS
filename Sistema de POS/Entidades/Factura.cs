@@ -12,6 +12,7 @@ namespace Sistema_de_POS.Entidades
         [Key]
         public int FacturaId { get; set; }
         public int ClienteId { get; set; }
+        public int UsuarioId { get; set; }
         public DateTime Fecha { get; set; }
         public string  Cliente { get; set; }
         public string Condicion { get; set; }
@@ -32,6 +33,7 @@ namespace Sistema_de_POS.Entidades
         {
             FacturaId = 0;
             ClienteId = 0;
+            UsuarioId = 0;
             Fecha = DateTime.Now;
             Cliente = string.Empty;
             Condicion = string.Empty;

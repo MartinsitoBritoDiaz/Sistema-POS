@@ -53,7 +53,6 @@
     <Compile Include="Entidades\EgresoFondos.cs" />
     <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\POS.cs" />
-    <Compile Include="Entidades\DetalleProductosss.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>

@@ -9,6 +9,7 @@ namespace Sistema_de_POS.Entidades
     public class Apertura
     {
         public int AperturaId { get; set; }
+        public int UsuarioId { get; set; }
         public DateTime Fecha { get; set; }
         public int Caja { get; set; }
         public string Usuario { get; set; }
