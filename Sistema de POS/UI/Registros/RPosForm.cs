@@ -206,109 +206,6 @@ namespace Sistema_de_POS.UI.Registros
 
         private void AgregarGridButton_Click(object sender, EventArgs e)
         {
-            if (DetalledataGridView.DataSource != null)
-                this.detalle = (List<DetalleProductoPOS>)DetalledataGridView.DataSource;
-
-            this.detalle.Add(
-
-                new DetalleProductoPOS(
-                    id: 0,
-                    POSid: (int)IDNumericUpDown.Value,
-                    cantidad: Convert.ToInt32(CantidadNumericUpDown.Value),
-                    unidad: UnidadComboBox.Text,
-                    descripcion: ProductoComboBox.Text,
-                    precioUnitario: Convert.ToDecimal(PrecioUnitarioTextBox.Text),
-                    importe: (Convert.ToDecimal(PrecioUnitarioTextBox.Text) * Convert.ToDecimal(CantidadNumericUpDown.Value))
-                    
-                    )
-
-                );
-            decimal subtotal = 0;
-            decimal descuentos = 0;
-            decimal ITBIS = 0;
-            decimal total = 0;
-            int cantidad = 0;
-
-            foreach (var item in this.detalle)
-            {
-                subtotal += item.importe;
-                descuentos = 0;
-                ITBIS += (decimal)(item.importe * (decimal)0.18);
-                total += subtotal - descuentos - ITBIS;
-                cantidad += 1;
-            }
-
-            SubtotalResultadolabel.Text = (subtotal).ToString();
-            ImpuestosResultadolabel.Text = (descuentos).ToString();
-            ITBISLabel.Text = (ITBIS).ToString();
-            TotalResultadolabel.Text = (total).ToString();
-            CantidadLabel.Text = (cantidad).ToString();
-
-            CantidadNumericUpDown.Value = 0;
-            UnidadComboBox.Text = string.Empty;
-            PrecioUnitarioTextBox.Text = string.Empty;
-            ImporteTextBox.Text = string.Empty;
-
-            AplicarCheckBox.Checked = false;
-            CargarGrid();
-        }
-
-        private void CantidadNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            decimal cantidad = 0;
-            decimal PrecioUnitario = 0;
-
-            if(string.IsNullOrWhiteSpace(PrecioUnitarioTextBox.Text) && string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
-            {
-                CantidadNumericUpDown.Value = 0;
-                PrecioUnitarioTextBox.Text = "0";
-            }
-            if (string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
-            {
-                CantidadNumericUpDown.Value = 0;
-            }
-            if (string.IsNullOrWhiteSpace(PrecioUnitarioTextBox.Text))
-            {
-                PrecioUnitarioTextBox.Text = "0";
-            }
-
-
-            cantidad = Convert.ToDecimal(CantidadNumericUpDown.Value);
-            PrecioUnitario = Convert.ToDecimal(PrecioUnitarioTextBox.Text);
-
-            decimal Total = 0;
-            Total = cantidad * PrecioUnitario;
-
-            ImporteTextBox.Text = Convert.ToString(Total);
-        }
-
-        private void PrecioUnitarioTextBox_TextChanged(object sender, EventArgs e)
-        {
-            decimal cantidad = 0;
-            decimal PrecioUnitario = 0;
-
-            if (string.IsNullOrWhiteSpace(PrecioUnitarioTextBox.Text) && string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
-            {
-                CantidadNumericUpDown.Value = 0;
-                PrecioUnitarioTextBox.Text = "0";
-            }
-            if (string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
-            {
-                CantidadNumericUpDown.Value = 0;
-            }
-            if (string.IsNullOrWhiteSpace(PrecioUnitarioTextBox.Text))
-            {
-                PrecioUnitarioTextBox.Text = "0";
-            }
-
-
-            cantidad = Convert.ToDecimal(CantidadNumericUpDown.Value);
-            PrecioUnitario = Convert.ToDecimal(PrecioUnitarioTextBox.Text);
-
-            decimal Total = 0;
-            Total = cantidad * PrecioUnitario;
-
-            ImporteTextBox.Text = Convert.ToString(Total);
         }
 
         private void EliminarFilabutton_Click(object sender, EventArgs e)
@@ -368,7 +265,8 @@ namespace Sistema_de_POS.UI.Registros
 
         private void RPosForm_Load(object sender, EventArgs e)
         {
-            /*RepositorioBase<Articulo> repo = new RepositorioBase<Articulo>();
+            this.WindowState = FormWindowState.Maximized;
+           /*RepositorioBase<Articulo> repo = new RepositorioBase<Articulo>();
 
             var Lista = repo.GetList(p => true);
 
@@ -573,17 +471,130 @@ namespace Sistema_de_POS.UI.Registros
         {
             
         }
-
-        private void BarraTituloPanel_MouseDown_1(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-
-        }
+        
 
         private void Panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BarraTituloPanel_MouseDown_2(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void ResultadotextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgregarGridButton_Click_1(object sender, EventArgs e)
+        {
+
+            if (DetalledataGridView.DataSource != null)
+                this.detalle = (List<DetalleProductoPOS>)DetalledataGridView.DataSource;
+
+            this.detalle.Add(
+
+                new DetalleProductoPOS(
+                    id: 0,
+                    POSid: (int)IDNumericUpDown.Value,
+                    cantidad: Convert.ToInt32(CantidadNumericUpDown.Value),
+                    unidad: UnidadComboBox.Text,
+                    descripcion: ProductoComboBox.Text,
+                    precioUnitario: Convert.ToDecimal(PrecioUnitarioTextBox.Text),
+                    importe: (Convert.ToDecimal(PrecioUnitarioTextBox.Text) * Convert.ToDecimal(CantidadNumericUpDown.Value))
+
+                    )
+
+                );
+            decimal subtotal = 0;
+            decimal descuentos = 0;
+            decimal ITBIS = 0;
+            decimal total = 0;
+            int cantidad = 0;
+
+            foreach (var item in this.detalle)
+            {
+                subtotal += item.importe;
+                descuentos = 0;
+                ITBIS += (decimal)(item.importe * (decimal)0.18);
+                total += subtotal - descuentos - ITBIS;
+                cantidad += 1;
+            }
+
+            SubtotalResultadolabel.Text = (subtotal).ToString();
+            ImpuestosResultadolabel.Text = (descuentos).ToString();
+            ITBISLabel.Text = (ITBIS).ToString();
+            TotalResultadolabel.Text = (total).ToString();
+            CantidadLabel.Text = (cantidad).ToString();
+
+            CantidadNumericUpDown.Value = 0;
+            UnidadComboBox.Text = string.Empty;
+            PrecioUnitarioTextBox.Text = string.Empty;
+            ImporteTextBox.Text = string.Empty;
+
+            AplicarCheckBox.Checked = false;
+            CargarGrid();
+        }
+
+        private void CantidadNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            decimal cantidad = 0;
+            decimal PrecioUnitario = 0;
+
+            if (string.IsNullOrWhiteSpace(PrecioUnitarioTextBox.Text) && string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
+            {
+                CantidadNumericUpDown.Value = 0;
+                PrecioUnitarioTextBox.Text = "0";
+            }
+            if (string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
+            {
+                CantidadNumericUpDown.Value = 0;
+            }
+            if (string.IsNullOrWhiteSpace(PrecioUnitarioTextBox.Text))
+            {
+                PrecioUnitarioTextBox.Text = "0";
+            }
+
+
+            cantidad = Convert.ToDecimal(CantidadNumericUpDown.Value);
+            PrecioUnitario = Convert.ToDecimal(PrecioUnitarioTextBox.Text);
+
+            decimal Total = 0;
+            Total = cantidad * PrecioUnitario;
+
+            ImporteTextBox.Text = Convert.ToString(Total);
+        }
+
+        private void PrecioUnitarioTextBox_TextChanged(object sender, EventArgs e)
+        {
+            decimal cantidad = 0;
+            decimal PrecioUnitario = 0;
+
+            if (string.IsNullOrWhiteSpace(PrecioUnitarioTextBox.Text) && string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
+            {
+                CantidadNumericUpDown.Value = 0;
+                PrecioUnitarioTextBox.Text = "0";
+            }
+            if (string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
+            {
+                CantidadNumericUpDown.Value = 0;
+            }
+            if (string.IsNullOrWhiteSpace(PrecioUnitarioTextBox.Text))
+            {
+                PrecioUnitarioTextBox.Text = "0";
+            }
+
+
+            cantidad = Convert.ToDecimal(CantidadNumericUpDown.Value);
+            PrecioUnitario = Convert.ToDecimal(PrecioUnitarioTextBox.Text);
+
+            decimal Total = 0;
+            Total = cantidad * PrecioUnitario;
+
+            ImporteTextBox.Text = Convert.ToString(Total);
         }
     }
 }

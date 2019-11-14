@@ -10,6 +10,7 @@ namespace SistemaPOS.DAL
 {
     public class Contexto : DbContext
     {
+        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Factura> Facturas { get; set; }
         public DbSet<POS> pos { get; set; }
         public DbSet<Articulo> articulo { get; set; }

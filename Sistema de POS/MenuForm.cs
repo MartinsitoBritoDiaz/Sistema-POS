@@ -17,6 +17,7 @@ namespace Sistema_de_POS
     {
         public MenuForm()
         {
+            
             InitializeComponent();
         }
 
@@ -143,7 +144,7 @@ namespace Sistema_de_POS
 
         private void RegistrosButton_Click(object sender, EventArgs e)
         {
-            if (RegistrosPanel.Height == 214)
+            if (RegistrosPanel.Height == 250)
             {
                 RegistrosPanel.Height = 0;
                 ConsultasButton.Location = new Point(0, 135);
@@ -151,9 +152,9 @@ namespace Sistema_de_POS
             }
             else
             {
-                ConsultasButton.Location = new Point(0, 345);
-                ConsultasPanel.Location = new Point(0, 380);
-                RegistrosPanel.Height = 214;
+                ConsultasButton.Location = new Point(0, 385);
+                ConsultasPanel.Location = new Point(0, 418);
+                RegistrosPanel.Height = 250;
             }
         }
 
@@ -165,16 +166,16 @@ namespace Sistema_de_POS
 
         private void ConsultasButton_Click(object sender, EventArgs e)
         {
-            if (RegistrosPanel.Height == 214)
+            if (RegistrosPanel.Height == 250)
             {
                 if (ConsultasPanel.Height == 72)
                 {
-                    ConsultasPanel.Location = new Point(0, 380);
+                    ConsultasPanel.Location = new Point(0, 418);
                     ConsultasPanel.Height = 0;
                 }
                 else
                 {
-                    ConsultasPanel.Location = new Point(0, 380);
+                    ConsultasPanel.Location = new Point(0, 418);
                     ConsultasPanel.Height = 72;
                 }
             }
@@ -193,6 +194,12 @@ namespace Sistema_de_POS
             }
 
             
+        }
+
+        private void UsuarioButton_Click(object sender, EventArgs e)
+        {
+            rUsuario registroUsuario = new rUsuario();
+            registroUsuario.Show();
         }
     }
 }

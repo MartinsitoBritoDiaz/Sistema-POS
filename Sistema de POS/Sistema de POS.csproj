@@ -54,6 +54,7 @@
     <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\POS.cs" />
     <Compile Include="Entidades\DetalleProductosss.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +79,12 @@
     </Compile>
     <Compile Include="UI\Consultas\ConsultaPOS.Designer.cs">
       <DependentUpon>ConsultaPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rLogin.Designer.cs">
+      <DependentUpon>rLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rAperturaCaja.cs">
       <SubType>Form</SubType>
@@ -130,6 +137,12 @@
     <Compile Include="UI\Registros\ToolBox\TipoDePago.Designer.cs">
       <DependentUpon>TipoDePago.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rUsuario.Designer.cs">
+      <DependentUpon>rUsuario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\ConsultaPOS.resx">
       <DependentUpon>ConsultaPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rLogin.resx">
+      <DependentUpon>rLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rAperturaCaja.resx">
       <DependentUpon>rAperturaCaja.cs</DependentUpon>
@@ -170,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\ToolBox\TipoDePago.resx">
       <DependentUpon>TipoDePago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rUsuario.resx">
+      <DependentUpon>rUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -36,7 +36,7 @@ namespace Sistema_de_POS.UI.Registros
             EfectivoDGV.Rows[8].Cells[0].Value = 1;
 
 
-            pos = repos.Buscar(6);
+            pos = repos.Buscar(1);
 
             DSETextBox.Text = Convert.ToString(pos.Total);
             DSTGTextBox.Text = Convert.ToString(pos.Total);

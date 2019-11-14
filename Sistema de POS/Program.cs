@@ -17,7 +17,7 @@ namespace Sistema_de_POS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuForm());
+            Application.Run(new rLogin());
         }
     }
 }

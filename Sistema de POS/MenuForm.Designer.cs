@@ -33,9 +33,9 @@
             this.ConsultasPanel = new System.Windows.Forms.Panel();
             this.VentasButton = new System.Windows.Forms.Button();
             this.ConsultasPOSButton = new System.Windows.Forms.Button();
+            this.ConsultasButton = new System.Windows.Forms.Button();
             this.RegistrosButton = new System.Windows.Forms.Button();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.ConsultasButton = new System.Windows.Forms.Button();
             this.RegistrosPanel = new System.Windows.Forms.Panel();
             this.ClienteButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -53,6 +53,7 @@
             this.MaximizarButton = new System.Windows.Forms.PictureBox();
             this.CerrarButton = new System.Windows.Forms.PictureBox();
             this.SlideButton = new System.Windows.Forms.PictureBox();
+            this.UsuarioButton = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.ConsultasPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -91,7 +92,7 @@
             this.ConsultasPanel.BackColor = System.Drawing.Color.Gray;
             this.ConsultasPanel.Controls.Add(this.VentasButton);
             this.ConsultasPanel.Controls.Add(this.ConsultasPOSButton);
-            this.ConsultasPanel.Location = new System.Drawing.Point(0, 214);
+            this.ConsultasPanel.Location = new System.Drawing.Point(0, 220);
             this.ConsultasPanel.Name = "ConsultasPanel";
             this.ConsultasPanel.Size = new System.Drawing.Size(250, 0);
             this.ConsultasPanel.TabIndex = 14;
@@ -134,6 +135,25 @@
             this.ConsultasPOSButton.UseVisualStyleBackColor = true;
             this.ConsultasPOSButton.Click += new System.EventHandler(this.FacturacionButton_Click);
             // 
+            // ConsultasButton
+            // 
+            this.ConsultasButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConsultasButton.FlatAppearance.BorderSize = 0;
+            this.ConsultasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.ConsultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConsultasButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultasButton.ForeColor = System.Drawing.Color.White;
+            this.ConsultasButton.Image = ((System.Drawing.Image)(resources.GetObject("ConsultasButton.Image")));
+            this.ConsultasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConsultasButton.Location = new System.Drawing.Point(0, 176);
+            this.ConsultasButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ConsultasButton.Name = "ConsultasButton";
+            this.ConsultasButton.Size = new System.Drawing.Size(251, 39);
+            this.ConsultasButton.TabIndex = 13;
+            this.ConsultasButton.Text = "Consultas";
+            this.ConsultasButton.UseVisualStyleBackColor = true;
+            this.ConsultasButton.Click += new System.EventHandler(this.ConsultasButton_Click);
+            // 
             // RegistrosButton
             // 
             this.RegistrosButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -164,28 +184,10 @@
             this.LogoPictureBox.TabIndex = 8;
             this.LogoPictureBox.TabStop = false;
             // 
-            // ConsultasButton
-            // 
-            this.ConsultasButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ConsultasButton.FlatAppearance.BorderSize = 0;
-            this.ConsultasButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.ConsultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultasButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultasButton.ForeColor = System.Drawing.Color.White;
-            this.ConsultasButton.Image = ((System.Drawing.Image)(resources.GetObject("ConsultasButton.Image")));
-            this.ConsultasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultasButton.Location = new System.Drawing.Point(0, 170);
-            this.ConsultasButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ConsultasButton.Name = "ConsultasButton";
-            this.ConsultasButton.Size = new System.Drawing.Size(251, 39);
-            this.ConsultasButton.TabIndex = 13;
-            this.ConsultasButton.Text = "Consultas";
-            this.ConsultasButton.UseVisualStyleBackColor = true;
-            this.ConsultasButton.Click += new System.EventHandler(this.ConsultasButton_Click);
-            // 
             // RegistrosPanel
             // 
             this.RegistrosPanel.BackColor = System.Drawing.Color.Gray;
+            this.RegistrosPanel.Controls.Add(this.UsuarioButton);
             this.RegistrosPanel.Controls.Add(this.ClienteButton);
             this.RegistrosPanel.Controls.Add(this.button2);
             this.RegistrosPanel.Controls.Add(this.POSButton);
@@ -453,6 +455,25 @@
             this.SlideButton.TabStop = false;
             this.SlideButton.Click += new System.EventHandler(this.SlideButton_Click);
             // 
+            // UsuarioButton
+            // 
+            this.UsuarioButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UsuarioButton.FlatAppearance.BorderSize = 0;
+            this.UsuarioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.UsuarioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UsuarioButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuarioButton.ForeColor = System.Drawing.Color.White;
+            this.UsuarioButton.Image = ((System.Drawing.Image)(resources.GetObject("UsuarioButton.Image")));
+            this.UsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.UsuarioButton.Location = new System.Drawing.Point(4, 261);
+            this.UsuarioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UsuarioButton.Name = "UsuarioButton";
+            this.UsuarioButton.Size = new System.Drawing.Size(251, 39);
+            this.UsuarioButton.TabIndex = 12;
+            this.UsuarioButton.Text = "Usuario";
+            this.UsuarioButton.UseVisualStyleBackColor = true;
+            this.UsuarioButton.Click += new System.EventHandler(this.UsuarioButton_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -508,6 +529,7 @@
         private System.Windows.Forms.Panel RegistrosPanel;
         private System.Windows.Forms.Button ConsultasButton;
         private System.Windows.Forms.Panel ConsultasPanel;
+        private System.Windows.Forms.Button UsuarioButton;
     }
 }
 
