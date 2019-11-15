@@ -19,6 +19,7 @@ namespace Sistema_de_POS.Entidades
         public string User { get; set; }
         public string Contraseña { get; set; }
         public  string Tipo { get; set; }
+        public virtual List<POS> Ventas { get; set; }
         public Usuario()
         {
             UsuarioId = 0;

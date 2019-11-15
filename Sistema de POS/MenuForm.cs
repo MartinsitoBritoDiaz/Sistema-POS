@@ -13,9 +13,10 @@ using Sistema_de_POS.UI.Consultas;
 
 namespace Sistema_de_POS
 {
+
     public partial class MenuForm : Form
     {
-        public string NombreUsuario { get; set; }
+        public static string NombreUsuario { get; set; }
 
         public MenuForm(string nombreUsuario)
         {

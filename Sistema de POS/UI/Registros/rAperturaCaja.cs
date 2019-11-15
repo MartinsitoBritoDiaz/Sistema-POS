@@ -42,6 +42,11 @@ namespace Sistema_de_POS.UI.Registros
         
             if(dataGridView1.Columns[e.ColumnIndex].Name == "ColumnaCantidad")
             {
+                if (row.Cells[1].Value == null)
+                {
+                    row.Cells[1].Value = 0;
+                }
+
                 billete = int.Parse(row.Cells[0].Value.ToString());
                 cantidad = int.Parse(row.Cells[1].Value.ToString());
                 subtotal = billete * cantidad;
@@ -54,6 +59,7 @@ namespace Sistema_de_POS.UI.Registros
 
         private void rAperturaCaja_Load(object sender, EventArgs e)
         {
+            UsuarioTextBox.Text = rLogin.UsuarioActual.Nombre;
 
             dataGridView1.Rows.Add(9);
             dataGridView1.Rows[0].Cells[0].Value = 2000;

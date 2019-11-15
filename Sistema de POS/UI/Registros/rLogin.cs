@@ -15,6 +15,7 @@ namespace Sistema_de_POS.UI.Registros
 {
     public partial class rLogin : Form
     {
+        public static Usuario UsuarioActual { get; set; }
         public rLogin()
         {
             InitializeComponent();
@@ -47,6 +48,7 @@ namespace Sistema_de_POS.UI.Registros
 
         }
 
+        
         private void Button1_Click(object sender, EventArgs e)
         {
             if (!Validar())
@@ -60,6 +62,7 @@ namespace Sistema_de_POS.UI.Registros
                 {
                     if (ContraseñaTextBox.Text == item.Contraseña)
                     {
+                        UsuarioActual = repositorio.Buscar(item.UsuarioId);
                         MenuForm menu = new MenuForm(UsuarioTextBox.Text);
                         menu.Show();
 

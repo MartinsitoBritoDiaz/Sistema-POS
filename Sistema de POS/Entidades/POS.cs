@@ -11,7 +11,8 @@ namespace Sistema_de_POS.Entidades
     {
         [Key]
         public int POSid { get; set; }
-        public int UsuarioId { get; set; }
+        public int Usuario { get; set; }
+        public string NombreUsuario { get; set; }
         public DateTime Fecha { get; set; }
         public decimal SubTotal { get; set; }
         public decimal Descuentos { get; set; }
@@ -22,6 +23,7 @@ namespace Sistema_de_POS.Entidades
         public string TipoPago { get; set; }
 
         public virtual List<DetalleProductoPOS> ProductosPOS { get; set; }
+        
 
         public POS()
         {

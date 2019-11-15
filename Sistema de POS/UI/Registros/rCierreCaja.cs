@@ -21,6 +21,8 @@ namespace Sistema_de_POS.UI.Registros
 
         private void rCierreCaja_Load(object sender, EventArgs e)
         {
+            UsuarioTextBox.Text = rLogin.UsuarioActual.Nombre;
+
             RepositorioBase<POS> repos = new RepositorioBase<POS>();
             POS pos = new POS();
 
@@ -36,10 +38,37 @@ namespace Sistema_de_POS.UI.Registros
             EfectivoDGV.Rows[8].Cells[0].Value = 1;
 
 
-            pos = repos.Buscar(1);
+            //pos = repos.Buscar(1);
 
-            DSETextBox.Text = Convert.ToString(pos.Total);
-            DSTGTextBox.Text = Convert.ToString(pos.Total);
+            var Lista = repos.GetList(p => true);
+            decimal totalefectivo = 0  ;
+            decimal totalcredito = 0;
+            decimal totalgeneral =0;
+            
+            foreach (var item in Lista)
+            {
+                if(item.TipoPago=="Tarjeta credito")
+                {
+                    if (item.NombreUsuario == UsuarioTextBox.Text) //Para saber si es el usuario actual
+                    {
+                        totalefectivo += item.Total;
+                    }
+                }
+                else
+                {
+                    if (item.NombreUsuario == UsuarioTextBox.Text) //Para saber si es el usuario actual
+                    {
+                        totalcredito += item.Total;
+                    }
+                }
+    
+            }
+
+            totalgeneral = totalefectivo + totalcredito;
+
+            DSETextBox.Text = Convert.ToString(totalefectivo);
+            DSTTextBox.Text = Convert.ToString(totalcredito);
+            DSTGTextBox.Text = Convert.ToString(totalgeneral);
         }
 
         int billete = 0;
@@ -64,8 +93,15 @@ namespace Sistema_de_POS.UI.Registros
                 {
                     tscantidad = "0";
                 }
+
+                if (row.Cells[1].Value == null)
+                {
+                    row.Cells[1].Value = 0;
+                }
+
                 billete = int.Parse(row.Cells[0].Value.ToString());
                 cantidad = int.Parse(row.Cells[1].Value.ToString());
+
                 subtotal = billete * cantidad;
                 total += subtotal;
                 row.Cells[2].Value = subtotal;
@@ -79,7 +115,7 @@ namespace Sistema_de_POS.UI.Registros
             IDNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             UsuarioTextBox.Text = string.Empty;
-            CajaTextBox.Text = string.Empty;
+            CajaNumericUpDown.Text = string.Empty;
             TotalEfectivoTextBox.Text = string.Empty;
             ComentarioTextBox.Text = string.Empty;
             EfectivoDGV.DataSource = null;
@@ -89,7 +125,7 @@ namespace Sistema_de_POS.UI.Registros
             Cierre cierre = new Cierre();
 
             cierre.CierreId = Convert.ToInt32(IDNumericUpDown.Value);
-            cierre.Caja = Convert.ToInt32(CajaTextBox.Text);
+            cierre.Caja = Convert.ToInt32(CajaNumericUpDown.Text);
             cierre.Fecha = FechaDateTimePicker.Value;
             cierre.Usuario = UsuarioTextBox.Text;
             cierre.TotalEfectivo = Convert.ToDouble(TotalEfectivoTextBox.Text);
@@ -100,7 +136,7 @@ namespace Sistema_de_POS.UI.Registros
         public void LlenarCampo(Cierre cierre)
         {
             IDNumericUpDown.Value = cierre.CierreId;
-            CajaTextBox.Text = Convert.ToString(cierre.Caja);
+            CajaNumericUpDown.Text = Convert.ToString(cierre.Caja);
             FechaDateTimePicker.Value = cierre.Fecha;
             UsuarioTextBox.Text = cierre.Usuario;
             TotalEfectivoTextBox.Text = Convert.ToString(cierre.TotalEfectivo);
@@ -112,19 +148,14 @@ namespace Sistema_de_POS.UI.Registros
             MyErrorProvider.Clear();
             bool paso = true;
 
-            if (string.IsNullOrWhiteSpace(CajaTextBox.Text))
+            if (CajaNumericUpDown.Value==0)
             {
-                MyErrorProvider.SetError(CajaTextBox, "El campo caja no puede estar vacio");
-                CajaTextBox.Focus();
+                MyErrorProvider.SetError(CajaNumericUpDown, "El campo caja no puede estar ser 0");
+                CajaNumericUpDown.Focus();
                 paso = false;
             }
 
-            if (string.IsNullOrWhiteSpace(UsuarioTextBox.Text))
-            {
-                MyErrorProvider.SetError(CajaTextBox, "El campo usuario no puede estar vacio");
-                UsuarioTextBox.Focus();
-                paso = false;
-            }
+           
             if (Convert.ToDouble(TotalGeneralTextBox.Text) != Convert.ToDouble(DSTGTextBox.Text))
             {
                 MyErrorProvider.SetError(Guardarbutton, "La caja no cuadra");
@@ -153,13 +184,21 @@ namespace Sistema_de_POS.UI.Registros
             RepositorioBase<Cierre> repo = new RepositorioBase<Cierre>();
             Cierre cierre = new Cierre();
 
+            RepositorioBase<Apertura> repos = new RepositorioBase<Apertura>();
+            Apertura apertura = new Apertura();
+
             if (!Validar())
                 return;
 
             cierre = LlenarClase();
 
             if (IDNumericUpDown.Value == 0)
+            {
                 paso = repo.Guardar(cierre);
+                apertura = repos.Buscar(Convert.ToInt32(CajaNumericUpDown.Value));
+                apertura.Cerrada = true; //Para Marcarla Cerrada
+                repos.Guardar(apertura);
+            }      
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
@@ -231,7 +270,9 @@ namespace Sistema_de_POS.UI.Registros
 
                 }
             }
-            TotalGeneralTextBox.Text = TotalEfectivoTextBox.Text;
+
+            decimal ttg = total + totalcredito;
+            TotalGeneralTextBox.Text = Convert.ToString(ttg);
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -261,6 +302,59 @@ namespace Sistema_de_POS.UI.Registros
         private void DSTGTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void EfectivoDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CreditoDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        decimal totalcredito = 0;
+        decimal monto = 0;
+        private void CreditoDGV_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = ((DataGridViewRow)(CreditoDGV.Rows[e.RowIndex]));
+
+
+
+            if (CreditoDGV.Columns[e.ColumnIndex].Name == "ColumnaMonto")
+            {
+                string tscantidad;
+                try
+                {
+                    tscantidad = (row.Cells[1].Value.ToString());
+                }
+                catch (Exception)
+                {
+                    tscantidad = "0";
+                }
+
+                if (row.Cells[1].Value == null)
+                {
+                    row.Cells[1].Value = 0;
+                }
+
+                
+                monto = int.Parse(row.Cells[1].Value.ToString());
+
+                
+                totalcredito += monto;
+                
+            }
+
+            TotalTarjetaCreditoTextBox.Text = Convert.ToString(totalcredito);
+            
+        }
+
+        private void TotalTarjetaCreditoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            decimal ttg = total + totalcredito;
+            TotalGeneralTextBox.Text = Convert.ToString(ttg);
         }
     }
 }

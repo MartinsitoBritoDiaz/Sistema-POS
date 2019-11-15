@@ -17,6 +17,7 @@ namespace Sistema_de_POS.UI.Registros
 {
     public partial class RPosForm : Form
     {
+        
         public decimal Primero { get; set; }
         public decimal Segundo { get; set; }
         public string Operador { get; set; }
@@ -26,6 +27,7 @@ namespace Sistema_de_POS.UI.Registros
         {
             InitializeComponent();
             this.detalle = new List<DetalleProductoPOS>();
+            
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -82,6 +84,7 @@ namespace Sistema_de_POS.UI.Registros
             FechaDateTimePicker.Value = DateTime.Now;
 
             this.detalle = new List<DetalleProductoPOS>();
+            
             CargarGrid();
         }
         
@@ -98,7 +101,13 @@ namespace Sistema_de_POS.UI.Registros
             p.SubTotal = Convert.ToDecimal(SubtotalResultadolabel.Text);
             p.Total = Convert.ToDecimal(TotalResultadolabel.Text);
 
+            if (TarjetaRadioButton.Checked)
+                p.TipoPago = "Tarjeta credito";
+            else
+                p.TipoPago = "Efectivo";
             p.ProductosPOS = this.detalle;
+            p.Usuario = rLogin.UsuarioActual.UsuarioId;
+            p.NombreUsuario = rLogin.UsuarioActual.Nombre;
             CargarGrid();
             return p;
         }
@@ -115,6 +124,7 @@ namespace Sistema_de_POS.UI.Registros
             TotalResultadolabel.Text = Convert.ToString(p.Total);
 
             this.detalle = p.ProductosPOS;
+        
             CargarGrid();
         }
 
@@ -266,6 +276,7 @@ namespace Sistema_de_POS.UI.Registros
         private void RPosForm_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            CajeroTextBox.Text = rLogin.UsuarioActual.Nombre;
            /*RepositorioBase<Articulo> repo = new RepositorioBase<Articulo>();
 
             var Lista = repo.GetList(p => true);
@@ -595,6 +606,22 @@ namespace Sistema_de_POS.UI.Registros
             Total = cantidad * PrecioUnitario;
 
             ImporteTextBox.Text = Convert.ToString(Total);
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TarjetaRadioButton.Checked)
+                EfectivoRadioButton.Checked = false;
+            else
+                EfectivoRadioButton.Checked = true;
+        }
+
+        private void TarjetaRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (EfectivoRadioButton.Checked)
+                TarjetaRadioButton.Checked = false;
+            else
+                TarjetaRadioButton.Checked = true;
         }
     }
 }

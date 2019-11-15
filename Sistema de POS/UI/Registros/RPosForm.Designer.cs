@@ -65,7 +65,6 @@
             this.HerramientasgroupBox = new System.Windows.Forms.GroupBox();
             this.AplicarCheckBox = new System.Windows.Forms.CheckBox();
             this.IDNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.TipoDePagobutton = new System.Windows.Forms.Button();
             this.ProductosMasVendidosbutton = new System.Windows.Forms.Button();
             this.Busquedabutton = new System.Windows.Forms.Button();
             this.ImpuestosResultadolabel = new System.Windows.Forms.Label();
@@ -98,6 +97,10 @@
             this.CerrarButton = new System.Windows.Forms.PictureBox();
             this.MinimizarButton = new System.Windows.Forms.PictureBox();
             this.BarraTituloPanel = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.TarjetaRadioButton = new System.Windows.Forms.RadioButton();
+            this.EfectivoRadioButton = new System.Windows.Forms.RadioButton();
             this.Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -110,10 +113,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
             this.BarraTituloPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel
             // 
+            this.Panel.Controls.Add(this.pictureBox3);
+            this.Panel.Controls.Add(this.pictureBox4);
+            this.Panel.Controls.Add(this.TarjetaRadioButton);
+            this.Panel.Controls.Add(this.EfectivoRadioButton);
             this.Panel.Controls.Add(this.EliminarFilabutton);
             this.Panel.Controls.Add(this.pictureBox1);
             this.Panel.Controls.Add(this.CajeroTextBox);
@@ -191,7 +200,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(523, 36);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(370, 53);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -250,7 +259,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(1317, 747);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(191, 65);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -498,7 +507,6 @@
             // 
             this.HerramientasgroupBox.Controls.Add(this.AplicarCheckBox);
             this.HerramientasgroupBox.Controls.Add(this.IDNumericUpDown);
-            this.HerramientasgroupBox.Controls.Add(this.TipoDePagobutton);
             this.HerramientasgroupBox.Controls.Add(this.ProductosMasVendidosbutton);
             this.HerramientasgroupBox.Controls.Add(this.Busquedabutton);
             this.HerramientasgroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -528,19 +536,6 @@
             this.IDNumericUpDown.Name = "IDNumericUpDown";
             this.IDNumericUpDown.Size = new System.Drawing.Size(65, 26);
             this.IDNumericUpDown.TabIndex = 57;
-            // 
-            // TipoDePagobutton
-            // 
-            this.TipoDePagobutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TipoDePagobutton.Image = global::Sistema_de_POS.Properties.Resources.Facturacion;
-            this.TipoDePagobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TipoDePagobutton.Location = new System.Drawing.Point(4, 140);
-            this.TipoDePagobutton.Name = "TipoDePagobutton";
-            this.TipoDePagobutton.Size = new System.Drawing.Size(196, 45);
-            this.TipoDePagobutton.TabIndex = 36;
-            this.TipoDePagobutton.Text = "TIPO DE PAGO";
-            this.TipoDePagobutton.UseVisualStyleBackColor = true;
-            this.TipoDePagobutton.Click += new System.EventHandler(this.TipoDePagobutton_Click);
             // 
             // ProductosMasVendidosbutton
             // 
@@ -839,7 +834,7 @@
             this.panel1.Controls.Add(this.Eliminarbutton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 688);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1386, 45);
             this.panel1.TabIndex = 54;
@@ -850,7 +845,7 @@
             this.CerrarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CerrarButton.Image = ((System.Drawing.Image)(resources.GetObject("CerrarButton.Image")));
             this.CerrarButton.Location = new System.Drawing.Point(1364, 2);
-            this.CerrarButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CerrarButton.Margin = new System.Windows.Forms.Padding(2);
             this.CerrarButton.Name = "CerrarButton";
             this.CerrarButton.Size = new System.Drawing.Size(19, 20);
             this.CerrarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -864,7 +859,7 @@
             this.MinimizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinimizarButton.Image = ((System.Drawing.Image)(resources.GetObject("MinimizarButton.Image")));
             this.MinimizarButton.Location = new System.Drawing.Point(1342, 2);
-            this.MinimizarButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimizarButton.Margin = new System.Windows.Forms.Padding(2);
             this.MinimizarButton.Name = "MinimizarButton";
             this.MinimizarButton.Size = new System.Drawing.Size(19, 20);
             this.MinimizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -879,12 +874,61 @@
             this.BarraTituloPanel.Controls.Add(this.CerrarButton);
             this.BarraTituloPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTituloPanel.Location = new System.Drawing.Point(0, 0);
-            this.BarraTituloPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BarraTituloPanel.Margin = new System.Windows.Forms.Padding(2);
             this.BarraTituloPanel.Name = "BarraTituloPanel";
             this.BarraTituloPanel.Size = new System.Drawing.Size(1386, 27);
             this.BarraTituloPanel.TabIndex = 55;
             this.BarraTituloPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTituloPanel_Paint);
             this.BarraTituloPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloPanel_MouseDown_2);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(943, 644);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(56, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 88;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(1144, 644);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(56, 40);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 87;
+            this.pictureBox4.TabStop = false;
+            // 
+            // TarjetaRadioButton
+            // 
+            this.TarjetaRadioButton.AutoSize = true;
+            this.TarjetaRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TarjetaRadioButton.Location = new System.Drawing.Point(1001, 658);
+            this.TarjetaRadioButton.Name = "TarjetaRadioButton";
+            this.TarjetaRadioButton.Size = new System.Drawing.Size(138, 21);
+            this.TarjetaRadioButton.TabIndex = 86;
+            this.TarjetaRadioButton.TabStop = true;
+            this.TarjetaRadioButton.Text = "Tarjeta de credito";
+            this.TarjetaRadioButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.TarjetaRadioButton.UseVisualStyleBackColor = true;
+            this.TarjetaRadioButton.CheckedChanged += new System.EventHandler(this.TarjetaRadioButton_CheckedChanged);
+            // 
+            // EfectivoRadioButton
+            // 
+            this.EfectivoRadioButton.AutoSize = true;
+            this.EfectivoRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EfectivoRadioButton.Location = new System.Drawing.Point(1205, 658);
+            this.EfectivoRadioButton.Name = "EfectivoRadioButton";
+            this.EfectivoRadioButton.Size = new System.Drawing.Size(76, 21);
+            this.EfectivoRadioButton.TabIndex = 85;
+            this.EfectivoRadioButton.TabStop = true;
+            this.EfectivoRadioButton.Text = "Efectivo";
+            this.EfectivoRadioButton.UseVisualStyleBackColor = true;
+            this.EfectivoRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // RPosForm
             // 
@@ -912,6 +956,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).EndInit();
             this.BarraTituloPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -921,7 +967,6 @@
         private System.Windows.Forms.Panel Panel;
         private System.Windows.Forms.Button Finbutton;
         private System.Windows.Forms.GroupBox HerramientasgroupBox;
-        private System.Windows.Forms.Button TipoDePagobutton;
         private System.Windows.Forms.Button ProductosMasVendidosbutton;
         private System.Windows.Forms.Button Busquedabutton;
         private System.Windows.Forms.Label ImpuestosResultadolabel;
@@ -986,5 +1031,9 @@
         private System.Windows.Forms.TextBox CajeroTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button AgregarGridButton;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.RadioButton TarjetaRadioButton;
+        private System.Windows.Forms.RadioButton EfectivoRadioButton;
     }
 }

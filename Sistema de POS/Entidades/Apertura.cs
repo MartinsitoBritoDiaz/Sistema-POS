@@ -15,6 +15,7 @@ namespace Sistema_de_POS.Entidades
         public string Usuario { get; set; }
         public double TotalEfectivo { get; set; }
         public string Comentario { get; set; }
+        public bool Cerrada { get; set; }
 
         public Apertura()
         {
