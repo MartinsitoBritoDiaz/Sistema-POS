@@ -222,20 +222,46 @@ namespace Sistema_de_POS.UI.Registros
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Cliente> repositorio = new RepositorioBase<Cliente>();
+            Cliente clienteSeleccionado = new Cliente();
 
-            int id;
-            int.TryParse(Convert.ToString(IDnumericUpDown.Value), out id);
+            bool interruptor = true;
 
-            Cliente cliente = repositorio.Buscar(id);
-            Limpiar();
-
-            if (cliente != null)
+            if ((string.IsNullOrWhiteSpace(NombreTextBox.Text)))
             {
-                LlenaCampo(cliente);
+                int id;
+                int.TryParse(Convert.ToString(IDnumericUpDown.Value), out id);
+
+                Cliente cliente = repositorio.Buscar(id);
+                Limpiar();
+
+                if (cliente != null)
+                    LlenaCampo(cliente);
+                else
+                    MessageBox.Show("Cliente no encontrado");
+                
             }
             else
             {
-                MessageBox.Show("Cliente no encontrado");
+                foreach (var item in repositorio.GetList(p => true))
+                {
+                    if (NombreTextBox.Text.Contains(item.Nombre))
+                    {
+                        clienteSeleccionado = item;
+                        interruptor = false;
+                        break;
+                    }
+                }
+
+                Limpiar();
+
+                if (!interruptor)
+                {
+                    LlenaCampo(clienteSeleccionado);
+                }
+                else
+                {
+                    MyErrorProvider.SetError(NombreTextBox, "No se puede Buscar un cliente que no existe");
+                }
             }
         }
 

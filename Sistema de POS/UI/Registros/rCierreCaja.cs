@@ -21,8 +21,6 @@ namespace Sistema_de_POS.UI.Registros
 
         private void rCierreCaja_Load(object sender, EventArgs e)
         {
-            UsuarioTextBox.Text = rLogin.UsuarioActual.Nombre;
-
             RepositorioBase<POS> repos = new RepositorioBase<POS>();
             POS pos = new POS();
 
@@ -45,24 +43,26 @@ namespace Sistema_de_POS.UI.Registros
             decimal totalcredito = 0;
             decimal totalgeneral =0;
             
-            foreach (var item in Lista)
-            {
-                if(item.TipoPago=="Tarjeta credito")
-                {
-                    if (item.NombreUsuario == UsuarioTextBox.Text) //Para saber si es el usuario actual
-                    {
-                        totalefectivo += item.Total;
-                    }
-                }
-                else
-                {
-                    if (item.NombreUsuario == UsuarioTextBox.Text) //Para saber si es el usuario actual
-                    {
-                        totalcredito += item.Total;
-                    }
-                }
+            //foreach (var item in Lista)
+            //{
+            //    if(item.TipoPago=="Tarjeta credito")
+            //    {
+            //        if (item.NombreUsuario == UsuarioTextBox.Text) //Para saber si es el usuario actual
+            //        {
+
+            //            totalcredito += item.Total;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (item.NombreUsuario == UsuarioTextBox.Text) //Para saber si es el usuario actual
+            //        {
+
+            //            totalefectivo += item.Total;
+            //        }
+            //    }
     
-            }
+            //}
 
             totalgeneral = totalefectivo + totalcredito;
 
@@ -127,7 +127,6 @@ namespace Sistema_de_POS.UI.Registros
             cierre.CierreId = Convert.ToInt32(IDNumericUpDown.Value);
             cierre.Caja = Convert.ToInt32(CajaNumericUpDown.Text);
             cierre.Fecha = FechaDateTimePicker.Value;
-            cierre.Usuario = UsuarioTextBox.Text;
             cierre.TotalEfectivo = Convert.ToDouble(TotalEfectivoTextBox.Text);
             cierre.Comentario = ComentarioTextBox.Text;
 
@@ -138,7 +137,6 @@ namespace Sistema_de_POS.UI.Registros
             IDNumericUpDown.Value = cierre.CierreId;
             CajaNumericUpDown.Text = Convert.ToString(cierre.Caja);
             FechaDateTimePicker.Value = cierre.Fecha;
-            UsuarioTextBox.Text = cierre.Usuario;
             TotalEfectivoTextBox.Text = Convert.ToString(cierre.TotalEfectivo);
             ComentarioTextBox.Text = cierre.Comentario;
         }
@@ -355,6 +353,11 @@ namespace Sistema_de_POS.UI.Registros
         {
             decimal ttg = total + totalcredito;
             TotalGeneralTextBox.Text = Convert.ToString(ttg);
+        }
+
+        private void UsuarioTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

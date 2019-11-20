@@ -63,9 +63,6 @@ namespace Sistema_de_POS.UI.Registros
                     if (ContraseñaTextBox.Text == item.Contraseña)
                     {
                         UsuarioActual = repositorio.Buscar(item.UsuarioId);
-                        MenuForm menu = new MenuForm(UsuarioTextBox.Text);
-                        menu.Show();
-
                     }
                     else
                     {
@@ -126,6 +123,16 @@ namespace Sistema_de_POS.UI.Registros
                 ContraseñaTextBox.UseSystemPasswordChar = true;
                 ContraseñaTextBox.Text = text;
             }
+        }
+
+        private void IngresarButton_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

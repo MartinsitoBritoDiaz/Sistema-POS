@@ -18,9 +18,8 @@ namespace Sistema_de_POS
     {
         public static string NombreUsuario { get; set; }
 
-        public MenuForm(string nombreUsuario)
+        public MenuForm()
         {
-            NombreUsuario = nombreUsuario;
             InitializeComponent();
         }
 
@@ -118,7 +117,7 @@ namespace Sistema_de_POS
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Form formulario = new RPosForm();
+            Form formulario = new rPointOS();
             formulario.Show();
         }
 
@@ -147,7 +146,7 @@ namespace Sistema_de_POS
 
         private void RegistrosButton_Click(object sender, EventArgs e)
         {
-            if (RegistrosPanel.Height == 250)
+            if (RegistrosPanel.Height == 290)
             {
                 RegistrosPanel.Height = 0;
                 ConsultasButton.Location = new Point(0, 135);
@@ -155,9 +154,9 @@ namespace Sistema_de_POS
             }
             else
             {
-                ConsultasButton.Location = new Point(0, 385);
-                ConsultasPanel.Location = new Point(0, 418);
-                RegistrosPanel.Height = 250;
+                ConsultasButton.Location = new Point(0, 408);
+                ConsultasPanel.Location = new Point(0, 440);
+                RegistrosPanel.Height = 290;
             }
         }
 
@@ -169,16 +168,16 @@ namespace Sistema_de_POS
 
         private void ConsultasButton_Click(object sender, EventArgs e)
         {
-            if (RegistrosPanel.Height == 250)
+            if (RegistrosPanel.Height == 290)
             {
                 if (ConsultasPanel.Height == 72)
                 {
-                    ConsultasPanel.Location = new Point(0, 418);
+                    ConsultasPanel.Location = new Point(0, 440);
                     ConsultasPanel.Height = 0;
                 }
                 else
                 {
-                    ConsultasPanel.Location = new Point(0, 418);
+                    ConsultasPanel.Location = new Point(0, 440);
                     ConsultasPanel.Height = 72;
                 }
             }
@@ -207,7 +206,12 @@ namespace Sistema_de_POS
 
         private void MenuForm_Load(object sender, EventArgs e)
         {
-            UsuarioActuallabel.Text = NombreUsuario;
+        }
+
+        private void Button3_Click_1(object sender, EventArgs e)
+        {
+            rProductos registro = new rProductos();
+            registro.Show();
         }
     }
 }

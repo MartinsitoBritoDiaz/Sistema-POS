@@ -18,7 +18,7 @@ namespace SistemaPOS.BLL
             _contexto = new Contexto();
         }
 
-        public T Buscar(int id)
+        public virtual T Buscar(int id)
         {
             T entity;
 
@@ -38,7 +38,7 @@ namespace SistemaPOS.BLL
             _contexto.Dispose();
         }
 
-        public bool Eliminar(int id)
+        public virtual bool Eliminar(int id)
         {
             bool paso = false;
 

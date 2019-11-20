@@ -43,8 +43,6 @@
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Apertura.cs" />
-    <Compile Include="Entidades\Articulo.cs" />
-    <Compile Include="Entidades\ArticuloMV.cs" />
     <Compile Include="Entidades\Cierre.cs" />
     <Compile Include="Entidades\CajaChica.cs" />
     <Compile Include="Entidades\Cliente.cs" />
@@ -53,6 +51,7 @@
     <Compile Include="Entidades\EgresoFondos.cs" />
     <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\POS.cs" />
+    <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
@@ -109,20 +108,38 @@
     <Compile Include="UI\Registros\rCliente.Designer.cs">
       <DependentUpon>rCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\RegistroProductos.cs">
+    <Compile Include="UI\Registros\rPointOS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\RegistroProductos.Designer.cs">
-      <DependentUpon>RegistroProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Registros\RPosForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Registros\RPosForm.Designer.cs">
-      <DependentUpon>RPosForm.cs</DependentUpon>
+    <Compile Include="UI\Registros\rPointOS.Designer.cs">
+      <DependentUpon>rPointOS.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\rFacturacion.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rProductos.Designer.cs">
+      <DependentUpon>rProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\ToolBox\BusquedaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\ToolBox\BusquedaClientes.Designer.cs">
+      <DependentUpon>BusquedaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\ToolBox\BusquedaPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\ToolBox\BusquedaPOS.Designer.cs">
+      <DependentUpon>BusquedaPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\ToolBox\BusquedaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\ToolBox\BusquedaProductos.Designer.cs">
+      <DependentUpon>BusquedaProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registros\ToolBox\ProductosMasVendidos.cs">
       <SubType>Form</SubType>
@@ -171,14 +188,23 @@
     <EmbeddedResource Include="UI\Registros\rCliente.resx">
       <DependentUpon>rCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\RegistroProductos.resx">
-      <DependentUpon>RegistroProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\RPosForm.resx">
-      <DependentUpon>RPosForm.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\rPointOS.resx">
+      <DependentUpon>rPointOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rFacturacion.resx">
       <DependentUpon>rFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rProductos.resx">
+      <DependentUpon>rProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\ToolBox\BusquedaClientes.resx">
+      <DependentUpon>BusquedaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\ToolBox\BusquedaPOS.resx">
+      <DependentUpon>BusquedaPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\ToolBox\BusquedaProductos.resx">
+      <DependentUpon>BusquedaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\ToolBox\ProductosMasVendidos.resx">
       <DependentUpon>ProductosMasVendidos.cs</DependentUpon>

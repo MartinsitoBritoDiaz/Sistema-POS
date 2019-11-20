@@ -10,23 +10,28 @@ namespace Sistema_de_POS.Entidades
     public class POS
     {
         [Key]
-        public int POSid { get; set; }
-        public int Usuario { get; set; }
-        public string NombreUsuario { get; set; }
+        public int PosId { get; set; }
         public DateTime Fecha { get; set; }
-        public decimal SubTotal { get; set; }
-        public decimal Descuentos { get; set; }
-        public decimal ITBIS { get; set; }
-        public decimal Total { get; set; }
+        public double SubTotal { get; set; }
+        public double Impuesto { get; set; }
+        public double Total { get; set; }
         public int Cantidad { get; set; }
-        public string Cajero { get; set; }
         public string TipoPago { get; set; }
+        public bool Estado { get; set; }
 
         public virtual List<DetalleProductoPOS> ProductosPOS { get; set; }
-        
 
         public POS()
         {
+            PosId = 0;
+            Fecha = DateTime.Now;
+            SubTotal = 0;
+            Impuesto = 0;
+            Total = 0;
+            Cantidad = 0;
+            TipoPago = string.Empty;
+            ProductosPOS = new List<DetalleProductoPOS>();
+            Estado = false;
         }
     }
 }

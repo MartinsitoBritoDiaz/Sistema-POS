@@ -39,11 +39,8 @@
             this.PolloButton = new System.Windows.Forms.Button();
             this.QuesoButton = new System.Windows.Forms.Button();
             this.ResButton = new System.Windows.Forms.Button();
-            this.SalamiCorrienteButton = new System.Windows.Forms.Button();
-            this.HieloButton = new System.Windows.Forms.Button();
             this.PiñaButton = new System.Windows.Forms.Button();
             this.HuevosButton = new System.Windows.Forms.Button();
-            this.CilantroButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ManzanaButton
@@ -93,7 +90,7 @@
             // LimonButton
             // 
             this.LimonButton.Image = ((System.Drawing.Image)(resources.GetObject("LimonButton.Image")));
-            this.LimonButton.Location = new System.Drawing.Point(544, 15);
+            this.LimonButton.Location = new System.Drawing.Point(412, 148);
             this.LimonButton.Margin = new System.Windows.Forms.Padding(4);
             this.LimonButton.Name = "LimonButton";
             this.LimonButton.Size = new System.Drawing.Size(124, 59);
@@ -148,7 +145,7 @@
             // ResButton
             // 
             this.ResButton.Image = ((System.Drawing.Image)(resources.GetObject("ResButton.Image")));
-            this.ResButton.Location = new System.Drawing.Point(544, 81);
+            this.ResButton.Location = new System.Drawing.Point(280, 148);
             this.ResButton.Margin = new System.Windows.Forms.Padding(4);
             this.ResButton.Name = "ResButton";
             this.ResButton.Size = new System.Drawing.Size(124, 59);
@@ -156,32 +153,10 @@
             this.ResButton.UseVisualStyleBackColor = true;
             this.ResButton.Click += new System.EventHandler(this.ResButton_Click);
             // 
-            // SalamiCorrienteButton
-            // 
-            this.SalamiCorrienteButton.Image = ((System.Drawing.Image)(resources.GetObject("SalamiCorrienteButton.Image")));
-            this.SalamiCorrienteButton.Location = new System.Drawing.Point(280, 148);
-            this.SalamiCorrienteButton.Margin = new System.Windows.Forms.Padding(4);
-            this.SalamiCorrienteButton.Name = "SalamiCorrienteButton";
-            this.SalamiCorrienteButton.Size = new System.Drawing.Size(124, 59);
-            this.SalamiCorrienteButton.TabIndex = 10;
-            this.SalamiCorrienteButton.UseVisualStyleBackColor = true;
-            this.SalamiCorrienteButton.Click += new System.EventHandler(this.SalamiCorrienteButton_Click);
-            // 
-            // HieloButton
-            // 
-            this.HieloButton.Image = ((System.Drawing.Image)(resources.GetObject("HieloButton.Image")));
-            this.HieloButton.Location = new System.Drawing.Point(412, 148);
-            this.HieloButton.Margin = new System.Windows.Forms.Padding(4);
-            this.HieloButton.Name = "HieloButton";
-            this.HieloButton.Size = new System.Drawing.Size(124, 59);
-            this.HieloButton.TabIndex = 11;
-            this.HieloButton.UseVisualStyleBackColor = true;
-            this.HieloButton.Click += new System.EventHandler(this.HieloButton_Click);
-            // 
             // PiñaButton
             // 
             this.PiñaButton.Image = ((System.Drawing.Image)(resources.GetObject("PiñaButton.Image")));
-            this.PiñaButton.Location = new System.Drawing.Point(544, 148);
+            this.PiñaButton.Location = new System.Drawing.Point(13, 148);
             this.PiñaButton.Margin = new System.Windows.Forms.Padding(4);
             this.PiñaButton.Name = "PiñaButton";
             this.PiñaButton.Size = new System.Drawing.Size(124, 59);
@@ -200,27 +175,13 @@
             this.HuevosButton.UseVisualStyleBackColor = true;
             this.HuevosButton.Click += new System.EventHandler(this.HuevosButton_Click);
             // 
-            // CilantroButton
-            // 
-            this.CilantroButton.Image = ((System.Drawing.Image)(resources.GetObject("CilantroButton.Image")));
-            this.CilantroButton.Location = new System.Drawing.Point(16, 148);
-            this.CilantroButton.Margin = new System.Windows.Forms.Padding(4);
-            this.CilantroButton.Name = "CilantroButton";
-            this.CilantroButton.Size = new System.Drawing.Size(124, 59);
-            this.CilantroButton.TabIndex = 14;
-            this.CilantroButton.UseVisualStyleBackColor = true;
-            this.CilantroButton.Click += new System.EventHandler(this.CilantroButton_Click);
-            // 
             // ProductosMasVendidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 224);
-            this.Controls.Add(this.CilantroButton);
+            this.ClientSize = new System.Drawing.Size(544, 224);
             this.Controls.Add(this.HuevosButton);
             this.Controls.Add(this.PiñaButton);
-            this.Controls.Add(this.HieloButton);
-            this.Controls.Add(this.SalamiCorrienteButton);
             this.Controls.Add(this.ResButton);
             this.Controls.Add(this.QuesoButton);
             this.Controls.Add(this.PolloButton);
@@ -250,10 +211,7 @@
         private System.Windows.Forms.Button PolloButton;
         private System.Windows.Forms.Button QuesoButton;
         private System.Windows.Forms.Button ResButton;
-        private System.Windows.Forms.Button SalamiCorrienteButton;
-        private System.Windows.Forms.Button HieloButton;
         private System.Windows.Forms.Button PiñaButton;
         private System.Windows.Forms.Button HuevosButton;
-        private System.Windows.Forms.Button CilantroButton;
     }
 }

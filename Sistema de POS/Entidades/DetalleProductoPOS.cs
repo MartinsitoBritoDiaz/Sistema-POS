@@ -10,27 +10,27 @@ namespace Sistema_de_POS.Entidades
     public class DetalleProductoPOS
     {
         [Key]
-        public int id { get; set; }
-        public int POSid { get; set; }
-        public int cantidad { get; set; }
+        public int ProductId { get; set; }
+        public string Descripcion { get; set; }
+        public int Cantidad { get; set; }
+        public double PrecioUnitario { get; set; }
+        public double Importe { get; set; }
         public string Unidad { get; set; }
-        public string descripcion { get; set; }
-        public decimal precioUnitario { get; set; }
-        public decimal importe { get; set; }
+        public int PosId { get; set; }
 
         public DetalleProductoPOS()
         {
         }
 
-        public DetalleProductoPOS(int id, int POSid, int cantidad, string unidad, string descripcion, decimal precioUnitario, decimal importe)
+        public DetalleProductoPOS(int productId, string descripcion, int cantidad, double precioUnitario, double importe, string unidad, int posId)
         {
-            this.id = id;
-            this.POSid = POSid;
-            this.cantidad = cantidad;
-            this.Unidad = unidad;
-            this.descripcion = descripcion;
-            this.precioUnitario = precioUnitario;
-            this.importe = importe;
+            ProductId = productId;
+            Descripcion = descripcion;
+            Cantidad = cantidad;
+            PrecioUnitario = precioUnitario;
+            Importe = importe;
+            Unidad = unidad;
+            PosId = posId;
         }
     }
 }

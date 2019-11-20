@@ -15,13 +15,22 @@ namespace SistemaPOS.BLL
     {
         public override bool Modificar(Factura factura)
         {
+            ClienteRepositorio repositorio = new ClienteRepositorio();
 
-            var anterior = base._contexto.Facturas.Find(factura.FacturaId);
-
-            foreach (var item in anterior.DetalleProducto)
+            foreach (var item in factura.DetalleProducto)
             {
-                if (!factura.DetalleProducto.Exists(d => d.ProductoId == item.ProductoId))
-                    base._contexto.Entry(item).State =  EntityState.Deleted;
+                if (item.ProductoId == 0)
+                {
+                    _contexto.Entry(item).State = EntityState.Added;
+                    repositorio.ModificarDeudas(factura.ClienteId, factura.Total);
+                }
+                else
+                {
+                    _contexto.Entry(item).State = EntityState.Modified;
+
+                    repositorio.ModificarDeudas(factura.ClienteId, (factura.Total)*-1);
+                }
+                  
             }
         
             return base.Modificar(factura);
@@ -31,9 +40,21 @@ namespace SistemaPOS.BLL
         {
             ClienteRepositorio repositorio = new ClienteRepositorio();
             
-            repositorio.ModificarDeudas(factura.ClienteId, factura.Deuda);
+            repositorio.ModificarDeudas(factura.ClienteId, factura.Total);
             
             return base.Guardar(factura);
+        }
+
+        public override Factura Buscar(int id)
+        {
+            Factura factura = new Factura();
+
+            factura = base.Buscar(id);
+
+            if(factura != null)
+                 factura.DetalleProducto.Count();
+
+            return base.Buscar(id);
         }
     }
 

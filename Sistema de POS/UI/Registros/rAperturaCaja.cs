@@ -92,7 +92,6 @@ namespace Sistema_de_POS.UI.Registros
             apertura.AperturaId = Convert.ToInt32(IDNumericUpDown.Value);
             apertura.Caja = Convert.ToInt32(CajaTextBox.Text);
             apertura.Fecha = FechaDateTimePicker.Value;
-            apertura.Usuario = UsuarioTextBox.Text;
             apertura.TotalEfectivo = Convert.ToDouble(TotalEfectivoTextBox.Text);
             apertura.Comentario = ComentarioTextBox.Text;
 
@@ -104,7 +103,6 @@ namespace Sistema_de_POS.UI.Registros
             IDNumericUpDown.Value = apertura.AperturaId;
             CajaTextBox.Text = Convert.ToString(apertura.Caja);
             FechaDateTimePicker.Value = apertura.Fecha;
-            UsuarioTextBox.Text = apertura.Usuario;
             TotalEfectivoTextBox.Text = Convert.ToString(apertura.TotalEfectivo);
             ComentarioTextBox.Text = apertura.Comentario;
         }

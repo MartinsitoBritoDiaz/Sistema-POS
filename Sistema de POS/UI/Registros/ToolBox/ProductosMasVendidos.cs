@@ -21,182 +21,427 @@ namespace Sistema_de_POS.UI.Registros.ToolBox
 
         private void ManzanaButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Manzana";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Manzana") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Manzana";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 30;
+                producto.Impuesto = (30 * 0.18);
+                producto.Unidad = "Unidades";
+                producto.Categoria = "Comestible";
+
+
+                repo.Guardar(producto);
+
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+            }
+
+            rPointOS.cantidadProductosBuscados = 1;
+
             this.Close();
         }
 
         private void AjiesButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Ajies";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Ajies") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Ajies";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 25;
+                producto.Impuesto = (25 * 0.18);
+                producto.Unidad = "Unidades";
+                producto.Categoria = "Comestible";
+
+                repo.Guardar(producto);
+
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+            }
+
+            rPointOS.cantidadProductosBuscados = 1;
             this.Close();
         }
 
         private void PlatanoButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Platano";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Manzana") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Manzana";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 12;
+                producto.Impuesto = (12 * 0.18);
+                producto.Unidad = "Unidades";
+                producto.Categoria = "Comestible";
+
+                repo.Guardar(producto);
+
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+            }
+
+            rPointOS.cantidadProductosBuscados = 1;
+
             this.Close();
         }
 
         private void CebollaButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Cebolla";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Cebolla") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Cebolla";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 19;
+                producto.Impuesto = (19 * 0.18);
+                producto.Unidad = "Paquetes";
+                producto.Categoria = "Comestible";
+
+                repo.Guardar(producto);
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+            }
+
+            rPointOS.cantidadProductosBuscados = 1;
             this.Close();
         }
 
         private void LimonButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Limon";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Limon") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if(interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Limon";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 19;
+                producto.Impuesto = (19 * 0.18);
+                producto.Unidad = "Paquetes";
+                producto.Categoria = "Comestible";
+
+                repo.Guardar(producto);
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+            }
+
+            rPointOS.cantidadProductosBuscados = 1;
             this.Close();
         }
 
         private void NaranjaButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Naranja";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Naranja") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Naranja";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 15;
+                producto.Impuesto = (15 * 0.18);
+                producto.Unidad = "Unidades";
+                producto.Categoria = "Comestible";
+
+                repo.Guardar(producto);
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+            }
+            rPointOS.cantidadProductosBuscados = 1;
+
             this.Close();
         }
 
         private void QuesoButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Queso de hoja";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Queso de hoja") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Queso de hoja";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 120;
+                producto.Impuesto = (120 * 0.18);
+                producto.Unidad = "Libras";
+                producto.Categoria = "Comestible";
+
+                repo.Guardar(producto);
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+
+            }
+            rPointOS.cantidadProductosBuscados = 1;
             this.Close();
         }
 
         private void PimentonButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Pimenton";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Pimenton") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Pimenton";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 45;
+                producto.Impuesto = (45 * 0.18);
+                producto.Unidad = "Libras";
+                producto.Categoria = "Comestible";
+
+                repo.Guardar(producto);
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+
+            }
+            rPointOS.cantidadProductosBuscados = 1;
             this.Close();
         }
 
         private void PolloButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Pollo";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Pollo") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Pollo";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 55;
+                producto.Impuesto = (55 * 0.18);
+                producto.Unidad = "Libras";
+                producto.Categoria = "Comestible";
+                repo.Guardar(producto);
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+            }
+            rPointOS.cantidadProductosBuscados = 1;
+
             this.Close();
         }
 
         private void ResButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Carne de res";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Carne de res") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Carne de res";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 90;
+                producto.Impuesto = (90 * 0.18);
+                producto.Unidad = "Libras";
+                producto.Categoria = "Comestible";
+                repo.Guardar(producto);
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+
+            }
+
+            rPointOS.cantidadProductosBuscados = 1;
             this.Close();
         }
 
-        private void CilantroButton_Click(object sender, EventArgs e)
-        {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
-
-            articulo.Descripcion = "Cilantro";
-            articulo.code = 1;
-
-            repo.Guardar(articulo);
-            this.Close();
-        }
 
         private void HuevosButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Huevos";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
-            this.Close();
-        }
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Huevos") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
 
-        private void SalamiCorrienteButton_Click(object sender, EventArgs e)
-        {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Huevos";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 150;
+                producto.Impuesto = (150 * 0.18);
+                producto.Unidad = "Paquetes";
+                producto.Categoria = "Comestible";
 
-            articulo.Descripcion = "Salami Corriente";
-            articulo.code = 1;
+                repo.Guardar(producto);
+                BusquedaProductos.listaProductoEnviar.Add(producto);
 
-            repo.Guardar(articulo);
-            this.Close();
-        }
-
-        private void HieloButton_Click(object sender, EventArgs e)
-        {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
-
-            articulo.Descripcion = "Hielo";
-            articulo.code = 1;
-
-            repo.Guardar(articulo);
-
+            }
+            rPointOS.cantidadProductosBuscados = 1;
             this.Close();
         }
 
         private void PiñaButton_Click(object sender, EventArgs e)
         {
-            ArticuloMV articulo = new ArticuloMV();
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
+            bool interruptor = true;
 
-            articulo.Descripcion = "Piña";
-            articulo.code = 1;
+            Producto producto = new Producto();
+            RepositorioBase<Producto> repo = new RepositorioBase<Producto>();
+            BusquedaProductos.listaProductoEnviar = new List<Producto>();
 
-            repo.Guardar(articulo);
+            foreach (var item in repo.GetList(p => true))
+            {
+                if (item.Nombre.CompareTo("Piña") == 0)
+                {
+                    BusquedaProductos.listaProductoEnviar.Add(item);
+                    interruptor = false;
+                }
+            }
+
+            if (interruptor)
+            {
+                producto.ProductoId = 0;
+                producto.Nombre = "Piña";
+                producto.Existencia = 100;
+                producto.PrecioUnitario = 50;
+                producto.Impuesto = (50 * 0.18);
+                producto.Unidad = "Unidades";
+                producto.Categoria = "Comestible";
+
+                repo.Guardar(producto);
+                BusquedaProductos.listaProductoEnviar.Add(producto);
+
+            }
+            rPointOS.cantidadProductosBuscados = 1;
             this.Close();
         }
     }

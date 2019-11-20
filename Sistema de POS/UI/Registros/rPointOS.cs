@@ -15,15 +15,17 @@ using System.Windows.Forms;
 
 namespace Sistema_de_POS.UI.Registros
 {
-    public partial class RPosForm : Form
+    public partial class rPointOS : Form
     {
-        
+        public static int cantidadProductosBuscados = 0;
+
+        public static int cantidadPOSBuscados = 0;
         public decimal Primero { get; set; }
         public decimal Segundo { get; set; }
         public string Operador { get; set; }
 
         public List<DetalleProductoPOS> detalle { get; set; }
-        public RPosForm()
+        public rPointOS()
         {
             InitializeComponent();
             this.detalle = new List<DetalleProductoPOS>();
@@ -37,29 +39,14 @@ namespace Sistema_de_POS.UI.Registros
 
         private void Busquedabutton_Click(object sender, EventArgs e)
         {
-            int id;
-            int.TryParse(IDNumericUpDown.Text, out id);
-            RepositorioBase<POS> repo = new RepositorioBase<POS>();
-            POS p = new POS();
-            p = repo.Buscar(id);
-
-            Limpiar();
-
-            if(p == null)
-            {
-                MessageBox.Show("No encontrado");
-            }
-            else
-            {
-                LlenarCampo(p);
-            }
+            
             
         }
 
         private void ProductosMasVendidosbutton_Click(object sender, EventArgs e)
         {
-            Form formulario = new ProductosMasVendidos();
-            formulario.Show();
+            Form productosMasVendidos = new ProductosMasVendidos();
+            productosMasVendidos.Show();
         }
 
         private void TipoDePagobutton_Click(object sender, EventArgs e)
@@ -75,13 +62,13 @@ namespace Sistema_de_POS.UI.Registros
         public void Limpiar()
         {
             IDNumericUpDown.Value = 0;
-            CajeroTextBox.Text = string.Empty;
             TotalResultadolabel.Text = "0.00";
+            SubtotalResultadolabel.Text = "0.00";
             ImpuestosResultadolabel.Text = "0.00";
-            ITBISLabel.Text = "0.00";
             TotalResultadolabel.Text = "0.00";
             CantidadLabel.Text = "0.00";
             FechaDateTimePicker.Value = DateTime.Now;
+            EfectivoRadioButton.Checked = true;
 
             this.detalle = new List<DetalleProductoPOS>();
             
@@ -90,41 +77,41 @@ namespace Sistema_de_POS.UI.Registros
         
         public POS LlenarClase()
         {
-            POS p = new POS();
-
-            p.POSid = Convert.ToInt32(IDNumericUpDown.Value);
-            p.Cajero = CajeroTextBox.Text;
-            p.Cantidad = Convert.ToInt32(CantidadLabel.Text);
-            p.Fecha = FechaDateTimePicker.Value;
-            p.Descuentos = Convert.ToDecimal(ImpuestosResultadolabel.Text);
-            p.ITBIS = Convert.ToDecimal(ITBISLabel.Text);
-            p.SubTotal = Convert.ToDecimal(SubtotalResultadolabel.Text);
-            p.Total = Convert.ToDecimal(TotalResultadolabel.Text);
+            POS pos = new POS();
+            pos.PosId = Convert.ToInt32(IDNumericUpDown.Value);
+            pos.Cantidad = Convert.ToInt32(CantidadLabel.Text);
+            pos.Fecha = FechaDateTimePicker.Value;
+            pos.Impuesto = Convert.ToDouble(ImpuestosResultadolabel.Text);
+            pos.SubTotal = Convert.ToDouble(SubtotalResultadolabel.Text);
+            pos.Total = Convert.ToDouble(TotalResultadolabel.Text);
+            pos.Estado = false;
 
             if (TarjetaRadioButton.Checked)
-                p.TipoPago = "Tarjeta credito";
+                pos.TipoPago = "Tarjeta credito";
             else
-                p.TipoPago = "Efectivo";
-            p.ProductosPOS = this.detalle;
-            p.Usuario = rLogin.UsuarioActual.UsuarioId;
-            p.NombreUsuario = rLogin.UsuarioActual.Nombre;
+                pos.TipoPago = "Efectivo";
+
+            pos.ProductosPOS = this.detalle;
+
             CargarGrid();
-            return p;
+            return pos;
         }
 
-        public void LlenarCampo(POS p)
+        public void LlenarCampo(POS pos)
         {
-            IDNumericUpDown.Value = p.POSid;
-            CajeroTextBox.Text = p.Cajero;
-            CantidadLabel.Text = Convert.ToString(p.Cantidad);
-            ImpuestosResultadolabel.Text = Convert.ToString(p.Descuentos);
-            FechaDateTimePicker.Value = p.Fecha.Date;
-            ITBISLabel.Text = Convert.ToString(p.ITBIS);
-            SubtotalResultadolabel.Text = Convert.ToString(p.SubTotal);
-            TotalResultadolabel.Text = Convert.ToString(p.Total);
+            IDNumericUpDown.Value = pos.PosId;
+            CantidadLabel.Text = Convert.ToString(pos.Cantidad);
+            ImpuestosResultadolabel.Text = Convert.ToString(pos.Impuesto);
+            FechaDateTimePicker.Value = pos.Fecha.Date;
+            SubtotalResultadolabel.Text = Convert.ToString(pos.SubTotal);
+            TotalResultadolabel.Text = Convert.ToString(pos.Total);
 
-            this.detalle = p.ProductosPOS;
-        
+            if (pos.TipoPago == "Tarjeta credito")
+                TarjetaRadioButton.Checked = true;
+            else
+                EfectivoRadioButton.Checked = true;
+
+            this.detalle = pos.ProductosPOS;
             CargarGrid();
         }
 
@@ -145,7 +132,7 @@ namespace Sistema_de_POS.UI.Registros
 
         public bool ExisteEnLaBaseDeDatos()
         {
-            RepositorioBase<POS> repo = new RepositorioBase<POS>();
+            POSRepositorio repo = new POSRepositorio();
             POS p = repo.Buscar((int)IDNumericUpDown.Value);
             return p != null;
         }
@@ -192,7 +179,7 @@ namespace Sistema_de_POS.UI.Registros
         {
             int id;
             int.TryParse(IDNumericUpDown.Text, out id);
-            RepositorioBase<POS> repo = new RepositorioBase<POS>();
+            POSRepositorio repo = new POSRepositorio();
 
             Limpiar();
 
@@ -220,133 +207,36 @@ namespace Sistema_de_POS.UI.Registros
 
         private void EliminarFilabutton_Click(object sender, EventArgs e)
         {
-            if(DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow!= null)
-            {
-                detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
-
-                CargarGrid();
-            }
-
-            decimal subtotal = 0;
-            decimal descuentos = 0;
-            decimal ITBIS = 0;
-            decimal total = 0;
-            int cantidad = 0;
-
-            foreach (var item in this.detalle)
-            {
-                subtotal += item.importe;
-                descuentos = 0;
-                ITBIS += (decimal)(item.importe * (decimal)0.18);
-                total += subtotal - descuentos - ITBIS;
-                cantidad += 1;
-            }
-
-            SubtotalResultadolabel.Text = ("$" + subtotal);
-            ImpuestosResultadolabel.Text = ("$" + descuentos);
-            ITBISLabel.Text = ("$" + ITBIS);
-            TotalResultadolabel.Text = ("$" + total);
-            CantidadLabel.Text = ("" + cantidad);
-
-            CantidadNumericUpDown.Value = 0;
-            UnidadComboBox.Text = string.Empty;
-            PrecioUnitarioTextBox.Text = string.Empty;
-            ImporteTextBox.Text = string.Empty;
-
-            CargarGrid();
+            
         }
 
-        private void AgregarProductoButton_Click(object sender, EventArgs e)
-        {
-            Form formulario = new RegistroProductos();
-            formulario.ShowDialog();
-
-            ProductoComboBox.Items.Clear();
-
-            RepositorioBase<Articulo> repo = new RepositorioBase<Articulo>();
-
-            var Lista = repo.GetList(p => true);
-
-            foreach (var item in Lista)
-            {
-                ProductoComboBox.Items.Add(item.Descripcion);
-            }
-        }
+        
 
         private void RPosForm_Load(object sender, EventArgs e)
         {
+            ResultadotextBox.Text = "0";
             this.WindowState = FormWindowState.Maximized;
-            CajeroTextBox.Text = rLogin.UsuarioActual.Nombre;
-           /*RepositorioBase<Articulo> repo = new RepositorioBase<Articulo>();
 
-            var Lista = repo.GetList(p => true);
-
-            foreach (var item in Lista)
-            {
-                ProductoComboBox.Items.Add(item.Descripcion);
-            }*/
         }
 
         public void ProductoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
 
         private void AplicarCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            AplicarCheckBox.Checked = false;
+            MyErrorProvider.Clear();
 
-            RepositorioBase<ArticuloMV> repo = new RepositorioBase<ArticuloMV>();
-
-            var Lista = repo.GetList(p => true);
-
-            foreach (var item in Lista)
+            if (cantidadProductosBuscados == 0)
             {
-                if (item.code == 1)
-                {
-                    ProductoComboBox.Text = item.Descripcion;
-                }
-            }
-
-            foreach (var item in Lista)
-            {
-                repo.Eliminar(item.ArticuloMVid);
-            }
-        }
-
-        private void Finbutton_Click(object sender, EventArgs e)
-        {
-            bool paso = false;
-
-            POSRepositorio repo = new POSRepositorio();
-            POS p = new POS();
-
-            if (!validar())
+                MyErrorProvider.SetError(ProductosMasVendidosbutton, "Debe de registrar productos al sistema");
+                BuscarProdcutoButton.Focus();
                 return;
-
-            p = LlenarClase();
-
-            if (IDNumericUpDown.Value == 0)
-                paso = repo.Guardar(p);
-            else
-            {
-                if (!ExisteEnLaBaseDeDatos())
-                {
-                    MessageBox.Show("No esta registrado");
-                    return;
-                }
-                paso = repo.Modificar(p);
             }
 
-            if (paso)
-            {
-                Limpiar();
-                MessageBox.Show("Guardado");
-            }
-            else
-                MessageBox.Show("No fue posible guardar");
-
-            this.Close();
+            ProductoTextBox.Text = BusquedaProductos.listaProductoEnviar[0].Nombre;
         }
 
         private void Unobutton_Click(object sender, EventArgs e)
@@ -403,28 +293,28 @@ namespace Sistema_de_POS.UI.Registros
         {
             Operador = "+";
             Primero = decimal.Parse(ResultadotextBox.Text);
-            ResultadotextBox.Clear();
+            ResultadotextBox.Value = 0;
         }
 
         private void Multiplicacionbutton_Click(object sender, EventArgs e)
         {
             Operador = "*";
             Primero = decimal.Parse(ResultadotextBox.Text);
-            ResultadotextBox.Clear();
+            ResultadotextBox.Value = 0;
         }
 
         private void Restabutton_Click(object sender, EventArgs e)
         {
             Operador = "-";
             Primero = decimal.Parse(ResultadotextBox.Text);
-            ResultadotextBox.Clear();
+            ResultadotextBox.Value = 0;
         }
 
         private void DivisionButton_Click(object sender, EventArgs e)
         {
             Operador = "/";
             Primero = decimal.Parse(ResultadotextBox.Text);
-            ResultadotextBox.Clear();
+            ResultadotextBox.Value = 0;
         }
 
         private void IgualButton_Click(object sender, EventArgs e)
@@ -447,6 +337,9 @@ namespace Sistema_de_POS.UI.Registros
                     ResultadotextBox.Text = res.ToString();
                     break;
                 case "/":
+                    if (Primero == 0)
+                        Primero = 1;
+
                     res = Primero / Segundo;
                     ResultadotextBox.Text = res.ToString();
                     break;
@@ -455,7 +348,7 @@ namespace Sistema_de_POS.UI.Registros
 
         private void LimpiarButton_Click(object sender, EventArgs e)
         {
-            ResultadotextBox.Clear();
+            ResultadotextBox.Value = 0;
         }
 
         private void Cerobutton_Click(object sender, EventArgs e)
@@ -502,6 +395,8 @@ namespace Sistema_de_POS.UI.Registros
 
         private void AgregarGridButton_Click_1(object sender, EventArgs e)
         {
+            if (!ValidarDetalle())
+                return;
 
             if (DetalledataGridView.DataSource != null)
                 this.detalle = (List<DetalleProductoPOS>)DetalledataGridView.DataSource;
@@ -509,39 +404,36 @@ namespace Sistema_de_POS.UI.Registros
             this.detalle.Add(
 
                 new DetalleProductoPOS(
-                    id: 0,
-                    POSid: (int)IDNumericUpDown.Value,
+                    productId: 0,
+                    descripcion: ProductoTextBox.Text,
                     cantidad: Convert.ToInt32(CantidadNumericUpDown.Value),
                     unidad: UnidadComboBox.Text,
-                    descripcion: ProductoComboBox.Text,
-                    precioUnitario: Convert.ToDecimal(PrecioUnitarioTextBox.Text),
-                    importe: (Convert.ToDecimal(PrecioUnitarioTextBox.Text) * Convert.ToDecimal(CantidadNumericUpDown.Value))
-
+                    precioUnitario: Convert.ToDouble(PrecioUnitarioTextBox.Text),
+                    importe: (Convert.ToDouble(PrecioUnitarioTextBox.Text) * Convert.ToDouble(CantidadNumericUpDown.Value)),
+                    posId: (int)IDNumericUpDown.Value
                     )
-
                 );
-            decimal subtotal = 0;
-            decimal descuentos = 0;
-            decimal ITBIS = 0;
-            decimal total = 0;
+
+            double subtotal = 0;
+            double impuesto = 0;
+            double total = 0;
             int cantidad = 0;
 
             foreach (var item in this.detalle)
             {
-                subtotal += item.importe;
-                descuentos = 0;
-                ITBIS += (decimal)(item.importe * (decimal)0.18);
-                total += subtotal - descuentos - ITBIS;
+                subtotal += item.Importe;
+                impuesto += Convert.ToDouble((item.Importe * (double)0.18));
+                total = (subtotal + impuesto);
                 cantidad += 1;
             }
 
             SubtotalResultadolabel.Text = (subtotal).ToString();
-            ImpuestosResultadolabel.Text = (descuentos).ToString();
-            ITBISLabel.Text = (ITBIS).ToString();
+            ImpuestosResultadolabel.Text = (impuesto).ToString();
             TotalResultadolabel.Text = (total).ToString();
             CantidadLabel.Text = (cantidad).ToString();
 
             CantidadNumericUpDown.Value = 0;
+            ProductoTextBox.Text = string.Empty;
             UnidadComboBox.Text = string.Empty;
             PrecioUnitarioTextBox.Text = string.Empty;
             ImporteTextBox.Text = string.Empty;
@@ -552,8 +444,8 @@ namespace Sistema_de_POS.UI.Registros
 
         private void CantidadNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            decimal cantidad = 0;
-            decimal PrecioUnitario = 0;
+            double cantidad = 0;
+            double PrecioUnitario = 0;
 
             if (string.IsNullOrWhiteSpace(PrecioUnitarioTextBox.Text) && string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
             {
@@ -570,10 +462,10 @@ namespace Sistema_de_POS.UI.Registros
             }
 
 
-            cantidad = Convert.ToDecimal(CantidadNumericUpDown.Value);
-            PrecioUnitario = Convert.ToDecimal(PrecioUnitarioTextBox.Text);
+            cantidad = Convert.ToDouble(CantidadNumericUpDown.Value);
+            PrecioUnitario = Convert.ToDouble(PrecioUnitarioTextBox.Text);
 
-            decimal Total = 0;
+            double Total = 0;
             Total = cantidad * PrecioUnitario;
 
             ImporteTextBox.Text = Convert.ToString(Total);
@@ -581,14 +473,15 @@ namespace Sistema_de_POS.UI.Registros
 
         private void PrecioUnitarioTextBox_TextChanged(object sender, EventArgs e)
         {
-            decimal cantidad = 0;
-            decimal PrecioUnitario = 0;
+            double cantidad = 0;
+            double PrecioUnitario = 0;
 
             if (string.IsNullOrWhiteSpace(PrecioUnitarioTextBox.Text) && string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
             {
                 CantidadNumericUpDown.Value = 0;
                 PrecioUnitarioTextBox.Text = "0";
             }
+
             if (string.IsNullOrWhiteSpace(CantidadNumericUpDown.Text))
             {
                 CantidadNumericUpDown.Value = 0;
@@ -598,11 +491,10 @@ namespace Sistema_de_POS.UI.Registros
                 PrecioUnitarioTextBox.Text = "0";
             }
 
+            cantidad = Convert.ToDouble(CantidadNumericUpDown.Value);
+            PrecioUnitario = Convert.ToDouble(PrecioUnitarioTextBox.Text);
 
-            cantidad = Convert.ToDecimal(CantidadNumericUpDown.Value);
-            PrecioUnitario = Convert.ToDecimal(PrecioUnitarioTextBox.Text);
-
-            decimal Total = 0;
+            double Total = 0;
             Total = cantidad * PrecioUnitario;
 
             ImporteTextBox.Text = Convert.ToString(Total);
@@ -622,6 +514,147 @@ namespace Sistema_de_POS.UI.Registros
                 TarjetaRadioButton.Checked = false;
             else
                 TarjetaRadioButton.Checked = true;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+
+            BusquedaProductos producto = new BusquedaProductos();
+            producto.ShowDialog();
+
+
+            if (cantidadProductosBuscados == 0)
+            {
+                MyErrorProvider.SetError(BuscarProdcutoButton, "Debe de registrar productos al sistema");
+                BuscarProdcutoButton.Focus();
+                return;
+            }
+
+            ProductoTextBox.Text = BusquedaProductos.listaProductoEnviar[0].Nombre;
+        }
+
+        private void ProductoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            UnidadComboBox.DisplayMember = "Unidad";
+            UnidadComboBox.DataSource = BusquedaProductos.listaProductoEnviar;
+            PrecioUnitarioTextBox.Text = Convert.ToString(BusquedaProductos.listaProductoEnviar[0].PrecioUnitario);
+
+        }
+
+        private void LimpiarProducto()
+        {
+            ProductoTextBox.Text = string.Empty;
+            CantidadNumericUpDown.Value = 0;
+            UnidadComboBox.ResetText();
+            PrecioUnitarioTextBox.Text = string.Empty;
+            ImporteTextBox.Text = string.Empty;
+        }
+        //todo: Para validar el detalle
+        private bool ValidarDetalle()
+        {
+            MyErrorProvider.Clear();
+            bool paso = true;
+
+            if(Convert.ToInt32(CantidadNumericUpDown.Value) == 0)
+            {
+                MyErrorProvider.SetError(CantidadNumericUpDown, "La cantidad de productos a vender no puede ser 0");
+                CantidadNumericUpDown.Focus();
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(ProductoTextBox.Text))
+            {
+                MyErrorProvider.SetError(ProductoTextBox, "Debe de seleccionar un producto para poder añadirlo a la lista de compra");
+                ProductoTextBox.Focus();
+                return false;
+            }
+
+            if (CantidadNumericUpDown.Value > BusquedaProductos.listaProductoEnviar[0].Existencia)
+            {
+                MyErrorProvider.SetError(CantidadNumericUpDown, "La cantidad de productos a vender debe ser menor o igual a la que hay en existencia");
+                CantidadNumericUpDown.Focus();
+                paso = false;
+            }
+            return paso;
+        }
+
+        private void EliminarFilabutton_Click_1(object sender, EventArgs e)
+        {
+            if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null)
+            {
+                detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
+
+                CargarGrid();
+            }
+            else
+                return;
+
+            double subtotal = 0;
+            double impuesto = 0;
+            double total = 0;
+            int cantidad = 0;
+
+            foreach (var item in this.detalle)
+            {
+                subtotal += item.Importe;
+                impuesto += Convert.ToDouble((double)(item.Importe * (double)0.18));
+                total = (subtotal + impuesto);
+                cantidad += 1;
+            }
+
+            SubtotalResultadolabel.Text = ("" + subtotal);
+            ImpuestosResultadolabel.Text = ("" + impuesto);
+            TotalResultadolabel.Text = ("" + total);
+            CantidadLabel.Text = ("" + cantidad);
+
+            CantidadNumericUpDown.Value = 0;
+            UnidadComboBox.Text = string.Empty;
+            PrecioUnitarioTextBox.Text = string.Empty;
+            ImporteTextBox.Text = string.Empty;
+
+            CargarGrid();
+        }
+
+        private void Busquedabutton_Click_1(object sender, EventArgs e)
+        {
+            int id;
+            int.TryParse(IDNumericUpDown.Text, out id);
+            POSRepositorio repo = new POSRepositorio();
+            POS p = new POS();
+            p = repo.Buscar(id);
+
+            Limpiar();
+
+            if (p == null)
+            {
+                MessageBox.Show("No encontrado");
+            }
+            else
+            {
+                LlenarCampo(p);
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+
+            BusquedaPOS busquedaPOS = new BusquedaPOS();
+            busquedaPOS.ShowDialog();
+
+            if (cantidadPOSBuscados == 0)
+            {
+                MyErrorProvider.SetError(BuscarRPOSButton, "Debe de registrar una venta al sistema para poder buscarla");
+                BuscarProdcutoButton.Focus();
+                return;
+            }
+            Limpiar();
+            LlenarCampo(BusquedaPOS.listaPOSEnviar[0]);
         }
     }
 }

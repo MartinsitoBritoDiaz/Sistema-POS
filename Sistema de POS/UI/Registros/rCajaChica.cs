@@ -210,7 +210,7 @@ namespace Sistema_de_POS.UI.Registros
             }
             // cajaChica.SaldoActual -=  Convert.ToInt32(MontoETextBox.Text);//
 
-
+            
 
             return egresoFondos;
         }
