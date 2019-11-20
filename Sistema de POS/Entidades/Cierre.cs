@@ -10,7 +10,7 @@ namespace Sistema_de_POS.Entidades
     {
         public int CierreId { get; set; }
         public DateTime Fecha { get; set; }
-        public int Caja { get; set; }
+       // public int Caja { get; set; }
         public double TotalEfectivo { get; set; }
         public double TotalCredito { get; set; }
         public double TotalGeneral { get; set; }

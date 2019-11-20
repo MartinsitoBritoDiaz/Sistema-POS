@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sistema_de_POS.UI;
 
 namespace Sistema_de_POS.UI.Registros
 {
@@ -21,6 +22,8 @@ namespace Sistema_de_POS.UI.Registros
 
         private void rCierreCaja_Load(object sender, EventArgs e)
         {
+            //UsuarioTextBox.Text = rLogin.UsuarioActual.Nombre;
+
             RepositorioBase<POS> repos = new RepositorioBase<POS>();
             POS pos = new POS();
 
@@ -115,7 +118,7 @@ namespace Sistema_de_POS.UI.Registros
             IDNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             UsuarioTextBox.Text = string.Empty;
-            CajaNumericUpDown.Text = string.Empty;
+           //CajaNumericUpDown.Text = string.Empty;
             TotalEfectivoTextBox.Text = string.Empty;
             ComentarioTextBox.Text = string.Empty;
             EfectivoDGV.DataSource = null;
@@ -125,7 +128,7 @@ namespace Sistema_de_POS.UI.Registros
             Cierre cierre = new Cierre();
 
             cierre.CierreId = Convert.ToInt32(IDNumericUpDown.Value);
-            cierre.Caja = Convert.ToInt32(CajaNumericUpDown.Text);
+            //cierre.Caja = Convert.ToInt32(CajaNumericUpDown.Text);
             cierre.Fecha = FechaDateTimePicker.Value;
             cierre.TotalEfectivo = Convert.ToDouble(TotalEfectivoTextBox.Text);
             cierre.Comentario = ComentarioTextBox.Text;
@@ -135,7 +138,7 @@ namespace Sistema_de_POS.UI.Registros
         public void LlenarCampo(Cierre cierre)
         {
             IDNumericUpDown.Value = cierre.CierreId;
-            CajaNumericUpDown.Text = Convert.ToString(cierre.Caja);
+            //CajaNumericUpDown.Text = Convert.ToString(cierre.Caja);
             FechaDateTimePicker.Value = cierre.Fecha;
             TotalEfectivoTextBox.Text = Convert.ToString(cierre.TotalEfectivo);
             ComentarioTextBox.Text = cierre.Comentario;
@@ -146,12 +149,12 @@ namespace Sistema_de_POS.UI.Registros
             MyErrorProvider.Clear();
             bool paso = true;
 
-            if (CajaNumericUpDown.Value==0)
+            /*if (CajaNumericUpDown.Value==0)
             {
                 MyErrorProvider.SetError(CajaNumericUpDown, "El campo caja no puede estar ser 0");
                 CajaNumericUpDown.Focus();
                 paso = false;
-            }
+            }*/
 
            
             if (Convert.ToDouble(TotalGeneralTextBox.Text) != Convert.ToDouble(DSTGTextBox.Text))
@@ -193,9 +196,9 @@ namespace Sistema_de_POS.UI.Registros
             if (IDNumericUpDown.Value == 0)
             {
                 paso = repo.Guardar(cierre);
-                apertura = repos.Buscar(Convert.ToInt32(CajaNumericUpDown.Value));
+                /*apertura = repos.Buscar(Convert.ToInt32(CajaNumericUpDown.Value));
                 apertura.Cerrada = true; //Para Marcarla Cerrada
-                repos.Guardar(apertura);
+                repos.Guardar(apertura);*/
             }      
             else
             {
@@ -255,16 +258,16 @@ namespace Sistema_de_POS.UI.Registros
             {
                 foreach (var item2 in Lista2)
                 {
-                    foreach (var item3 in Lista3)
-                    {
-                        if(item2.Caja == item3.Caja)
-                        {
+                    //foreach (var item3 in Lista3)
+                    //{
+                       // if(item2.Caja == item3.Caja)
+                        //{
                             DSETextBox.Text = Convert.ToString(item.Total);
                             DSTTextBox.Text = "0";
                             DSTGTextBox.Text = Convert.ToString((double)item.Total + item2.TotalEfectivo);
-                        }
+                        //}
                         
-                    }
+                    //}
 
                 }
             }
