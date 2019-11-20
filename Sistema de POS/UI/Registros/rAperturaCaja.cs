@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace Sistema_de_POS.UI.Registros
 {
     public partial class rAperturaCaja : Form
-    {
+    {//
         public rAperturaCaja()
         {
             InitializeComponent();
