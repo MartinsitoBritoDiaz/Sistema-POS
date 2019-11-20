@@ -117,7 +117,7 @@ namespace Sistema_de_POS.UI.Registros
         {
             IDNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
-            UsuarioTextBox.Text = string.Empty;
+            //UsuarioTextBox.Text = string.Empty;
            //CajaNumericUpDown.Text = string.Empty;
             TotalEfectivoTextBox.Text = string.Empty;
             ComentarioTextBox.Text = string.Empty;
@@ -248,11 +248,11 @@ namespace Sistema_de_POS.UI.Registros
         {
             RepositorioBase<POS> repo = new RepositorioBase<POS>();
             RepositorioBase<Apertura> repo2 = new RepositorioBase<Apertura>();
-            RepositorioBase<Cierre> repo3 = new RepositorioBase<Cierre>();
+            //RepositorioBase<Cierre> repo3 = new RepositorioBase<Cierre>();
 
             var Lista = repo.GetList(p => true);
             var Lista2 = repo2.GetList(l => true);
-            var Lista3 = repo3.GetList(c => true);
+            //var Lista3 = repo3.GetList(c => true);
 
             foreach (var item in Lista)
             {
