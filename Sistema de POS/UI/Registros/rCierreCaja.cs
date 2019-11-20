@@ -20,12 +20,8 @@ namespace Sistema_de_POS.UI.Registros
             InitializeComponent();
         }
 
-        private void rCierreCaja_Load(object sender, EventArgs e)
+        private void CargarGrid()
         {
-            //UsuarioTextBox.Text = rLogin.UsuarioActual.Nombre;
-
-            RepositorioBase<POS> repos = new RepositorioBase<POS>();
-            POS pos = new POS();
 
             EfectivoDGV.Rows.Add(9);
             EfectivoDGV.Rows[0].Cells[0].Value = 2000;
@@ -38,14 +34,33 @@ namespace Sistema_de_POS.UI.Registros
             EfectivoDGV.Rows[7].Cells[0].Value = 5;
             EfectivoDGV.Rows[8].Cells[0].Value = 1;
 
+        }
+        private void rCierreCaja_Load(object sender, EventArgs e)
+        {
+            //UsuarioTextBox.Text = rLogin.UsuarioActual.Nombre;
 
+            RepositorioBase<POS> repos = new RepositorioBase<POS>();
+            POS pos = new POS();
+
+            CargarGrid();
             //pos = repos.Buscar(1);
 
             var Lista = repos.GetList(p => true);
-            decimal totalefectivo = 0  ;
-            decimal totalcredito = 0;
-            decimal totalgeneral =0;
-            
+            double totalefectivo = 0  ;
+            double totalcredito = 0;
+            double totalgeneral =0;
+
+            foreach (var item in Lista)
+            {
+                if(item.TipoPago=="Tarjeta credito")
+                {
+                    totalcredito += item.Total;
+                }
+                else
+                {
+                    totalefectivo += item.Total;
+                }
+            }
             //foreach (var item in Lista)
             //{
             //    if(item.TipoPago=="Tarjeta credito")
@@ -120,8 +135,12 @@ namespace Sistema_de_POS.UI.Registros
             //UsuarioTextBox.Text = string.Empty;
            //CajaNumericUpDown.Text = string.Empty;
             TotalEfectivoTextBox.Text = string.Empty;
+            TotalTarjetaCreditoTextBox.Text = string.Empty;
+            TotalGeneralTextBox.Text = string.Empty;
             ComentarioTextBox.Text = string.Empty;
-            EfectivoDGV.DataSource = null;
+            //EfectivoDGV.DataSource = null;
+
+            CargarGrid();
         }
         public Cierre LlenarClase()
         {

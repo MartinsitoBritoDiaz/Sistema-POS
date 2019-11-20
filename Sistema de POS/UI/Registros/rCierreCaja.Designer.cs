@@ -37,9 +37,6 @@
             this.CierreCajaTabControl = new System.Windows.Forms.TabControl();
             this.CierreEfectivoTabPage = new System.Windows.Forms.TabPage();
             this.EfectivoDGV = new System.Windows.Forms.DataGridView();
-            this.ColumnaBilletes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.CreditoDGV = new System.Windows.Forms.DataGridView();
             this.ColumnaReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +64,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.label11 = new System.Windows.Forms.Label();
+            this.ColumnaBilletes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BarraTituloPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
@@ -161,35 +161,13 @@
             this.ColumnaBilletes,
             this.ColumnaCantidad,
             this.ColumnaSubtotal});
-            this.EfectivoDGV.Location = new System.Drawing.Point(6, 6);
+            this.EfectivoDGV.Location = new System.Drawing.Point(8, 0);
             this.EfectivoDGV.Name = "EfectivoDGV";
             this.EfectivoDGV.RowHeadersWidth = 51;
             this.EfectivoDGV.Size = new System.Drawing.Size(442, 237);
             this.EfectivoDGV.TabIndex = 61;
             this.EfectivoDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EfectivoDGV_CellContentClick);
             this.EfectivoDGV.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
-            // 
-            // ColumnaBilletes
-            // 
-            this.ColumnaBilletes.HeaderText = "Denominacion";
-            this.ColumnaBilletes.MinimumWidth = 6;
-            this.ColumnaBilletes.Name = "ColumnaBilletes";
-            this.ColumnaBilletes.ReadOnly = true;
-            this.ColumnaBilletes.Width = 125;
-            // 
-            // ColumnaCantidad
-            // 
-            this.ColumnaCantidad.HeaderText = "Cantidad";
-            this.ColumnaCantidad.MinimumWidth = 6;
-            this.ColumnaCantidad.Name = "ColumnaCantidad";
-            this.ColumnaCantidad.Width = 125;
-            // 
-            // ColumnaSubtotal
-            // 
-            this.ColumnaSubtotal.HeaderText = "Subtotal";
-            this.ColumnaSubtotal.MinimumWidth = 6;
-            this.ColumnaSubtotal.Name = "ColumnaSubtotal";
-            this.ColumnaSubtotal.Width = 125;
             // 
             // tabPage2
             // 
@@ -457,6 +435,29 @@
             this.label11.TabIndex = 99;
             this.label11.Text = "Comentario";
             // 
+            // ColumnaBilletes
+            // 
+            this.ColumnaBilletes.HeaderText = "Denominacion";
+            this.ColumnaBilletes.MinimumWidth = 6;
+            this.ColumnaBilletes.Name = "ColumnaBilletes";
+            this.ColumnaBilletes.ReadOnly = true;
+            this.ColumnaBilletes.Width = 125;
+            // 
+            // ColumnaCantidad
+            // 
+            this.ColumnaCantidad.HeaderText = "Cantidad";
+            this.ColumnaCantidad.MinimumWidth = 6;
+            this.ColumnaCantidad.Name = "ColumnaCantidad";
+            this.ColumnaCantidad.Width = 125;
+            // 
+            // ColumnaSubtotal
+            // 
+            this.ColumnaSubtotal.HeaderText = "Subtotal";
+            this.ColumnaSubtotal.MinimumWidth = 6;
+            this.ColumnaSubtotal.Name = "ColumnaSubtotal";
+            this.ColumnaSubtotal.ReadOnly = true;
+            this.ColumnaSubtotal.Width = 125;
+            // 
             // rCierreCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,9 +514,6 @@
         private System.Windows.Forms.TabControl CierreCajaTabControl;
         private System.Windows.Forms.TabPage CierreEfectivoTabPage;
         private System.Windows.Forms.DataGridView EfectivoDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaBilletes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaSubtotal;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button NuevoButton;
@@ -543,5 +541,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaMonto;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaBilletes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaSubtotal;
     }
 }
