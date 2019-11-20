@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.ReportesButton = new System.Windows.Forms.Button();
             this.ConsultasPanel = new System.Windows.Forms.Panel();
             this.VentasButton = new System.Windows.Forms.Button();
             this.ConsultasPOSButton = new System.Windows.Forms.Button();
@@ -72,6 +73,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.ReportesButton);
             this.MenuVertical.Controls.Add(this.ConsultasPanel);
             this.MenuVertical.Controls.Add(this.ConsultasButton);
             this.MenuVertical.Controls.Add(this.RegistrosButton);
@@ -85,6 +87,24 @@
             this.MenuVertical.Size = new System.Drawing.Size(251, 698);
             this.MenuVertical.TabIndex = 0;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
+            // 
+            // ReportesButton
+            // 
+            this.ReportesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReportesButton.FlatAppearance.BorderSize = 0;
+            this.ReportesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.ReportesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReportesButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportesButton.ForeColor = System.Drawing.Color.White;
+            this.ReportesButton.Image = ((System.Drawing.Image)(resources.GetObject("ReportesButton.Image")));
+            this.ReportesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ReportesButton.Location = new System.Drawing.Point(0, 648);
+            this.ReportesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ReportesButton.Name = "ReportesButton";
+            this.ReportesButton.Size = new System.Drawing.Size(251, 39);
+            this.ReportesButton.TabIndex = 15;
+            this.ReportesButton.Text = "Ventas del dia";
+            this.ReportesButton.UseVisualStyleBackColor = true;
             // 
             // ConsultasPanel
             // 
@@ -533,6 +553,7 @@
         private System.Windows.Forms.Panel ConsultasPanel;
         private System.Windows.Forms.Button UsuarioButton;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button ReportesButton;
     }
 }
 

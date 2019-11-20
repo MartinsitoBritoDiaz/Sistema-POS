@@ -337,8 +337,12 @@ namespace Sistema_de_POS.UI.Registros
                     ResultadotextBox.Text = res.ToString();
                     break;
                 case "/":
+
                     if (Primero == 0)
                         Primero = 1;
+
+                    if (Segundo == 0)
+                        Segundo = 1;
 
                     res = Primero / Segundo;
                     ResultadotextBox.Text = res.ToString();

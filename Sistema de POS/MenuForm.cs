@@ -77,7 +77,8 @@ namespace Sistema_de_POS
 
         private void VentasButton_Click(object sender, EventArgs e)
         {
-         
+            ConsultaFactura consulta = new ConsultaFactura();
+            consulta.Show();
         }
 
         private void FacturacionButton_Click(object sender, EventArgs e)
