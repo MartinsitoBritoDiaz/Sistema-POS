@@ -632,7 +632,10 @@ namespace Sistema_de_POS.UI.Registros
             }
             else
             {
-                LlenarCampo(p);
+                if(p.Estado == false)
+                    LlenarCampo(p);
+                else
+                    MessageBox.Show("Ya este registro del pos esta cerrado en caja");
             }
         }
 

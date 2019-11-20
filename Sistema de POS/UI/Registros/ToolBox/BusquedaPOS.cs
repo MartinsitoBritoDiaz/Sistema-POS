@@ -31,8 +31,8 @@ namespace Sistema_de_POS.UI.Registros.ToolBox
 
             POSDataGridView.DataSource = null;
             POSDataGridView.Rows.Clear();
-            foreach (var item in lista)
-                POSDataGridView.Rows.Add(false, item.PosId,item.Fecha,item.SubTotal,item.Impuesto,item.Total,item.Cantidad,item.TipoPago);
+            foreach (var item in lista.Where(l => l.Estado == false).ToList())
+                POSDataGridView.Rows.Add(false, item.PosId,item.Fecha,item.SubTotal,item.Impuesto,item.Total,item.Cantidad,item.TipoPago,item.Estado);
         }
 
         private List<POS> LlenarDataGridPOS()

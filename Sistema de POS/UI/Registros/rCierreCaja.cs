@@ -10,11 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema_de_POS.UI;
+using Sistema_de_POS.BLL;
 
 namespace Sistema_de_POS.UI.Registros
 {
     public partial class rCierreCaja : Form
     {
+        public static List<POS> ListaPOS = new List<POS>();
         public rCierreCaja()
         {
             InitializeComponent();
@@ -37,50 +39,30 @@ namespace Sistema_de_POS.UI.Registros
         }
         private void rCierreCaja_Load(object sender, EventArgs e)
         {
-            //UsuarioTextBox.Text = rLogin.UsuarioActual.Nombre;
-
-            RepositorioBase<POS> repos = new RepositorioBase<POS>();
+            ListaPOS = new List<POS>();
+            POSRepositorio repos = new POSRepositorio();
             POS pos = new POS();
 
             CargarGrid();
-            //pos = repos.Buscar(1);
 
             var Lista = repos.GetList(p => true);
             double totalefectivo = 0  ;
             double totalcredito = 0;
-            double totalgeneral =0;
+            double totalgeneral = 0;
 
             foreach (var item in Lista)
             {
-                if(item.TipoPago=="Tarjeta credito")
+                if(!item.Estado)
                 {
-                    totalcredito += item.Total;
+                    if (item.TipoPago == "Tarjeta credito")
+                        totalcredito += item.Total;
+                    else
+                        totalefectivo += item.Total;
+
+                    ListaPOS.Add(item);
                 }
-                else
-                {
-                    totalefectivo += item.Total;
-                }
+
             }
-            //foreach (var item in Lista)
-            //{
-            //    if(item.TipoPago=="Tarjeta credito")
-            //    {
-            //        if (item.NombreUsuario == UsuarioTextBox.Text) //Para saber si es el usuario actual
-            //        {
-
-            //            totalcredito += item.Total;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        if (item.NombreUsuario == UsuarioTextBox.Text) //Para saber si es el usuario actual
-            //        {
-
-            //            totalefectivo += item.Total;
-            //        }
-            //    }
-    
-            //}
 
             totalgeneral = totalefectivo + totalcredito;
 
@@ -149,7 +131,16 @@ namespace Sistema_de_POS.UI.Registros
             cierre.CierreId = Convert.ToInt32(IDNumericUpDown.Value);
             //cierre.Caja = Convert.ToInt32(CajaNumericUpDown.Text);
             cierre.Fecha = FechaDateTimePicker.Value;
-            cierre.TotalEfectivo = Convert.ToDouble(TotalEfectivoTextBox.Text);
+            if (string.IsNullOrWhiteSpace(TotalEfectivoTextBox.Text) && TotalEfectivoTextBox.Text == "0")
+                cierre.TotalEfectivo = Convert.ToDouble(TotalEfectivoTextBox.Text);
+            else
+                cierre.TotalEfectivo = 0;
+
+            if (string.IsNullOrWhiteSpace(TotalTarjetaCreditoTextBox.Text) && TotalTarjetaCreditoTextBox.Text == "0")
+                cierre.TotalCredito = Convert.ToDouble(TotalTarjetaCreditoTextBox.Text);
+            else
+                cierre.TotalCredito = 0;
+
             cierre.Comentario = ComentarioTextBox.Text;
 
             return cierre;
@@ -174,13 +165,21 @@ namespace Sistema_de_POS.UI.Registros
                 CajaNumericUpDown.Focus();
                 paso = false;
             }*/
+            
 
-           
-            if (Convert.ToDouble(TotalGeneralTextBox.Text) != Convert.ToDouble(DSTGTextBox.Text))
+            if(!string.IsNullOrWhiteSpace(TotalGeneralTextBox.Text))
+                if (Convert.ToDouble(TotalGeneralTextBox.Text) != Convert.ToDouble(DSTGTextBox.Text))
+                {
+                    MyErrorProvider.SetError(Guardarbutton, "La caja no cuadra");
+                    paso = false;
+                }
+            else
             {
-                MyErrorProvider.SetError(Guardarbutton, "La caja no cuadra");
-                paso = false;
-            }
+                MyErrorProvider.SetError(EfectivoDGV, "Debe de llenar los campos con los montos que posee");
+                EfectivoDGV.Focus();
+                return false;
+             }
+
 
             return paso;
         }
@@ -204,21 +203,30 @@ namespace Sistema_de_POS.UI.Registros
             RepositorioBase<Cierre> repo = new RepositorioBase<Cierre>();
             Cierre cierre = new Cierre();
 
-            RepositorioBase<Apertura> repos = new RepositorioBase<Apertura>();
-            Apertura apertura = new Apertura();
 
-            if (!Validar())
-                return;
+            /*if (!Validar())
+                return;*/
+
+            POSRepositorio repositorioPOS = new POSRepositorio();
+
+            foreach (var item in repositorioPOS.GetList(r => true))
+            {
+                foreach (var aux in ListaPOS)
+                {
+                    if (item.PosId == aux.PosId)
+                    {
+                        item.Estado = true;
+
+                        repositorioPOS.Modificar(item);
+                    }    
+                }
+            }
+
 
             cierre = LlenarClase();
 
             if (IDNumericUpDown.Value == 0)
-            {
                 paso = repo.Guardar(cierre);
-                /*apertura = repos.Buscar(Convert.ToInt32(CajaNumericUpDown.Value));
-                apertura.Cerrada = true; //Para Marcarla Cerrada
-                repos.Guardar(apertura);*/
-            }      
             else
             {
                 if (!ExisteEnLaBaseDeDatos())

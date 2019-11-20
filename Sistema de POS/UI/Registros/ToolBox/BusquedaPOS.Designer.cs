@@ -32,6 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.POSDataGridView = new System.Windows.Forms.DataGridView();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +41,7 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.POSDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
@@ -88,7 +89,8 @@
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8});
+            this.Column8,
+            this.Column9});
             this.POSDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.POSDataGridView.Location = new System.Drawing.Point(0, 0);
             this.POSDataGridView.Name = "POSDataGridView";
@@ -96,6 +98,10 @@
             this.POSDataGridView.RowTemplate.Height = 24;
             this.POSDataGridView.Size = new System.Drawing.Size(1298, 521);
             this.POSDataGridView.TabIndex = 23;
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // Column1
             // 
@@ -162,9 +168,13 @@
             this.Column8.ReadOnly = true;
             this.Column8.Width = 125;
             // 
-            // MyErrorProvider
+            // Column9
             // 
-            this.MyErrorProvider.ContainerControl = this;
+            this.Column9.HeaderText = "Estado";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 125;
             // 
             // BusquedaPOS
             // 
@@ -188,6 +198,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button Agregarbutton;
         private System.Windows.Forms.DataGridView POSDataGridView;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -196,6 +207,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
     }
 }

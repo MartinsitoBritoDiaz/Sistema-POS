@@ -31,11 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rPointOS));
             this.Panel = new System.Windows.Forms.Panel();
+            this.ResultadotextBox = new System.Windows.Forms.NumericUpDown();
+            this.BuscarProdcutoButton = new System.Windows.Forms.Button();
             this.ProductoTextBox = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.TarjetaRadioButton = new System.Windows.Forms.RadioButton();
             this.EfectivoRadioButton = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.AgregarGridButton = new System.Windows.Forms.Button();
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,8 +61,12 @@
             this.CantidadLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.HerramientasgroupBox = new System.Windows.Forms.GroupBox();
+            this.BuscarRPOSButton = new System.Windows.Forms.Button();
+            this.IDNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Busquedabutton = new System.Windows.Forms.Button();
             this.AplicarCheckBox = new System.Windows.Forms.CheckBox();
             this.ProductosMasVendidosbutton = new System.Windows.Forms.Button();
+            this.EliminarFilabutton = new System.Windows.Forms.Button();
             this.ImpuestosResultadolabel = new System.Windows.Forms.Label();
             this.Impuestoslabel = new System.Windows.Forms.Label();
             this.Cerobutton = new System.Windows.Forms.Button();
@@ -82,34 +93,23 @@
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.BarraTituloPanel = new System.Windows.Forms.Panel();
-            this.IDNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ResultadotextBox = new System.Windows.Forms.NumericUpDown();
             this.MinimizarButton = new System.Windows.Forms.PictureBox();
             this.CerrarButton = new System.Windows.Forms.PictureBox();
-            this.BuscarProdcutoButton = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.AgregarGridButton = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.BuscarRPOSButton = new System.Windows.Forms.Button();
-            this.Busquedabutton = new System.Windows.Forms.Button();
-            this.EliminarFilabutton = new System.Windows.Forms.Button();
             this.Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
-            this.HerramientasgroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.BarraTituloPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadotextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
+            this.HerramientasgroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.BarraTituloPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel
@@ -172,6 +172,24 @@
             this.Panel.TabIndex = 3;
             this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Paint);
             // 
+            // ResultadotextBox
+            // 
+            this.ResultadotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultadotextBox.Location = new System.Drawing.Point(1739, 107);
+            this.ResultadotextBox.Name = "ResultadotextBox";
+            this.ResultadotextBox.Size = new System.Drawing.Size(283, 30);
+            this.ResultadotextBox.TabIndex = 92;
+            // 
+            // BuscarProdcutoButton
+            // 
+            this.BuscarProdcutoButton.Image = global::Sistema_de_POS.Properties.Resources.imgBuscar;
+            this.BuscarProdcutoButton.Location = new System.Drawing.Point(197, 707);
+            this.BuscarProdcutoButton.Name = "BuscarProdcutoButton";
+            this.BuscarProdcutoButton.Size = new System.Drawing.Size(61, 58);
+            this.BuscarProdcutoButton.TabIndex = 91;
+            this.BuscarProdcutoButton.UseVisualStyleBackColor = true;
+            this.BuscarProdcutoButton.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // ProductoTextBox
             // 
             this.ProductoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,6 +200,28 @@
             this.ProductoTextBox.Size = new System.Drawing.Size(155, 30);
             this.ProductoTextBox.TabIndex = 89;
             this.ProductoTextBox.TextChanged += new System.EventHandler(this.ProductoTextBox_TextChanged);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(1144, 794);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(75, 49);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 88;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(1412, 794);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(75, 49);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 87;
+            this.pictureBox4.TabStop = false;
             // 
             // TarjetaRadioButton
             // 
@@ -212,6 +252,28 @@
             this.EfectivoRadioButton.UseVisualStyleBackColor = true;
             this.EfectivoRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(726, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(493, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 83;
+            this.pictureBox1.TabStop = false;
+            // 
+            // AgregarGridButton
+            // 
+            this.AgregarGridButton.Image = ((System.Drawing.Image)(resources.GetObject("AgregarGridButton.Image")));
+            this.AgregarGridButton.Location = new System.Drawing.Point(1633, 699);
+            this.AgregarGridButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AgregarGridButton.Name = "AgregarGridButton";
+            this.AgregarGridButton.Size = new System.Drawing.Size(69, 60);
+            this.AgregarGridButton.TabIndex = 79;
+            this.AgregarGridButton.UseVisualStyleBackColor = true;
+            this.AgregarGridButton.Click += new System.EventHandler(this.AgregarGridButton_Click_1);
+            // 
             // FechaDateTimePicker
             // 
             this.FechaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -233,6 +295,17 @@
             this.label6.Size = new System.Drawing.Size(64, 24);
             this.label6.TabIndex = 75;
             this.label6.Text = "Fecha";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1756, 919);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(255, 80);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 68;
+            this.pictureBox2.TabStop = false;
             // 
             // label15
             // 
@@ -436,7 +509,7 @@
             this.HerramientasgroupBox.Controls.Add(this.ProductosMasVendidosbutton);
             this.HerramientasgroupBox.Controls.Add(this.EliminarFilabutton);
             this.HerramientasgroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HerramientasgroupBox.Location = new System.Drawing.Point(1739, 531);
+            this.HerramientasgroupBox.Location = new System.Drawing.Point(1737, 538);
             this.HerramientasgroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.HerramientasgroupBox.Name = "HerramientasgroupBox";
             this.HerramientasgroupBox.Padding = new System.Windows.Forms.Padding(4);
@@ -444,6 +517,37 @@
             this.HerramientasgroupBox.TabIndex = 29;
             this.HerramientasgroupBox.TabStop = false;
             this.HerramientasgroupBox.Text = "Herramientas";
+            // 
+            // BuscarRPOSButton
+            // 
+            this.BuscarRPOSButton.Image = global::Sistema_de_POS.Properties.Resources.imgBuscar;
+            this.BuscarRPOSButton.Location = new System.Drawing.Point(136, 71);
+            this.BuscarRPOSButton.Name = "BuscarRPOSButton";
+            this.BuscarRPOSButton.Size = new System.Drawing.Size(105, 69);
+            this.BuscarRPOSButton.TabIndex = 93;
+            this.BuscarRPOSButton.UseVisualStyleBackColor = true;
+            this.BuscarRPOSButton.Click += new System.EventHandler(this.Button2_Click_1);
+            // 
+            // IDNumericUpDown
+            // 
+            this.IDNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDNumericUpDown.Location = new System.Drawing.Point(132, 29);
+            this.IDNumericUpDown.Name = "IDNumericUpDown";
+            this.IDNumericUpDown.Size = new System.Drawing.Size(109, 28);
+            this.IDNumericUpDown.TabIndex = 92;
+            // 
+            // Busquedabutton
+            // 
+            this.Busquedabutton.Image = ((System.Drawing.Image)(resources.GetObject("Busquedabutton.Image")));
+            this.Busquedabutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Busquedabutton.Location = new System.Drawing.Point(7, 29);
+            this.Busquedabutton.Name = "Busquedabutton";
+            this.Busquedabutton.Size = new System.Drawing.Size(101, 111);
+            this.Busquedabutton.TabIndex = 92;
+            this.Busquedabutton.Text = "Busqueda\r\npor Id\r\n\r\n";
+            this.Busquedabutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Busquedabutton.UseVisualStyleBackColor = true;
+            this.Busquedabutton.Click += new System.EventHandler(this.Busquedabutton_Click_1);
             // 
             // AplicarCheckBox
             // 
@@ -469,6 +573,20 @@
             this.ProductosMasVendidosbutton.Text = "PRODUCTOS MÁS VENDIDOS";
             this.ProductosMasVendidosbutton.UseVisualStyleBackColor = true;
             this.ProductosMasVendidosbutton.Click += new System.EventHandler(this.ProductosMasVendidosbutton_Click);
+            // 
+            // EliminarFilabutton
+            // 
+            this.EliminarFilabutton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarFilabutton.Image")));
+            this.EliminarFilabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarFilabutton.Location = new System.Drawing.Point(41, 272);
+            this.EliminarFilabutton.Margin = new System.Windows.Forms.Padding(4);
+            this.EliminarFilabutton.Name = "EliminarFilabutton";
+            this.EliminarFilabutton.Size = new System.Drawing.Size(221, 39);
+            this.EliminarFilabutton.TabIndex = 84;
+            this.EliminarFilabutton.Text = "Remover producto";
+            this.EliminarFilabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarFilabutton.UseVisualStyleBackColor = true;
+            this.EliminarFilabutton.Click += new System.EventHandler(this.EliminarFilabutton_Click_1);
             // 
             // ImpuestosResultadolabel
             // 
@@ -768,22 +886,6 @@
             this.BarraTituloPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTituloPanel_Paint);
             this.BarraTituloPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTituloPanel_MouseDown_2);
             // 
-            // IDNumericUpDown
-            // 
-            this.IDNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDNumericUpDown.Location = new System.Drawing.Point(132, 29);
-            this.IDNumericUpDown.Name = "IDNumericUpDown";
-            this.IDNumericUpDown.Size = new System.Drawing.Size(109, 28);
-            this.IDNumericUpDown.TabIndex = 92;
-            // 
-            // ResultadotextBox
-            // 
-            this.ResultadotextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResultadotextBox.Location = new System.Drawing.Point(1739, 107);
-            this.ResultadotextBox.Name = "ResultadotextBox";
-            this.ResultadotextBox.Size = new System.Drawing.Size(283, 30);
-            this.ResultadotextBox.TabIndex = 92;
-            // 
             // MinimizarButton
             // 
             this.MinimizarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -812,108 +914,6 @@
             this.CerrarButton.TabStop = false;
             this.CerrarButton.Click += new System.EventHandler(this.CerrarButton_Click);
             // 
-            // BuscarProdcutoButton
-            // 
-            this.BuscarProdcutoButton.Image = global::Sistema_de_POS.Properties.Resources.imgBuscar;
-            this.BuscarProdcutoButton.Location = new System.Drawing.Point(197, 707);
-            this.BuscarProdcutoButton.Name = "BuscarProdcutoButton";
-            this.BuscarProdcutoButton.Size = new System.Drawing.Size(61, 58);
-            this.BuscarProdcutoButton.TabIndex = 91;
-            this.BuscarProdcutoButton.UseVisualStyleBackColor = true;
-            this.BuscarProdcutoButton.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1144, 794);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(75, 49);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 88;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(1412, 794);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(75, 49);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 87;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(726, 37);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(493, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 83;
-            this.pictureBox1.TabStop = false;
-            // 
-            // AgregarGridButton
-            // 
-            this.AgregarGridButton.Image = ((System.Drawing.Image)(resources.GetObject("AgregarGridButton.Image")));
-            this.AgregarGridButton.Location = new System.Drawing.Point(1633, 699);
-            this.AgregarGridButton.Margin = new System.Windows.Forms.Padding(4);
-            this.AgregarGridButton.Name = "AgregarGridButton";
-            this.AgregarGridButton.Size = new System.Drawing.Size(69, 60);
-            this.AgregarGridButton.TabIndex = 79;
-            this.AgregarGridButton.UseVisualStyleBackColor = true;
-            this.AgregarGridButton.Click += new System.EventHandler(this.AgregarGridButton_Click_1);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1756, 919);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(255, 80);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 68;
-            this.pictureBox2.TabStop = false;
-            // 
-            // BuscarRPOSButton
-            // 
-            this.BuscarRPOSButton.Image = global::Sistema_de_POS.Properties.Resources.imgBuscar;
-            this.BuscarRPOSButton.Location = new System.Drawing.Point(136, 71);
-            this.BuscarRPOSButton.Name = "BuscarRPOSButton";
-            this.BuscarRPOSButton.Size = new System.Drawing.Size(105, 69);
-            this.BuscarRPOSButton.TabIndex = 93;
-            this.BuscarRPOSButton.UseVisualStyleBackColor = true;
-            this.BuscarRPOSButton.Click += new System.EventHandler(this.Button2_Click_1);
-            // 
-            // Busquedabutton
-            // 
-            this.Busquedabutton.Image = ((System.Drawing.Image)(resources.GetObject("Busquedabutton.Image")));
-            this.Busquedabutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Busquedabutton.Location = new System.Drawing.Point(7, 29);
-            this.Busquedabutton.Name = "Busquedabutton";
-            this.Busquedabutton.Size = new System.Drawing.Size(101, 111);
-            this.Busquedabutton.TabIndex = 92;
-            this.Busquedabutton.Text = "Busqueda\r\npor Id\r\n\r\n";
-            this.Busquedabutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Busquedabutton.UseVisualStyleBackColor = true;
-            this.Busquedabutton.Click += new System.EventHandler(this.Busquedabutton_Click_1);
-            // 
-            // EliminarFilabutton
-            // 
-            this.EliminarFilabutton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarFilabutton.Image")));
-            this.EliminarFilabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarFilabutton.Location = new System.Drawing.Point(41, 272);
-            this.EliminarFilabutton.Margin = new System.Windows.Forms.Padding(4);
-            this.EliminarFilabutton.Name = "EliminarFilabutton";
-            this.EliminarFilabutton.Size = new System.Drawing.Size(221, 39);
-            this.EliminarFilabutton.TabIndex = 84;
-            this.EliminarFilabutton.Text = "Remover producto";
-            this.EliminarFilabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EliminarFilabutton.UseVisualStyleBackColor = true;
-            this.EliminarFilabutton.Click += new System.EventHandler(this.EliminarFilabutton_Click_1);
-            // 
             // rPointOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -929,21 +929,21 @@
             this.Load += new System.EventHandler(this.RPosForm_Load);
             this.Panel.ResumeLayout(false);
             this.Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
-            this.HerramientasgroupBox.ResumeLayout(false);
-            this.HerramientasgroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.BarraTituloPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultadotextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
+            this.HerramientasgroupBox.ResumeLayout(false);
+            this.HerramientasgroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.BarraTituloPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -103,7 +103,7 @@ namespace Sistema_de_POS.UI.Registros.ToolBox
 
             foreach (var item in repo.GetList(p => true))
             {
-                if (item.Nombre.CompareTo("Manzana") == 0)
+                if (item.Nombre.CompareTo("Platano") == 0)
                 {
                     BusquedaProductos.listaProductoEnviar.Add(item);
                     interruptor = false;
@@ -113,7 +113,7 @@ namespace Sistema_de_POS.UI.Registros.ToolBox
             if (interruptor)
             {
                 producto.ProductoId = 0;
-                producto.Nombre = "Manzana";
+                producto.Nombre = "Platano";
                 producto.Existencia = 100;
                 producto.PrecioUnitario = 12;
                 producto.Impuesto = (12 * 0.18);
