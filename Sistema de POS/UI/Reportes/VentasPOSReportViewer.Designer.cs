@@ -38,16 +38,20 @@
             this.MycrystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.MycrystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MycrystalReportViewer.Location = new System.Drawing.Point(0, 0);
+            this.MycrystalReportViewer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MycrystalReportViewer.Name = "MycrystalReportViewer";
-            this.MycrystalReportViewer.Size = new System.Drawing.Size(853, 453);
+            this.MycrystalReportViewer.Size = new System.Drawing.Size(1137, 558);
             this.MycrystalReportViewer.TabIndex = 0;
+            this.MycrystalReportViewer.ToolPanelWidth = 267;
+            this.MycrystalReportViewer.Load += new System.EventHandler(this.MycrystalReportViewer_Load);
             // 
             // VentasPOSReportViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(853, 453);
+            this.ClientSize = new System.Drawing.Size(1137, 558);
             this.Controls.Add(this.MycrystalReportViewer);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "VentasPOSReportViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas del dia de hoy";

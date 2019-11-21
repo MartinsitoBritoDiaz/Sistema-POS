@@ -29,5 +29,10 @@ namespace Sistema_de_POS.UI.Reportes
             MycrystalReportViewer.ReportSource = listadoVentas;
             MycrystalReportViewer.Refresh();
         }
+
+        private void MycrystalReportViewer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

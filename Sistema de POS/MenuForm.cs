@@ -223,7 +223,7 @@ namespace Sistema_de_POS
         {
             POSRepositorio repositorio = new POSRepositorio();
 
-            ListaVentasPOS = repositorio.GetList(p => p.Fecha == DateTime.Today).ToList();
+            ListaVentasPOS = repositorio.GetList(p => true).Where(p => p.Fecha.Date == DateTime.Today).ToList();
 
             if (ListaVentasPOS.Count == 0)
             {
