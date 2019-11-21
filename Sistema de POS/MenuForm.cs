@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Sistema_de_POS.UI.Registros;
 using Sistema_de_POS.UI.Consultas;
+using Sistema_de_POS.Entidades;
+using Sistema_de_POS.BLL;
+using Sistema_de_POS.UI.Reportes;
 
 namespace Sistema_de_POS
 {
@@ -17,6 +20,7 @@ namespace Sistema_de_POS
     public partial class MenuForm : Form
     {
         public static string NombreUsuario { get; set; }
+        private List<POS> ListaVentasPOS { get; set; }
 
         public MenuForm()
         {
@@ -213,6 +217,22 @@ namespace Sistema_de_POS
         {
             rProductos registro = new rProductos();
             registro.Show();
+        }
+
+        private void ReportesButton_Click(object sender, EventArgs e)
+        {
+            POSRepositorio repositorio = new POSRepositorio();
+
+            ListaVentasPOS = repositorio.GetList(p => p.Fecha == DateTime.Today).ToList();
+
+            if (ListaVentasPOS.Count == 0)
+            {
+                MessageBox.Show("No hay datos para imprimir");
+                return;
+            }
+
+            VentasPOSReportViewer prestamosReportViewer = new VentasPOSReportViewer(ListaVentasPOS);
+            prestamosReportViewer.ShowDialog();
         }
     }
 }
