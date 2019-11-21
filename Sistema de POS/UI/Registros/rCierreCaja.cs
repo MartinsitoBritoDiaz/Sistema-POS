@@ -36,6 +36,11 @@ namespace Sistema_de_POS.UI.Registros
             EfectivoDGV.Rows[7].Cells[0].Value = 5;
             EfectivoDGV.Rows[8].Cells[0].Value = 1;
 
+
+            CreditoDGV.Rows.Add(3);
+            CreditoDGV.Rows[0].Cells[0].Value = "Mastercard";
+            CreditoDGV.Rows[1].Cells[0].Value = "Visa";
+            CreditoDGV.Rows[0].Cells[0].Value = "American Express";
         }
         private void rCierreCaja_Load(object sender, EventArgs e)
         {
@@ -167,16 +172,26 @@ namespace Sistema_de_POS.UI.Registros
             }*/
             
 
-            if(!string.IsNullOrWhiteSpace(TotalGeneralTextBox.Text))
-                if (Convert.ToDouble(TotalGeneralTextBox.Text) != Convert.ToDouble(DSTGTextBox.Text))
+            if(TotalGeneralTextBox.Text!="0")
+                //Math.Ceiling para redondear hacia arriba
+                if(Convert.ToDouble(TotalEfectivoTextBox.Text) != Math.Ceiling(Convert.ToDouble(DSETextBox.Text)))
                 {
-                    MyErrorProvider.SetError(Guardarbutton, "La caja no cuadra");
+                    MyErrorProvider.SetError(DSETextBox, "No debe haber diferencia entre el efectivo en caja y el efectivo del sistema");
+                    DSETextBox.Focus();
+                    paso = false;
+                }
+                if (Convert.ToDouble(TotalTarjetaCreditoTextBox.Text) != Convert.ToDouble(DSTGTextBox.Text))
+                {
+                    MyErrorProvider.SetError(DSTTextBox, "Los datos del sistem y los ingresados por el usuario no coinciden");
+                    DSTTextBox.Focus();
                     paso = false;
                 }
             else
             {
                 MyErrorProvider.SetError(EfectivoDGV, "Debe de llenar los campos con los montos que posee");
                 EfectivoDGV.Focus();
+                MyErrorProvider.SetError(CreditoDGV, "Debe de llenar los campos con los montos que posee");
+                CreditoDGV.Focus();
                 return false;
              }
 
@@ -204,8 +219,8 @@ namespace Sistema_de_POS.UI.Registros
             Cierre cierre = new Cierre();
 
 
-            /*if (!Validar())
-                return;*/
+            if (!Validar())
+                return;
 
             POSRepositorio repositorioPOS = new POSRepositorio();
 
@@ -226,7 +241,10 @@ namespace Sistema_de_POS.UI.Registros
             cierre = LlenarClase();
 
             if (IDNumericUpDown.Value == 0)
+            {
                 paso = repo.Guardar(cierre);
+                Limpiar();
+            }
             else
             {
                 if (!ExisteEnLaBaseDeDatos())

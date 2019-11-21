@@ -37,10 +37,11 @@
             this.CierreCajaTabControl = new System.Windows.Forms.TabControl();
             this.CierreEfectivoTabPage = new System.Windows.Forms.TabPage();
             this.EfectivoDGV = new System.Windows.Forms.DataGridView();
+            this.ColumnaBilletes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.CreditoDGV = new System.Windows.Forms.DataGridView();
-            this.ColumnaReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BorrarButton = new System.Windows.Forms.Button();
@@ -64,9 +65,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.label11 = new System.Windows.Forms.Label();
-            this.ColumnaBilletes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaReferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BarraTituloPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarButton)).BeginInit();
@@ -88,7 +88,7 @@
             this.BarraTituloPanel.Controls.Add(this.CerrarButton);
             this.BarraTituloPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTituloPanel.Location = new System.Drawing.Point(0, 0);
-            this.BarraTituloPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BarraTituloPanel.Margin = new System.Windows.Forms.Padding(2);
             this.BarraTituloPanel.Name = "BarraTituloPanel";
             this.BarraTituloPanel.Size = new System.Drawing.Size(539, 28);
             this.BarraTituloPanel.TabIndex = 48;
@@ -110,7 +110,7 @@
             this.MinimizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinimizarButton.Image = ((System.Drawing.Image)(resources.GetObject("MinimizarButton.Image")));
             this.MinimizarButton.Location = new System.Drawing.Point(489, 2);
-            this.MinimizarButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimizarButton.Margin = new System.Windows.Forms.Padding(2);
             this.MinimizarButton.Name = "MinimizarButton";
             this.MinimizarButton.Size = new System.Drawing.Size(19, 20);
             this.MinimizarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -124,7 +124,7 @@
             this.CerrarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CerrarButton.Image = ((System.Drawing.Image)(resources.GetObject("CerrarButton.Image")));
             this.CerrarButton.Location = new System.Drawing.Point(516, 2);
-            this.CerrarButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CerrarButton.Margin = new System.Windows.Forms.Padding(2);
             this.CerrarButton.Name = "CerrarButton";
             this.CerrarButton.Size = new System.Drawing.Size(19, 20);
             this.CerrarButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -148,7 +148,7 @@
             this.CierreEfectivoTabPage.Controls.Add(this.EfectivoDGV);
             this.CierreEfectivoTabPage.Location = new System.Drawing.Point(4, 22);
             this.CierreEfectivoTabPage.Name = "CierreEfectivoTabPage";
-            this.CierreEfectivoTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.CierreEfectivoTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.CierreEfectivoTabPage.Size = new System.Drawing.Size(527, 247);
             this.CierreEfectivoTabPage.TabIndex = 0;
             this.CierreEfectivoTabPage.Text = "Efectivo";
@@ -169,12 +169,35 @@
             this.EfectivoDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EfectivoDGV_CellContentClick);
             this.EfectivoDGV.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
+            // ColumnaBilletes
+            // 
+            this.ColumnaBilletes.HeaderText = "Denominacion";
+            this.ColumnaBilletes.MinimumWidth = 6;
+            this.ColumnaBilletes.Name = "ColumnaBilletes";
+            this.ColumnaBilletes.ReadOnly = true;
+            this.ColumnaBilletes.Width = 125;
+            // 
+            // ColumnaCantidad
+            // 
+            this.ColumnaCantidad.HeaderText = "Cantidad";
+            this.ColumnaCantidad.MinimumWidth = 6;
+            this.ColumnaCantidad.Name = "ColumnaCantidad";
+            this.ColumnaCantidad.Width = 125;
+            // 
+            // ColumnaSubtotal
+            // 
+            this.ColumnaSubtotal.HeaderText = "Subtotal";
+            this.ColumnaSubtotal.MinimumWidth = 6;
+            this.ColumnaSubtotal.Name = "ColumnaSubtotal";
+            this.ColumnaSubtotal.ReadOnly = true;
+            this.ColumnaSubtotal.Width = 125;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.CreditoDGV);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(527, 247);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Credito";
@@ -194,20 +217,6 @@
             this.CreditoDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CreditoDGV_CellContentClick);
             this.CreditoDGV.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.CreditoDGV_CellEndEdit);
             // 
-            // ColumnaReferencia
-            // 
-            this.ColumnaReferencia.HeaderText = "Referencia";
-            this.ColumnaReferencia.MinimumWidth = 6;
-            this.ColumnaReferencia.Name = "ColumnaReferencia";
-            this.ColumnaReferencia.Width = 200;
-            // 
-            // ColumnaMonto
-            // 
-            this.ColumnaMonto.HeaderText = "Monto";
-            this.ColumnaMonto.MinimumWidth = 6;
-            this.ColumnaMonto.Name = "ColumnaMonto";
-            this.ColumnaMonto.Width = 125;
-            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -216,7 +225,7 @@
             this.panel2.Controls.Add(this.BorrarButton);
             this.panel2.Controls.Add(this.Guardarbutton);
             this.panel2.Location = new System.Drawing.Point(0, 526);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(539, 39);
             this.panel2.TabIndex = 51;
@@ -366,6 +375,7 @@
             this.TotalGeneralTextBox.ReadOnly = true;
             this.TotalGeneralTextBox.Size = new System.Drawing.Size(110, 20);
             this.TotalGeneralTextBox.TabIndex = 90;
+            this.TotalGeneralTextBox.Text = "0";
             this.TotalGeneralTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label7
@@ -384,6 +394,7 @@
             this.TotalTarjetaCreditoTextBox.ReadOnly = true;
             this.TotalTarjetaCreditoTextBox.Size = new System.Drawing.Size(110, 20);
             this.TotalTarjetaCreditoTextBox.TabIndex = 88;
+            this.TotalTarjetaCreditoTextBox.Text = "0";
             this.TotalTarjetaCreditoTextBox.TextChanged += new System.EventHandler(this.TotalTarjetaCreditoTextBox_TextChanged);
             // 
             // label6
@@ -411,6 +422,7 @@
             this.TotalEfectivoTextBox.ReadOnly = true;
             this.TotalEfectivoTextBox.Size = new System.Drawing.Size(110, 20);
             this.TotalEfectivoTextBox.TabIndex = 84;
+            this.TotalEfectivoTextBox.Text = "0";
             this.TotalEfectivoTextBox.TextChanged += new System.EventHandler(this.TotalEfectivoTextBox_TextChanged);
             // 
             // label4
@@ -435,28 +447,20 @@
             this.label11.TabIndex = 99;
             this.label11.Text = "Comentario";
             // 
-            // ColumnaBilletes
+            // ColumnaReferencia
             // 
-            this.ColumnaBilletes.HeaderText = "Denominacion";
-            this.ColumnaBilletes.MinimumWidth = 6;
-            this.ColumnaBilletes.Name = "ColumnaBilletes";
-            this.ColumnaBilletes.ReadOnly = true;
-            this.ColumnaBilletes.Width = 125;
+            this.ColumnaReferencia.HeaderText = "Referencia";
+            this.ColumnaReferencia.MinimumWidth = 6;
+            this.ColumnaReferencia.Name = "ColumnaReferencia";
+            this.ColumnaReferencia.ReadOnly = true;
+            this.ColumnaReferencia.Width = 200;
             // 
-            // ColumnaCantidad
+            // ColumnaMonto
             // 
-            this.ColumnaCantidad.HeaderText = "Cantidad";
-            this.ColumnaCantidad.MinimumWidth = 6;
-            this.ColumnaCantidad.Name = "ColumnaCantidad";
-            this.ColumnaCantidad.Width = 125;
-            // 
-            // ColumnaSubtotal
-            // 
-            this.ColumnaSubtotal.HeaderText = "Subtotal";
-            this.ColumnaSubtotal.MinimumWidth = 6;
-            this.ColumnaSubtotal.Name = "ColumnaSubtotal";
-            this.ColumnaSubtotal.ReadOnly = true;
-            this.ColumnaSubtotal.Width = 125;
+            this.ColumnaMonto.HeaderText = "Monto";
+            this.ColumnaMonto.MinimumWidth = 6;
+            this.ColumnaMonto.Name = "ColumnaMonto";
+            this.ColumnaMonto.Width = 125;
             // 
             // rCierreCaja
             // 
@@ -537,12 +541,12 @@
         private System.Windows.Forms.TextBox ComentarioTextBox;
         private System.Windows.Forms.TextBox TotalEfectivoTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaReferencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaMonto;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaBilletes;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaSubtotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaReferencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaMonto;
     }
 }
