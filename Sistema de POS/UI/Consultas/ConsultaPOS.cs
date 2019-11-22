@@ -24,7 +24,29 @@ namespace Sistema_de_POS.UI.Consultas
             var Listado = new List<POS>();
             RepositorioBase<POS> repositorio = new RepositorioBase<POS>();
 
-            Listado = repositorio.GetList(p => true);
+            if (IDNumericUpDown.Value != 0)
+            {
+                int id = Convert.ToInt32(IDNumericUpDown.Value);
+                Listado = repositorio.GetList(c => c.PosId == id);
+                Listado = Listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+            }
+            else if (!string.IsNullOrWhiteSpace(CantidadTextBox.Text))
+            {
+                int cantidad = Convert.ToInt32(CantidadTextBox.Text);
+                Listado = repositorio.GetList(c => c.Cantidad == cantidad);
+
+                Listado = Listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+            }
+            else if(!string.IsNullOrWhiteSpace(TotalTextBox.Text))
+            {
+                double total = Convert.ToDouble(TotalTextBox.Text);
+                Listado = repositorio.GetList(c => c.Total == total);
+
+                Listado = Listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+            }
+            else
+                Listado = repositorio.GetList(p => true);
+
 
             ConsultadataGridView.DataSource = null;
             ConsultadataGridView.DataSource = Listado;

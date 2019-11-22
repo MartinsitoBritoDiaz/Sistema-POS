@@ -24,10 +24,37 @@ namespace Sistema_de_POS.UI.Consultas
             var Listado = new List<Factura>();
             RepositorioBase<Factura> repositorio = new RepositorioBase<Factura>();
 
-            Listado = repositorio.GetList(p => true);
+            if (IDNumericUpDown.Value != 0)
+            {
+                int id = Convert.ToInt32(IDNumericUpDown.Value);
+                Listado = repositorio.GetList(c => c.FacturaId == id);
+                Listado = Listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+            }
+            else if (IDClienteNumericUpDown.Value != 0)
+            {
+                int IDC = Convert.ToInt32(IDClienteNumericUpDown.Value.ToString());
+                Listado = repositorio.GetList(c => c.ClienteId == IDC);
+
+                Listado = Listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+            }
+            else if (!string.IsNullOrWhiteSpace(TotalTextBox.Text))
+            {
+                double total = Convert.ToDouble(TotalTextBox.Text);
+                Listado = repositorio.GetList(c => c.Total == total);
+
+                Listado = Listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
+            }
+            else
+                Listado = repositorio.GetList(p => true);
+
 
             ConsultadataGridView.DataSource = null;
             ConsultadataGridView.DataSource = Listado;
+        }
+
+        private void IDClienteNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,35 +35,32 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.IDNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.IDClienteNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TotalTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDClienteNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // ConsultadataGridView
             // 
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultadataGridView.Location = new System.Drawing.Point(13, 34);
+            this.ConsultadataGridView.Location = new System.Drawing.Point(17, 42);
+            this.ConsultadataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
             this.ConsultadataGridView.RowHeadersWidth = 51;
-            this.ConsultadataGridView.Size = new System.Drawing.Size(561, 406);
+            this.ConsultadataGridView.Size = new System.Drawing.Size(748, 500);
             this.ConsultadataGridView.TabIndex = 19;
             // 
             // Consultarbutton
             // 
-            this.Consultarbutton.Location = new System.Drawing.Point(367, 5);
+            this.Consultarbutton.Location = new System.Drawing.Point(489, 6);
+            this.Consultarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(207, 23);
+            this.Consultarbutton.Size = new System.Drawing.Size(276, 28);
             this.Consultarbutton.TabIndex = 18;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.UseVisualStyleBackColor = true;
@@ -72,131 +69,106 @@
             // HastadateTimePicker
             // 
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(188, 8);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(251, 10);
+            this.HastadateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
-            this.HastadateTimePicker.Size = new System.Drawing.Size(81, 20);
+            this.HastadateTimePicker.Size = new System.Drawing.Size(107, 22);
             this.HastadateTimePicker.TabIndex = 15;
             // 
             // DesdedateTimePicker
             // 
             this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(57, 7);
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(76, 9);
+            this.DesdedateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
-            this.DesdedateTimePicker.Size = new System.Drawing.Size(81, 20);
+            this.DesdedateTimePicker.Size = new System.Drawing.Size(107, 22);
             this.DesdedateTimePicker.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(144, 15);
+            this.label2.Location = new System.Drawing.Point(192, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "Hasta:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 15);
+            this.label1.Location = new System.Drawing.Point(13, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 10;
             this.label1.Text = "Desde:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(581, 36);
+            this.label3.Location = new System.Drawing.Point(775, 44);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 13);
+            this.label3.Size = new System.Drawing.Size(21, 17);
             this.label3.TabIndex = 20;
             this.label3.Text = "ID";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(581, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Nombre del Cliente";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(580, 62);
+            this.label5.Location = new System.Drawing.Point(773, 76);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(68, 17);
             this.label5.TabIndex = 22;
             this.label5.Text = "ID Cliente";
             // 
-            // label6
+            // IDNumericUpDown
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(581, 114);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 13);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Cantidad de Articulos";
+            this.IDNumericUpDown.Location = new System.Drawing.Point(931, 42);
+            this.IDNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.IDNumericUpDown.Name = "IDNumericUpDown";
+            this.IDNumericUpDown.Size = new System.Drawing.Size(160, 22);
+            this.IDNumericUpDown.TabIndex = 24;
             // 
-            // numericUpDown1
+            // IDClienteNumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(698, 34);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 24;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(698, 60);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 25;
+            this.IDClienteNumericUpDown.Location = new System.Drawing.Point(931, 74);
+            this.IDClienteNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.IDClienteNumericUpDown.Name = "IDClienteNumericUpDown";
+            this.IDClienteNumericUpDown.Size = new System.Drawing.Size(160, 22);
+            this.IDClienteNumericUpDown.TabIndex = 25;
+            this.IDClienteNumericUpDown.ValueChanged += new System.EventHandler(this.IDClienteNumericUpDown_ValueChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(580, 141);
+            this.label7.Location = new System.Drawing.Point(775, 104);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.Size = new System.Drawing.Size(40, 17);
             this.label7.TabIndex = 26;
             this.label7.Text = "Total";
             // 
-            // textBox1
+            // TotalTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(698, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 27;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(698, 112);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown3.TabIndex = 28;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(698, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
-            this.textBox2.TabIndex = 29;
+            this.TotalTextBox.Location = new System.Drawing.Point(931, 104);
+            this.TotalTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.Size = new System.Drawing.Size(159, 22);
+            this.TotalTextBox.TabIndex = 29;
             // 
             // ConsultaFactura
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 447);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1107, 550);
+            this.Controls.Add(this.TotalTextBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.IDClienteNumericUpDown);
+            this.Controls.Add(this.IDNumericUpDown);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.Consultarbutton);
@@ -204,13 +176,12 @@
             this.Controls.Add(this.DesdedateTimePicker);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ConsultaFactura";
             this.Text = "ConsultaFactura";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDClienteNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,14 +196,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown IDNumericUpDown;
+        private System.Windows.Forms.NumericUpDown IDClienteNumericUpDown;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TotalTextBox;
     }
 }
