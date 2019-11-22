@@ -36,11 +36,40 @@ namespace Sistema_de_POS.UI.Registros
             EfectivoDGV.Rows[7].Cells[0].Value = 5;
             EfectivoDGV.Rows[8].Cells[0].Value = 1;
 
+            EfectivoDGV.Rows[0].Cells[1].Value = "0";
+            EfectivoDGV.Rows[1].Cells[1].Value = "0";
+            EfectivoDGV.Rows[2].Cells[1].Value = "0";
+            EfectivoDGV.Rows[3].Cells[1].Value = "0";
+            EfectivoDGV.Rows[4].Cells[1].Value = "0";
+            EfectivoDGV.Rows[5].Cells[1].Value = "0";
+            EfectivoDGV.Rows[6].Cells[1].Value = "0";
+            EfectivoDGV.Rows[7].Cells[1].Value = "0";
+            EfectivoDGV.Rows[8].Cells[1].Value = "0";
+
+            EfectivoDGV.Rows[0].Cells[2].Value = "0";
+            EfectivoDGV.Rows[1].Cells[2].Value = "0";
+            EfectivoDGV.Rows[2].Cells[2].Value = "0";
+            EfectivoDGV.Rows[3].Cells[2].Value = "0";
+            EfectivoDGV.Rows[4].Cells[2].Value = "0";
+            EfectivoDGV.Rows[5].Cells[2].Value = "0";
+            EfectivoDGV.Rows[6].Cells[2].Value = "0";
+            EfectivoDGV.Rows[7].Cells[2].Value = "0";
+            EfectivoDGV.Rows[8].Cells[2].Value = "0";
+
+            EfectivoDGV.Columns[0].DefaultCellStyle.Format = "#,#.#";
+            EfectivoDGV.Columns[1].DefaultCellStyle.Format = "#";
+            EfectivoDGV.Columns[2].DefaultCellStyle.Format = "#,#.#";
 
             CreditoDGV.Rows.Add(3);
             CreditoDGV.Rows[0].Cells[0].Value = "Mastercard";
             CreditoDGV.Rows[1].Cells[0].Value = "Visa";
-            CreditoDGV.Rows[0].Cells[0].Value = "American Express";
+            CreditoDGV.Rows[2].Cells[0].Value = "American Express";
+
+            CreditoDGV.Rows[0].Cells[1].Value = "0";
+            CreditoDGV.Rows[1].Cells[1].Value = "0";
+            CreditoDGV.Rows[2].Cells[1].Value = "0";
+
+            CreditoDGV.Columns[1].DefaultCellStyle.Format = "#,#.#";
         }
         private void rCierreCaja_Load(object sender, EventArgs e)
         {
@@ -104,8 +133,18 @@ namespace Sistema_de_POS.UI.Registros
                     row.Cells[1].Value = 0;
                 }
 
+                int aux = 0;
+                if (int.TryParse(row.Cells[1].Value.ToString(), out aux))
+                {
+                    cantidad = aux;
+                    
+                }
+                else
+                {
+                    row.Cells[1].Value = 0;
+                }
+
                 billete = int.Parse(row.Cells[0].Value.ToString());
-                cantidad = int.Parse(row.Cells[1].Value.ToString());
 
                 subtotal = billete * cantidad;
                 total += subtotal;
@@ -170,9 +209,10 @@ namespace Sistema_de_POS.UI.Registros
                 CajaNumericUpDown.Focus();
                 paso = false;
             }*/
-            
 
-            if(TotalGeneralTextBox.Text!="0")
+
+            if (TotalGeneralTextBox.Text != "0")
+            {
                 //Math.Ceiling para redondear hacia arriba
                 if(Convert.ToDouble(TotalEfectivoTextBox.Text) != Math.Ceiling(Convert.ToDouble(DSETextBox.Text)))
                 {
@@ -180,12 +220,13 @@ namespace Sistema_de_POS.UI.Registros
                     DSETextBox.Focus();
                     paso = false;
                 }
-                if (Convert.ToDouble(TotalTarjetaCreditoTextBox.Text) != Convert.ToDouble(DSTGTextBox.Text))
+                if (Convert.ToDouble(TotalTarjetaCreditoTextBox.Text) != Convert.ToDouble(DSTTextBox.Text))
                 {
                     MyErrorProvider.SetError(DSTTextBox, "Los datos del sistem y los ingresados por el usuario no coinciden");
                     DSTTextBox.Focus();
                     paso = false;
                 }
+            }      
             else
             {
                 MyErrorProvider.SetError(EfectivoDGV, "Debe de llenar los campos con los montos que posee");
@@ -258,6 +299,9 @@ namespace Sistema_de_POS.UI.Registros
             if (paso)
             {
                 MessageBox.Show("Guardado");
+                DSETextBox.Text = "0";
+                DSTTextBox.Text = "0";
+                DSTGTextBox.Text = "0";
             }
             else
             {
@@ -385,10 +429,19 @@ namespace Sistema_de_POS.UI.Registros
                     row.Cells[1].Value = 0;
                 }
 
-                
-                monto = int.Parse(row.Cells[1].Value.ToString());
+                decimal aux = 0;
+                if (decimal.TryParse(row.Cells[1].Value.ToString(), out aux))
+                {
+                    monto = aux;
+                    //monto = decimal.Parse(row.Cells[1].Value.ToString());
+                }
+                else
+                {
+                    row.Cells[1].Value = 0;
+                }
+                    
 
-                
+
                 totalcredito += monto;
                 
             }
